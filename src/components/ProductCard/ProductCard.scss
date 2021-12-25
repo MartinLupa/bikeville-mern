@@ -1,10 +1,9 @@
-@import '../../styles/Variables.scss';
+@import "../../styles/Variables.scss";
 
 .card-container {
   display: flex;
   flex-direction: column;
   text-align: center;
-  align-items: center;
   width: 400px;
   padding: 20px;
   margin: 20px;
@@ -22,7 +21,12 @@ p {
   margin: 0;
 }
 
+.card-info {
+  text-align: left;
+}
+
 .card-price {
+  margin: auto;
   width: 200px;
   margin-bottom: 10px;
   margin-top: 20px;
@@ -36,5 +40,6 @@ p {
 }
 
 .card-btn {
+  margin: auto;
   width: 200px;
 }
