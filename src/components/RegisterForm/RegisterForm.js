@@ -1,3 +1,4 @@
+import GeneralButton from "../GeneralButton/GeneralButton";
 import "./RegisterForm.css";
 
 export default function RegisterForm() {
@@ -5,7 +6,7 @@ export default function RegisterForm() {
     <div className="register-container">
       <div className="register-img"></div>
       <form className="register-form" action="">
-        <h3>Create account</h3>
+        <h4>Create account</h4>
 
         <div className="form-row">
           <div className="form-col">
@@ -58,7 +59,9 @@ export default function RegisterForm() {
             <input type="password" placeholder="Repeat your password" />
           </div>
         </div>
-        <button className="register-btn">Register</button>
+        <div className="form-btn">
+          <GeneralButton text={"REGISTER"} />
+        </div>
       </form>
     </div>
   );
