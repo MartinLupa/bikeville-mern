@@ -1,1 +1,7 @@
-@import '../styles/Variables.scss';
+@import "../styles/Variables.scss";
+
+.main-container {
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+}
