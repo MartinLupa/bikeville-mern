@@ -1,9 +1,23 @@
 @import '../../styles/Variables.scss';
 
-.navbar-main {
+.navbar-container {
+  display: flex;
+  height: 80px;
   background-color: $main-color;
+  flex-grow: 1;
 }
 
 .logo {
+  margin-left: 20px;
+  display: flex;
   color: $secondary-color;
+  align-items: center;
+}
+
+.logo-icon {
+  height: 50px;
+}
+
+.logo h4 {
+  margin-left: 10px;
 }

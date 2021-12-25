@@ -1,12 +1,15 @@
-import './Navbar.css';
-import '../../styles/Variables.scss';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBiking } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import '../../styles/Variables.scss';
+import './Navbar.css';
 
 export default function Navbar() {
   return (
-    <div className="navbar-main">
-      <FontAwesomeIcon className="logo" icon={faBiking}></FontAwesomeIcon>
+    <div className="navbar-container">
+      <div className="logo">
+        <FontAwesomeIcon size="2x" icon={faBiking}></FontAwesomeIcon>
+        <h4>BIKEVILLE</h4>
+      </div>
     </div>
   );
 }
