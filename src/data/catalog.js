@@ -33,6 +33,7 @@ const products = {
       },
       net_price: 3254,
       vat: 682,
+      full_price: 3936,
       stock: 1000,
     },
     {
@@ -50,6 +51,7 @@ const products = {
       },
       net_price: 3254,
       vat: 682,
+      full_price: 3936,
       stock: 1000,
     },
     {
@@ -67,6 +69,7 @@ const products = {
       },
       net_price: 3254,
       vat: 682,
+      full_price: 3936,
       stock: 1000,
     },
     {
@@ -84,6 +87,7 @@ const products = {
       },
       net_price: 3254,
       vat: 682,
+      full_price: 3936,
       stock: 1000,
     },
     {
@@ -101,6 +105,7 @@ const products = {
       },
       net_price: 3254,
       vat: 682,
+      full_price: 3936,
       stock: 1000,
     },
     {
@@ -118,6 +123,7 @@ const products = {
       },
       net_price: 3254,
       vat: 682,
+      full_price: 3936,
       stock: 1000,
     },
     {
@@ -135,6 +141,7 @@ const products = {
       },
       net_price: 3254,
       vat: 682,
+      full_price: 3936,
       stock: 1000,
     },
     {
@@ -152,6 +159,7 @@ const products = {
       },
       net_price: 3254,
       vat: 682,
+      full_price: 3936,
       stock: 1000,
     },
   ],
