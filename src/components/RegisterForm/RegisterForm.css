@@ -19,7 +19,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 
 .register-form {
@@ -85,7 +85,7 @@ form input {
   }
 }
 
-@media only screen and (max-width: 1300px) {
+@media only screen and (max-width: 800px) {
   .form-row {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
