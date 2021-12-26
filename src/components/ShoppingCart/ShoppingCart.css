@@ -7,12 +7,13 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin: 40px;
+  margin: 40px auto;
   padding: 40px;
   border: 1px solid #d7d3d3;
   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 10px;
+  max-width: 1200px;
 }
 
 .cart {
@@ -44,11 +45,21 @@
   height: 28%;
 }
 
+.cart-total {
+  margin: 0px 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
 .cart-btn {
   margin: 5px 5px 5px auto;
 }
 
-@media only screen and (max-width: 1250px) {
+@media only screen and (max-width: 1200px) {
   .cart {
     width: 100%;
   }

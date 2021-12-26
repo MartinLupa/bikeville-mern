@@ -4,19 +4,23 @@ export default function PaymentItem() {
   return (
     <div className="payment-item">
       <div>
-        <h5>Cervelo R5</h5>
-        <p>ID: RB_R501</p>
+        <h6>Cervelo R5</h6>
+        <h6>ID: RB_R501</h6>
       </div>
       <div className="payment-amounts">
         <div>
           <p>Net price: </p>
           <p>VAT: </p>
-          <p>Total:</p>
+          <p>
+            <strong>Total:</strong>
+          </p>
         </div>
         <div className="amounts">
-          <p>€2350</p>
-          <p>€640</p>
-          <p> €3120</p>
+          <p>€ 2350</p>
+          <p>€ 640</p>
+          <p>
+            <strong>€ 3120</strong>
+          </p>
         </div>
       </div>
     </div>
