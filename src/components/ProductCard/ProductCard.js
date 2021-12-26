@@ -13,7 +13,7 @@ export default function ProductCard({ img, model, type, full_price }) {
         alt={model}
       />
       <div className="card-info">
-        <h2>{model}</h2>
+        <h4>{model}</h4>
         <p>{type}</p>
         <a onClick={handleProductDetail} href="">
           More info..

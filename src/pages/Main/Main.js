@@ -17,10 +17,11 @@ export default function Main() {
 
   return (
     <div className="main-container">
-      {catalog.map((product, index) => {
+      {catalog.map((product) => {
         return (
           <ProductCard
             key={product.product_id}
+            id={product.product_id}
             img={product.image}
             model={product.model}
             type={product.type}
