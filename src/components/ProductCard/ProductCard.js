@@ -1,13 +1,20 @@
-import { useState } from "react";
+import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { GlobalContext } from "../../App";
 import AddCartButton from "../AddCartButton/AddCartButton";
 import "./ProductCard.css";
 
 export default function ProductCard({ img, model, type, full_price, id }) {
-  const [productID, setProductID] = useState();
+  const { productID, setProductID } = useContext(GlobalContext);
+  const navigate = useNavigate();
 
   const handleDetailsClick = (e) => {
-    console.log(e.id);
     setProductID(e.id);
+  };
+
+  const handleDetailsSubmit = (e) => {
+    e.preventDefault();
+    navigate(`product_details/${productID}`);
   };
 
   return (
@@ -16,13 +23,14 @@ export default function ProductCard({ img, model, type, full_price, id }) {
       <div className="card-info">
         <h4>{model}</h4>
         <p>{type}</p>
-
-        <a
-          onClick={() => handleDetailsClick({ id })}
-          href={`product_details/${productID}`}
-        >
-          More info..
-        </a>
+        <form onSubmit={handleDetailsSubmit} action="">
+          <button
+            className="card-btn"
+            onClick={() => handleDetailsClick({ id })}
+          >
+            More info...
+          </button>
+        </form>
       </div>
 
       <div className="card-price">

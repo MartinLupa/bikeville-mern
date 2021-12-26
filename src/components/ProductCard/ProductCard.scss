@@ -25,6 +25,18 @@ p {
   text-align: left;
 }
 
+.card-btn {
+  padding: 0;
+  color: blue;
+  border: none;
+  background-color: white;
+  text-align: left;
+  margin: 0;
+}
+.card-btn:hover {
+  color: $secondary-color;
+}
+
 .card-price {
   margin: auto;
   width: 200px;
