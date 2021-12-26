@@ -4,13 +4,21 @@ import AddCartButton from "../../components/AddCartButton/AddCartButton";
 import "./ProductDetails.css";
 
 export default function ProductDetails() {
-  const { catalog, setCatalog, productID } = useContext(GlobalContext);
+  const { catalog, productID } = useContext(GlobalContext);
 
   const filteredProduct = catalog.filter(
     (product) => product.product_id === productID
   );
-  const { model, image, description, type, brake_type, groupset, sizes } =
-    filteredProduct[0];
+  const {
+    model,
+    image,
+    description,
+    type,
+    brake_type,
+    groupset,
+    sizes,
+    product_id,
+  } = filteredProduct[0];
 
   return (
     <div className="details-container">
@@ -35,7 +43,7 @@ export default function ProductDetails() {
           ))}
         </div>
         <div className="details-btn">
-          <AddCartButton />
+          <AddCartButton id={product_id} />
         </div>
       </div>
     </div>

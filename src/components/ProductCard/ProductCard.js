@@ -36,7 +36,7 @@ export default function ProductCard({ img, model, type, full_price, id }) {
       <div className="card-price">
         <p>€{full_price}</p>
       </div>
-      <AddCartButton className="card-btn" />
+      <AddCartButton id={id} className="card-btn" />
     </div>
   );
 }

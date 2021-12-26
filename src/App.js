@@ -8,15 +8,19 @@ export const GlobalContext = createContext();
 function App() {
   const [catalog, setCatalog] = useState();
   const [productID, setProductID] = useState();
-
-  useEffect(() => {
-    console.log("APP", catalog);
-  });
+  const [shoppingCart, setShoppingCart] = useState([]);
 
   return (
     <div>
       <GlobalContext.Provider
-        value={{ catalog, setCatalog, productID, setProductID }}
+        value={{
+          catalog,
+          setCatalog,
+          productID,
+          setProductID,
+          shoppingCart,
+          setShoppingCart,
+        }}
       >
         <Router />
       </GlobalContext.Provider>
