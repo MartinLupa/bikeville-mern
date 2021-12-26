@@ -1,4 +1,4 @@
-@import '../../styles/Variables.scss';
+@import "../../styles/Variables.scss";
 
 .navbar-container {
   display: flex;
@@ -20,4 +20,5 @@
 
 .logo h4 {
   margin-left: 10px;
+  margin-bottom: 0px;
 }

@@ -1,6 +1,7 @@
 import { useLocation } from "react-router-dom";
 import Login from "../../components/Login/Login";
 import RegisterForm from "../../components/RegisterForm/RegisterForm";
+import "./RegistrationAndLogin.css";
 
 export default function RegistrationAndLogin() {
   const location = useLocation();

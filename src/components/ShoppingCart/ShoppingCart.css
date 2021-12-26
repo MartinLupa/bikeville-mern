@@ -1,0 +1,56 @@
+.cart-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 40px;
+  padding: 40px;
+  border: 1px solid #d7d3d3;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.cart {
+  font-weight: 600;
+  color: #6a6a6a;
+  padding: 20px;
+  margin: 5px;
+  border: 1px solid #d7d3d3;
+  border-radius: 10px;
+}
+
+.items-container {
+  width: 60%;
+  height: 70%;
+}
+
+.payment-container {
+  width: 38%;
+  height: 70%;
+}
+
+.shipping-container {
+  width: 60%;
+  height: 28%;
+}
+
+.other-container {
+  width: 38%;
+  height: 28%;
+}
+
+.cart-btn {
+  margin: 5px 5px 5px auto;
+}
+
+@media only screen and (max-width: 1250px) {
+  .cart {
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=ShoppingCart.css.map */

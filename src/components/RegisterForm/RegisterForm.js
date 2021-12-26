@@ -7,7 +7,6 @@ export default function RegisterForm() {
       <div className="register-img"></div>
       <form className="register-form" action="">
         <h4>Create account</h4>
-
         <div className="form-row">
           <div className="form-col">
             <label htmlFor="">First name</label>

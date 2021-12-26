@@ -1,0 +1,25 @@
+@import "../../styles/Variables.scss";
+
+.cart-item {
+  display: flex;
+  border: 1px solid $light-border-color;
+  border-radius: 5px;
+  margin-bottom: 3px;
+  padding: 10px;
+}
+.qty-container {
+  display: flex;
+  align-items: center;
+}
+.qty {
+  border: 1px solid $light-border-color;
+
+  height: 30px;
+  padding: 3px 10px;
+  border-radius: 5px;
+}
+
+.cart-img {
+  width: 150px;
+  margin: 10px;
+}

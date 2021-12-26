@@ -1,4 +1,4 @@
-@import '../../styles/Variables.scss';
+@import "../../styles/Variables.scss";
 
 .footer-container {
   height: 80px;
@@ -8,6 +8,7 @@
   background-color: $main-color;
   color: $white-text;
   text-align: center;
+  bottom: 0;
 }
 
 .icon {

@@ -1,0 +1,31 @@
+.cart-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: 1px solid #d7d3d3;
+  border-radius: 5px;
+  margin-bottom: 3px;
+  padding: 10px;
+}
+
+.qty-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.qty {
+  border: 1px solid #d7d3d3;
+  height: 30px;
+  padding: 3px 10px;
+  border-radius: 5px;
+}
+
+.cart-img {
+  width: 150px;
+  margin: 10px;
+}
+/*# sourceMappingURL=CartItem.css.map */
