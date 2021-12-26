@@ -1,5 +1,6 @@
 import CartItem from "../CartItem/CartItem";
 import GeneralButton from "../GeneralButton/GeneralButton";
+import PaymentItem from "../PaymentItem/PaymentItem";
 import "./ShoppingCart.css";
 
 export default function ShoppingCart() {
@@ -12,6 +13,7 @@ export default function ShoppingCart() {
       </div>
       <div className="cart payment-container">
         <h6>Payment</h6>
+        <PaymentItem />
       </div>
       <div className="cart shipping-container">
         <h6>Shipping</h6>

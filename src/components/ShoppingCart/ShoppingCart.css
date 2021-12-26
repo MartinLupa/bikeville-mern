@@ -26,12 +26,12 @@
 
 .items-container {
   width: 60%;
-  height: 70%;
+  min-height: 70%;
 }
 
 .payment-container {
   width: 38%;
-  height: 70%;
+  min-height: 70%;
 }
 
 .shipping-container {

@@ -3,8 +3,7 @@
 .cart-item {
   display: flex;
   justify-content: space-between;
-  border: 1px solid $light-border-color;
-  border-radius: 5px;
+  border-bottom: 1px solid $light-border-color;
   margin-bottom: 3px;
   padding: 10px;
 }
@@ -51,9 +50,14 @@
     flex-direction: column;
   }
   .cart-left {
+    align-items: center;
     margin: auto;
   }
   .cart-right {
     margin: auto;
+  }
+  .cart-img {
+    width: 100px;
+    margin: 10px;
   }
 }

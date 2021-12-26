@@ -18,6 +18,7 @@ export default function CartItem() {
           <p>ID: RB_R501</p>
         </div>
       </div>
+
       <div className="cart-right">
         <div className="cart-price">€2450</div>
         <div>
