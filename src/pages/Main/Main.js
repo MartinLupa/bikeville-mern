@@ -4,6 +4,7 @@ import "./Main.css";
 
 export default function Main() {
   const [catalog, setCatalog] = useState([]);
+
   useEffect(() => {
     fetch("catalog.json", {
       headers: {
