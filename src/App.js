@@ -10,6 +10,7 @@ function App() {
   const [productID, setProductID] = useState();
   const [shoppingCart, setShoppingCart] = useState([]);
 
+  useEffect(() => console.log(shoppingCart));
   return (
     <div>
       <GlobalContext.Provider

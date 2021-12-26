@@ -1,3 +1,5 @@
+import { useContext } from "react";
+import { GlobalContext } from "../../App";
 import dhl_logo from "../../images/dhl_logo.JPG";
 import present_packaging from "../../images/present_packaging.JPG";
 import ups_logo from "../../images/ups_logo.JPG";
@@ -9,18 +11,21 @@ import ShippingItem from "../ShippingItem/ShippingItem";
 import "./ShoppingCart.css";
 
 export default function ShoppingCart() {
+  const { shoppingCart } = useContext(GlobalContext);
   return (
     <div className="cart-container">
       <div className="cart items-container">
         <h6>Cart Items</h6>
-        <CartItem />
-        <CartItem />
+        {shoppingCart?.map((item) => (
+          <CartItem />
+        ))}
       </div>
       <div className="cart payment-container">
         <h6>Payment</h6>
-        <PaymentItem />
-        <PaymentItem />
-        <PaymentItem />
+        {shoppingCart?.map((item) => (
+          <PaymentItem />
+        ))}
+
         <div className="cart-total">
           <p>
             <strong>TOTAL:</strong>

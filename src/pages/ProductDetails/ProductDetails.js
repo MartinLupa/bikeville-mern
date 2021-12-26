@@ -6,7 +6,7 @@ import "./ProductDetails.css";
 export default function ProductDetails() {
   const { catalog, productID } = useContext(GlobalContext);
 
-  const filteredProduct = catalog.filter(
+  const filteredProduct = catalog?.filter(
     (product) => product.product_id === productID
   );
   const {
