@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
+import { GlobalContext } from "../../App";
 import ProductCard from "../../components/ProductCard/ProductCard";
 import "./Main.css";
 
 export default function Main() {
-  const [catalog, setCatalog] = useState([]);
+  const { catalog, setCatalog } = useContext(GlobalContext);
 
   useEffect(() => {
     fetch("catalog.json", {
@@ -18,7 +19,7 @@ export default function Main() {
 
   return (
     <div className="main-container">
-      {catalog.map((product) => {
+      {catalog?.map((product) => {
         return (
           <ProductCard
             key={product.product_id}

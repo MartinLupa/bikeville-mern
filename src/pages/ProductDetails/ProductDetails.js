@@ -1,10 +1,7 @@
-import { useState } from "react";
 import AddCartButton from "../../components/AddCartButton/AddCartButton";
 import "./ProductDetails.css";
 
 export default function ProductDetails() {
-  const [detailedProduct, setDetailedProduct] = useState([]);
-
   return (
     <div className="details-container">
       <img
