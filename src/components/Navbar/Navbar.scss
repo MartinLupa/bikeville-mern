@@ -10,15 +10,13 @@
 }
 
 .nav-left {
-  margin-left: 40px;
+  margin-left: 20px;
   display: flex;
-
   align-items: center;
-}
-
-.nav-left h4 {
-  margin: 0;
-  margin-left: 10px;
+  h4 {
+    margin: 0;
+    margin-left: 10px;
+  }
 }
 
 .nav-center {
@@ -35,14 +33,18 @@
 
 .nav-right {
   display: flex;
+  align-items: center;
   margin-right: 40px;
 }
 
-.cart-icon {
-  color: $secondary-color;
+.nav-link {
+  color: $secondary-color !important;
+  margin-left: 20px;
+  text-decoration: none;
 }
 
-.cart-icon:hover {
-  color: $secondary-color-hover;
+.nav-link:hover {
+  color: $secondary-color-hover !important;
+
   transition: 0.3s;
 }
