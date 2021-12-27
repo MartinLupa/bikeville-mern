@@ -1,6 +1,9 @@
 @import "../../styles/Variables.scss";
 
 .add-cart-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-weight: 600;
   padding: 10px 15px;
   background-color: $secondary-color;

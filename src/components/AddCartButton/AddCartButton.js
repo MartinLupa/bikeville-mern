@@ -1,5 +1,4 @@
-import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import { useContext } from "react";
 import { GlobalContext } from "../../App";
 import "./AddCartButton.css";
@@ -13,7 +12,7 @@ export default function AddCartButton({ id }) {
 
   return (
     <button onClick={handleAddClick} id={id} className="add-cart-btn">
-      <FontAwesomeIcon className="add-cart-icon" icon={faShoppingCart} />
+      <ShoppingCartOutlinedIcon fontSize="small" className="add-cart-icon" />
       ADD TO CART
     </button>
   );

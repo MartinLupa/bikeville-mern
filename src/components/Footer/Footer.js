@@ -1,6 +1,6 @@
-import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import './Footer.css';
+import GitHubIcon from "@mui/icons-material/GitHub";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import "./Footer.css";
 
 export default function Footer() {
   const date = new Date();
@@ -14,10 +14,10 @@ export default function Footer() {
           className="icon linkedin-icon"
           href="https://www.linkedin.com/in/martin-lupa/"
         >
-          <FontAwesomeIcon icon={faLinkedin} />
+          <LinkedInIcon fontSize="small" />
         </a>
         <a className="icon git-icon" href="https://www.github.com/MartinLupa">
-          <FontAwesomeIcon icon={faGithub} />
+          <GitHubIcon fontSize="small" />
         </a>
       </div>
     </footer>

@@ -1,12 +1,15 @@
+import { useCounter } from "../../hooks/useCounter";
 import CartItemButton from "../CartItemButton/CartItemButton";
 import "./CartItem.css";
 
-export default function CartItem() {
+export default function CartItem({ model, id, img, total_price }) {
+  const { state, increment, decrement } = useCounter();
+
   return (
     <div className="cart-item">
       <div className="cart-left">
         <div className="qty-container">
-          <div className="qty">1</div>
+          <div className="qty">{state}</div>
         </div>
         <img
           className="cart-img"
@@ -22,8 +25,8 @@ export default function CartItem() {
       <div className="cart-right">
         <div className="cart-price">€2450</div>
         <div>
-          <CartItemButton text={"+"} />
-          <CartItemButton text={"-"} />
+          <CartItemButton onClick={increment} text={"+"} />
+          <CartItemButton onClick={decrement} text={"-"} />
           <CartItemButton text={"x"} />
         </div>
       </div>

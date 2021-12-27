@@ -7,13 +7,17 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin: 40px auto;
-  padding: 40px;
+  margin: 20px auto;
+  padding: 20px;
   border: 1px solid #d7d3d3;
   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 10px;
   max-width: 1200px;
+}
+
+.cart-container h4 {
+  margin: 0;
 }
 
 .cart {
@@ -31,18 +35,18 @@
 }
 
 .payment-container {
-  width: 38%;
+  width: 30%;
   min-height: 70%;
 }
 
 .shipping-container {
   width: 60%;
-  height: 28%;
+  min-height: 28%;
 }
 
 .other-container {
-  width: 38%;
-  height: 28%;
+  width: 30%;
+  min-height: 28%;
 }
 
 .cart-total {

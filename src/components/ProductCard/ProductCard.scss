@@ -10,15 +10,14 @@
   border: 1px solid $light-border-color;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 5px;
+  h2,
+  p {
+    margin: 10px 0;
+  }
 }
 
 .card-img {
   width: 400px;
-}
-
-h2,
-p {
-  margin: 0;
 }
 
 .card-info {
@@ -52,6 +51,6 @@ p {
 }
 
 .card-btn {
-  margin: auto;
-  width: 200px;
+  display: flex;
+  align-items: center;
 }

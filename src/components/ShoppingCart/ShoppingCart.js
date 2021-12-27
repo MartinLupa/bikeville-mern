@@ -11,19 +11,20 @@ import ShippingItem from "../ShippingItem/ShippingItem";
 import "./ShoppingCart.css";
 
 export default function ShoppingCart() {
-  const { shoppingCart } = useContext(GlobalContext);
+  const { shoppingCart, catalog } = useContext(GlobalContext);
+
   return (
     <div className="cart-container">
       <div className="cart items-container">
-        <h6>Cart Items</h6>
-        {shoppingCart?.map((item) => (
-          <CartItem />
+        <h4>Cart Items</h4>
+        {shoppingCart?.map((id) => (
+          <CartItem key={id} model id total_price img />
         ))}
       </div>
       <div className="cart payment-container">
-        <h6>Payment</h6>
-        {shoppingCart?.map((item) => (
-          <PaymentItem />
+        <h4>Payment</h4>
+        {shoppingCart?.map((id) => (
+          <PaymentItem key={id} />
         ))}
 
         <div className="cart-total">
@@ -36,12 +37,12 @@ export default function ShoppingCart() {
         </div>
       </div>
       <div className="cart shipping-container">
-        <h6>Shipping</h6>
+        <h4>Shipping</h4>
         <ShippingItem logo={ups_logo} price={14} />
         <ShippingItem logo={dhl_logo} price={14} />
       </div>
       <div className="cart other-container">
-        <h6>Other services</h6>
+        <h4>Other services</h4>
         <OtherServiceItem text={"Present packaging"} img={present_packaging} />
       </div>
       <div className="cart-btn">

@@ -1,24 +1,48 @@
 @import "../../styles/Variables.scss";
 
 .navbar-container {
+  color: $secondary-color;
   display: flex;
+  align-items: center;
+  justify-content: space-between;
   height: 80px;
   background-color: $main-color;
-  flex-grow: 1;
 }
 
-.logo {
-  margin-left: 20px;
+.nav-left {
+  margin-left: 40px;
   display: flex;
-  color: $secondary-color;
+
   align-items: center;
 }
 
-.logo-icon {
-  height: 50px;
+.nav-left h4 {
+  margin: 0;
+  margin-left: 10px;
 }
 
-.logo h4 {
-  margin-left: 10px;
-  margin-bottom: 0px;
+.nav-center {
+  display: flex;
+}
+
+.nav-center input {
+  margin-right: 10px;
+  width: 300px;
+  height: 40px;
+  border: 1px solid $light-border-color;
+  border-radius: 5px;
+}
+
+.nav-right {
+  display: flex;
+  margin-right: 40px;
+}
+
+.cart-icon {
+  color: $secondary-color;
+}
+
+.cart-icon:hover {
+  color: $secondary-color-hover;
+  transition: 0.3s;
 }

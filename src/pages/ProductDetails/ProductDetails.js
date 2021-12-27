@@ -39,7 +39,7 @@ export default function ProductDetails() {
         <h4>SIZES:</h4>
         <div className="details-size">
           {sizes.map((size) => (
-            <p>{size}</p>
+            <p key={size}>{size}</p>
           ))}
         </div>
         <div className="details-btn">

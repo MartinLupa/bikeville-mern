@@ -1,3 +1,4 @@
+import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { GlobalContext } from "../../App";
@@ -28,6 +29,7 @@ export default function ProductCard({ img, model, type, full_price, id }) {
             className="card-btn"
             onClick={() => handleDetailsClick({ id })}
           >
+            <InfoOutlinedIcon fontSize="small" />
             More info...
           </button>
         </form>
