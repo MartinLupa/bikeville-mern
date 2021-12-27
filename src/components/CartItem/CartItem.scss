@@ -35,7 +35,7 @@
   text-align: center;
   border: 1px solid $light-border-color;
   height: 30px;
-  padding: 3px 10px;
+  padding: 10px 10px 3px 10px;
   border-radius: 5px;
   margin: 2px;
 }
@@ -43,21 +43,4 @@
 .cart-img {
   width: 150px;
   margin: 10px;
-}
-
-@media only screen and (max-width: 710px) {
-  .cart-item {
-    flex-direction: column;
-  }
-  .cart-left {
-    align-items: center;
-    margin: auto;
-  }
-  .cart-right {
-    margin: auto;
-  }
-  .cart-img {
-    width: 100px;
-    margin: 10px;
-  }
 }
