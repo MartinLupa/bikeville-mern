@@ -7,7 +7,7 @@
       -ms-flex-direction: column;
           flex-direction: column;
   text-align: center;
-  width: 450px;
+  width: 400px;
   padding: 20px;
   margin: 20px;
   border: 1px solid #d7d3d3;
@@ -23,6 +23,7 @@
 
 .card-img {
   width: 400px;
+  margin: auto;
 }
 
 .card-info {

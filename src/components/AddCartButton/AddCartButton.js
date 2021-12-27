@@ -4,10 +4,11 @@ import { GlobalContext } from "../../App";
 import "./AddCartButton.css";
 
 export default function AddCartButton({ id }) {
-  const { setShoppingCart } = useContext(GlobalContext);
+  const { setShoppingCart, catalog } = useContext(GlobalContext);
   const handleAddClick = ({ target }) => {
     // console.log(id);
-    setShoppingCart((previousCart) => [...previousCart, id]);
+    const addedProduct = catalog.filter((product) => product.product_id === id);
+    setShoppingCart((previousCart) => [...previousCart, addedProduct]);
   };
 
   return (

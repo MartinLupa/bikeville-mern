@@ -17,14 +17,14 @@ export default function ShoppingCart() {
     <div className="cart-container">
       <div className="cart items-container">
         <h4>Cart Items</h4>
-        {shoppingCart?.map((id) => (
-          <CartItem key={id} model id total_price img />
+        {shoppingCart?.map((product, id) => (
+          <CartItem key={id} product={product} />
         ))}
       </div>
       <div className="cart payment-container">
         <h4>Payment</h4>
-        {shoppingCart?.map((id) => (
-          <PaymentItem key={id} />
+        {shoppingCart?.map((product, id) => (
+          <PaymentItem key={id} product={product} />
         ))}
 
         <div className="cart-total">

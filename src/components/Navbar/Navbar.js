@@ -15,13 +15,6 @@ export default function Navbar() {
         </div>
       </NavLink>
 
-      <div className="nav-center">
-        <input
-          className="input"
-          type="text"
-          placeholder="Search by product name"
-        />
-      </div>
       <div className="nav-right">
         <NavLink className="nav-link" to="/registration">
           <p>REGISTER</p>

@@ -2,7 +2,7 @@ import { useCounter } from "../../hooks/useCounter";
 import CartItemButton from "../CartItemButton/CartItemButton";
 import "./CartItem.css";
 
-export default function CartItem({ model, id, img, total_price }) {
+export default function CartItem({ product }) {
   const { state, increment, decrement } = useCounter();
 
   return (
@@ -17,13 +17,13 @@ export default function CartItem({ model, id, img, total_price }) {
           alt=""
         />
         <div>
-          <h5>Cervelo R5</h5>
-          <p>ID: RB_R501</p>
+          <h5>{product[0].model}</h5>
+          <p>{product[0].product_id}</p>
         </div>
       </div>
 
       <div className="cart-right">
-        <div className="cart-price">€2450</div>
+        <div className="cart-price">€ {product[0].full_price}</div>
         <div>
           <CartItemButton onClick={increment} text={"+"} />
           <CartItemButton onClick={decrement} text={"-"} />

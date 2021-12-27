@@ -1,11 +1,11 @@
 import "./PaymentItem.css";
 
-export default function PaymentItem() {
+export default function PaymentItem({ product }) {
   return (
     <div className="payment-item">
       <div>
-        <h6>Cervelo R5</h6>
-        <h6>ID: RB_R501</h6>
+        <h6>{product[0].model}</h6>
+        <h6>{product[0].product_id}</h6>
       </div>
       <div className="payment-amounts">
         <div>
@@ -16,10 +16,10 @@ export default function PaymentItem() {
           </p>
         </div>
         <div className="amounts">
-          <p>€ 2350</p>
-          <p>€ 640</p>
+          <p>€ {product[0].net_price}</p>
+          <p>€ {product[0].vat}</p>
           <p>
-            <strong>€ 3120</strong>
+            <strong>€ {product[0].full_price}</strong>
           </p>
         </div>
       </div>
