@@ -11,11 +11,7 @@ export default function CartItem({ product }) {
         <div className="qty-container">
           <div className="qty">{state}</div>
         </div>
-        <img
-          className="cart-img"
-          src="https://www.cervelo.com/media/catalog/product/m/y/my22-dura-ace-di2-five-black.jpg?quality=80&bg-color=255,255,255&fit=bounds&height=800&width=1200&canvas=1200:800"
-          alt=""
-        />
+        <img className="cart-img" src={product[0].image} alt="" />
         <div>
           <h5>{product[0].model}</h5>
           <p>{product[0].product_id}</p>

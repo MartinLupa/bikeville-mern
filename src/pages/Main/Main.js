@@ -1,5 +1,6 @@
 import { useContext, useEffect } from "react";
 import { GlobalContext } from "../../App";
+import Newsletter from "../../components/Newsletter/Newsletter";
 import ProductCard from "../../components/ProductCard/ProductCard";
 import "./Main.css";
 

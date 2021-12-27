@@ -11,7 +11,7 @@ import ShippingItem from "../ShippingItem/ShippingItem";
 import "./ShoppingCart.css";
 
 export default function ShoppingCart() {
-  const { shoppingCart, catalog } = useContext(GlobalContext);
+  const { shoppingCart } = useContext(GlobalContext);
 
   return (
     <div className="cart-container">
