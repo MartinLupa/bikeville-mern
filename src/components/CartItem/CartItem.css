@@ -41,7 +41,7 @@
 .qty {
   text-align: center;
   border: 1px solid #d7d3d3;
-  height: 30px;
+  height: 25px;
   padding: 3px 10px;
   border-radius: 5px;
   margin: 2px;
@@ -50,7 +50,7 @@
 .cart-price {
   text-align: center;
   border: 1px solid #d7d3d3;
-  height: 30px;
+  height: 25px;
   padding: 10px 10px 3px 10px;
   border-radius: 5px;
   margin: 2px;
