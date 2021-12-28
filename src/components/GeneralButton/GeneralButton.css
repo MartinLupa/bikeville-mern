@@ -9,7 +9,7 @@
   width: 200px;
 }
 
-.add-cart-btn:hover {
+.general-btn:hover {
   background-color: #ff7d7d;
   -webkit-transition: 0.3s;
   transition: 0.3s;

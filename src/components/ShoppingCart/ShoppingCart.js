@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 import { GlobalContext } from "../../App";
 import dhl_logo from "../../images/dhl_logo.JPG";
 import present_packaging from "../../images/present_packaging.JPG";
@@ -46,7 +47,10 @@ export default function ShoppingCart() {
         <OtherServiceItem text={"Present packaging"} img={present_packaging} />
       </div>
       <div className="cart-btn">
-        <GeneralButton text={"SEND ORDER"} />
+        <Link to="/">
+          <GeneralButton text={"CONTINUE SHOPPING"} />
+        </Link>
+        <GeneralButton text={"CHECKOUT"} />
       </div>
     </div>
   );
