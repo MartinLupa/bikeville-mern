@@ -20,7 +20,7 @@ export default function Router() {
             element={<ProductDetails />}
           />
           <Route path="/registration" element={<RegistrationAndLogin />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/login" element={<RegistrationAndLogin />} />
           <Route path="/shopping_cart/:userId" element={<ShoppingCart />} />
         </Routes>
         <Newsletter />

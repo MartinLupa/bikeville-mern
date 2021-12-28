@@ -1,4 +1,14 @@
 .login-form {
   padding: 50px;
 }
+
+.login-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
 /*# sourceMappingURL=Login.css.map */

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import GeneralButton from "../GeneralButton/GeneralButton";
 import "./RegisterForm.css";
 
@@ -58,6 +59,7 @@ export default function RegisterForm() {
             <input type="password" placeholder="Repeat your password" />
           </div>
         </div>
+        <Link to="/login">Already have an account?</Link>
         <div className="form-btn">
           <GeneralButton text={"REGISTER"} />
         </div>
