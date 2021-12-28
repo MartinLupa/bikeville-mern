@@ -1,7 +1,7 @@
 import { useContext, useEffect } from "react";
 import { GlobalContext } from "../../App";
-import Newsletter from "../../components/Newsletter/Newsletter";
 import ProductCard from "../../components/ProductCard/ProductCard";
+import ProductFilter from "../../components/ProductFilter/ProductFilter";
 import "./Main.css";
 
 export default function Main() {
@@ -20,6 +20,7 @@ export default function Main() {
 
   return (
     <div className="main-container">
+      <ProductFilter />
       {catalog?.map((product) => {
         return (
           <ProductCard
