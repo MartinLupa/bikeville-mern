@@ -9,7 +9,8 @@ export default function ProductFilter() {
       </div>
       <div className="right">
         <select name="" id="">
-          <option value="">By name A-Z</option>
+          <option value="">By name: A-Z</option>
+          <option value="">By name: Z-A</option>
           <option value="">Price: Higher first</option>
           <option value="">Price: Lower first</option>
         </select>
