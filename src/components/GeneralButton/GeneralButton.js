@@ -1,5 +1,5 @@
 import "./GeneralButton.css";
 
 export default function GeneralButton({ text }) {
-  return <button className="add-cart-btn">{text}</button>;
+  return <button className="general-btn">{text}</button>;
 }

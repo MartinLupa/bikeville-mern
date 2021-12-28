@@ -1,26 +1,5 @@
 @import "../../styles/Variables.scss";
 
-.register-container {
-  color: $dark-grey-text;
-  display: flex;
-  margin: 50px auto;
-  max-width: 1200px;
-  border: 1px solid $light-border-color;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
-  height: 100%;
-}
-
-.register-img {
-  width: 40%;
-  background-image: url("https://c1.wallpaperflare.com/preview/596/947/717/track-racing-velodrome-bike.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
-}
-
 .register-form {
   margin: 50px;
 }
@@ -55,16 +34,6 @@ form input {
 }
 
 @media only screen and (max-width: 1300px) {
-  .register-container {
-    flex-direction: column;
-    margin: 40px;
-  }
-  .register-img {
-    height: 40%;
-    width: 100%;
-    border-top-right-radius: 10px;
-    border-top-right-radius: 0px;
-  }
   .register-form {
     margin: 30px auto;
   }
