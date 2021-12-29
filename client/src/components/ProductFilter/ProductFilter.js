@@ -11,8 +11,6 @@ export default function ProductFilter() {
       by_price_lower_first: "full_price",
     };
     const sortProperty = types[type];
-    // console.log("type", type);
-    // console.log("sort property", sortProperty);
     let sortedCatalog;
     if (type === "by_price_higher_first") {
       sortedCatalog = [...catalog].sort(
@@ -26,12 +24,6 @@ export default function ProductFilter() {
     // console.log("sorted catalog", sortedCatalog);
     setCatalog(sortedCatalog);
   };
-
-  // const handleFilterChange = (e) => {
-  //   const filterValue = e.target.value;
-  //   setFilter({ [e.target.name]: filterValue });
-  // };
-  console.log("catalog from filter", catalog);
 
   return (
     <div className="product-filter-container">
