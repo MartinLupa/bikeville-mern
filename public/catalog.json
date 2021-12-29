@@ -1,7 +1,7 @@
 {
   "bicycles": [
     {
-      "model": "R5",
+      "model": "Cervelo R5",
       "trail_type": "Road bike - Full carbon",
       "product_id": "RB_R501",
       "image": "https://www.cervelo.com/media/catalog/product/m/y/my22-dura-ace-di2-five-black.jpg?quality=80&bg-color=255,255,255&fit=bounds&height=800&width=1200&canvas=1200:800",
@@ -16,7 +16,7 @@
       "stock": 1000
     },
     {
-      "model": "S5",
+      "model": "Cervelo S5",
       "trail_type": "Road bike - Full carbon",
       "product_id": "RB_S501",
       "image": "https://www.cervelo.com/media/catalog/product/s/5/s5-dred-axs-iron-oxide-profile.jpg?quality=80&bg-color=255,255,255&fit=bounds&height=800&width=1200&canvas=1200:800",
@@ -31,7 +31,7 @@
       "stock": 1000
     },
     {
-      "model": "Caledonia 5",
+      "model": "Cervelo Caledonia 5",
       "trail_type": "Road bike - Full carbon",
       "product_id": "RB_C501",
       "image": "https://www.cervelo.com/media/catalog/product/c/a/caledonia-5-red-axs-five-black.jpg?quality=80&bg-color=255,255,255&fit=bounds&height=800&width=1200&canvas=1200:800",
@@ -46,7 +46,7 @@
       "stock": 1000
     },
     {
-      "model": "Caledonia",
+      "model": "Cervelo Caledonia",
       "trail_type": "Road bike - Full carbon",
       "product_id": "RB_C001",
       "image": "https://www.cervelo.com/media/catalog/product/c/a/caledonia-rival-axs-gloss_black.jpg?quality=80&bg-color=255,255,255&fit=bounds&height=800&width=1200&canvas=1200:800",
@@ -61,7 +61,7 @@
       "stock": 1000
     },
     {
-      "model": "P5",
+      "model": "Cervelo P5",
       "trail_type": "Triathlon bike - Full carbon",
       "product_id": "RB_P501",
       "image": "https://www.cervelo.com/media/catalog/product/p/5/p5-purple-sunset.jpg?quality=80&bg-color=255,255,255&fit=bounds&height=800&width=1200&canvas=1200:800",
@@ -77,7 +77,7 @@
       "stock": 1000
     },
     {
-      "model": "P Series",
+      "model": "Cervelo P Series",
       "trail_type": "Triathlon bike - Full carbon",
       "product_id": "RB_PS01",
       "image": "https://www.cervelo.com/media/catalog/product/m/y/my21_pseries_ultegradi2_carbon_black.jpg?quality=80&bg-color=255,255,255&fit=bounds&height=800&width=1200&canvas=1200:800",
@@ -92,7 +92,7 @@
       "stock": 1000
     },
     {
-      "model": "PX Series",
+      "model": "Cervelo PX Series",
       "trail_type": "Triathlon bike - Full carbon",
       "product_id": "RB_PX01",
       "image": "https://www.cervelo.com/media/catalog/product/p/x/px-frameset-kailua-bay.jpg?quality=80&bg-color=255,255,255&fit=bounds&height=800&width=1200&canvas=1200:800",
@@ -107,7 +107,7 @@
       "stock": 1000
     },
     {
-      "model": "Aspero 5",
+      "model": "Cervelo Aspero 5",
       "trail_type": "Gravel bike - Full carbon",
       "product_id": "RB_A501",
       "image": "https://www.cervelo.com/media/catalog/product/a/s/aspero-5-red-xplr-sunset.jpg?quality=80&bg-color=255,255,255&fit=bounds&height=800&width=1200&canvas=1200:800",
@@ -122,7 +122,7 @@
       "stock": 1000
     },
     {
-      "model": "Aspero",
+      "model": "Cervelo Aspero",
       "trail_type": "Gravel bike - Full carbon",
       "product_id": "RB_A001",
       "image": "https://www.cervelo.com/media/catalog/product/a/s/aspero-grx-rx815-di2-purple-sunset_1_.jpg?quality=80&bg-color=255,255,255&fit=bounds&height=800&width=1200&canvas=1200:800",

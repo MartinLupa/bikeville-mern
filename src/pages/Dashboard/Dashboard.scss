@@ -1,0 +1,36 @@
+@import "../../styles/Variables.scss";
+
+.dashboard-container {
+  margin: 20px;
+  border: 1px solid $light-border-color;
+  border-radius: 5px;
+  min-height: 100vh;
+}
+
+.kpi-container {
+  margin-left: 10px;
+  margin-right: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.kpi {
+  margin: 25px 15px;
+  width: 23%;
+  border: 1px solid $light-border-color;
+  border-radius: 3px;
+}
+
+.dashboard-orders {
+  border: 1px solid $light-border-color;
+  border-radius: 3px;
+  margin: 0px 25px;
+}
+
+.dashboard-btn {
+  margin-left: 25px;
+  margin-right: 25px;
+  display: flex;
+  justify-content: space-between;
+}

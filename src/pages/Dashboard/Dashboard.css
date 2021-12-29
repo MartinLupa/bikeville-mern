@@ -1,0 +1,44 @@
+.dashboard-container {
+  margin: 20px;
+  border: 1px solid #d7d3d3;
+  border-radius: 5px;
+  min-height: 100vh;
+}
+
+.kpi-container {
+  margin-left: 10px;
+  margin-right: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.kpi {
+  margin: 25px 15px;
+  width: 23%;
+  border: 1px solid #d7d3d3;
+  border-radius: 3px;
+}
+
+.dashboard-orders {
+  border: 1px solid #d7d3d3;
+  border-radius: 3px;
+  margin: 0px 25px;
+}
+
+.dashboard-btn {
+  margin-left: 25px;
+  margin-right: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+/*# sourceMappingURL=Dashboard.css.map */
