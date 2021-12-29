@@ -10,10 +10,10 @@
       "brake_type": "Disc",
       "groupset": "Dura Ace Di2",
       "sizes": [48, 51, 54, 56, 58, 61],
-      "net_price": 3254,
-      "vat": 682,
-      "full_price": 3936,
-      "stock": 1000
+      "net_price": 1700,
+      "vat": 357,
+      "full_price": 2057,
+      "inStock": true
     },
     {
       "model": "Cervelo S5",
@@ -25,10 +25,10 @@
       "brake_type": "Disc",
       "groupset": "Dura Ace Di2",
       "sizes": [48, 51, 54, 56, 58],
-      "net_price": 3254,
-      "vat": 682,
-      "full_price": 3936,
-      "stock": 1000
+      "net_price": 2850,
+      "vat": 599,
+      "full_price": 3449,
+      "inStock": true
     },
     {
       "model": "Cervelo Caledonia 5",
@@ -40,10 +40,10 @@
       "brake_type": "Disc",
       "groupset": "Red eTAP AXS",
       "sizes": [48, 51, 54, 56, 58, 61],
-      "net_price": 3254,
-      "vat": 682,
-      "full_price": 3936,
-      "stock": 1000
+      "net_price": 1900,
+      "vat": 399,
+      "full_price": 2299,
+      "inStock": true
     },
     {
       "model": "Cervelo Caledonia",
@@ -55,10 +55,10 @@
       "brake_type": "Disc",
       "groupset": "105",
       "sizes": [48, 51, 54, 56, 58, 61],
-      "net_price": 3254,
-      "vat": 682,
-      "full_price": 3936,
-      "stock": 1000
+      "net_price": 1500,
+      "vat": 315,
+      "full_price": 1815,
+      "inStock": true
     },
     {
       "model": "Cervelo P5",
@@ -71,10 +71,10 @@
       "groupset": "Force eTAP AXS 1",
       "sizes": [48, 51, 54, 56, 58],
 
-      "net_price": 3254,
-      "vat": 682,
-      "full_price": 3936,
-      "stock": 1000
+      "net_price": 3100,
+      "vat": 651,
+      "full_price": 3751,
+      "inStock": true
     },
     {
       "model": "Cervelo P Series",
@@ -86,10 +86,10 @@
       "brake_type": "Disc",
       "groupset": "105",
       "sizes": [48, 51, 54, 56, 58, 61],
-      "net_price": 3254,
-      "vat": 682,
-      "full_price": 3936,
-      "stock": 1000
+      "net_price": 3350,
+      "vat": 704,
+      "full_price": 4054,
+      "inStock": true
     },
     {
       "model": "Cervelo PX Series",
@@ -101,10 +101,10 @@
       "brake_type": "Disc",
       "groupset": "105",
       "sizes": [51, 56, 58, 61],
-      "net_price": 3254,
-      "vat": 682,
-      "full_price": 3936,
-      "stock": 1000
+      "net_price": 1820,
+      "vat": 382,
+      "full_price": 2202,
+      "inStock": true
     },
     {
       "model": "Cervelo Aspero 5",
@@ -116,10 +116,10 @@
       "brake_type": "Disc",
       "groupset": "Red XPLR eTAP AXS",
       "sizes": [48, 51, 54, 56, 58, 61],
-      "net_price": 3254,
-      "vat": 682,
-      "full_price": 3936,
-      "stock": 1000
+      "net_price": 2200,
+      "vat": 462,
+      "full_price": 2662,
+      "inStock": true
     },
     {
       "model": "Cervelo Aspero",
@@ -131,10 +131,10 @@
       "brake_type": "Disc",
       "groupset": "GRX",
       "sizes": [48, 51, 54, 56, 58, 61],
-      "net_price": 3254,
-      "vat": 682,
-      "full_price": 3936,
-      "stock": 1000
+      "net_price": 2050,
+      "vat": 431,
+      "full_price": 2481,
+      "inStock": true
     }
   ]
 }
