@@ -33,7 +33,7 @@ export default function ShoppingCart() {
             <strong>TOTAL:</strong>
           </p>
           <p>
-            <strong>€ 4650</strong>
+            <strong>€ 4350</strong>
           </p>
         </div>
       </div>
@@ -50,7 +50,9 @@ export default function ShoppingCart() {
         <Link to="/">
           <GeneralButton text={"CONTINUE SHOPPING"} />
         </Link>
-        <GeneralButton text={"CHECKOUT"} />
+        <Link to="/pay">
+          <GeneralButton text={"CHECKOUT"} />
+        </Link>
       </div>
     </div>
   );

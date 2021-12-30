@@ -5,6 +5,7 @@ import "./ProductFilter.css";
 export default function ProductFilter() {
   const { catalog, setCatalog } = useContext(GlobalContext);
 
+  //Price sorting
   const sortCatalog = (type) => {
     const types = {
       by_price_higher_first: "full_price",
