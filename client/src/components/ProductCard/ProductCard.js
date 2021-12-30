@@ -1,4 +1,5 @@
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
+import "animate.css";
 import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { GlobalContext } from "../../App";
@@ -14,7 +15,7 @@ export default function ProductCard({ img, model, type, full_price, id }) {
   };
 
   return (
-    <div className="card-container">
+    <div className="card-container animate__animated animate__backInLeft">
       <div className="hover-effect">
         <Link
           className="more-info-icon"

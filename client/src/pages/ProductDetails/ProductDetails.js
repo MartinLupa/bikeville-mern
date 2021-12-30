@@ -21,7 +21,7 @@ export default function ProductDetails() {
   } = filteredProduct[0];
 
   return (
-    <div className="details-container">
+    <div className="details-container animate__animated animate__backInLeft">
       <img className="details-img" src={image} alt="" />
 
       <div className="details-info">
