@@ -16,11 +16,20 @@ export default function Navbar() {
       </NavLink>
 
       <div className="nav-right">
+        <NavLink className="nav-link" to="/contact">
+          <div className="underline">
+            <p>CONTACT</p>
+          </div>
+        </NavLink>
         <NavLink className="nav-link" to="/registration">
-          <p>REGISTER</p>
+          <div className="underline">
+            <p>REGISTER</p>
+          </div>
         </NavLink>
         <NavLink className="nav-link" to="/login">
-          <p>LOGIN</p>
+          <div className="underline">
+            <p>LOGIN</p>
+          </div>
         </NavLink>
         <NavLink to="/shopping_cart/martin">
           <Badge badgeContent={2} color="primary">

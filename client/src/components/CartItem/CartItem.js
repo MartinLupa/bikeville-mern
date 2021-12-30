@@ -2,7 +2,7 @@ import { useCounter } from "../../hooks/useCounter";
 import CartItemButton from "../CartItemButton/CartItemButton";
 import "./CartItem.css";
 
-export default function CartItem({ product }) {
+export default function CartItem({ product, id }) {
   const { state, increment, decrement } = useCounter();
 
   return (
@@ -11,7 +11,9 @@ export default function CartItem({ product }) {
         <div className="qty-container">
           <div className="qty">{state}</div>
         </div>
+
         <img className="cart-img" src={product[0].image} alt="" />
+
         <div>
           <h5>{product[0].model}</h5>
           <p>{product[0].product_id}</p>

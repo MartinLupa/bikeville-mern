@@ -30,6 +30,7 @@ export default function Main() {
               id={product.product_id}
               img={product.image}
               model={product.model}
+              short_description={product.short_description}
               type={product.type}
               full_price={product.full_price}
             />

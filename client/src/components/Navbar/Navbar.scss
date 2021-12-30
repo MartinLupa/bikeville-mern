@@ -1,6 +1,7 @@
 @import "../../styles/Variables.scss";
 
 .navbar-container {
+  font-weight: 600;
   color: $secondary-color;
   display: flex;
   align-items: center;
@@ -41,10 +42,17 @@
   color: $secondary-color !important;
   margin-left: 20px;
   text-decoration: none;
+  &:hover {
+    color: $secondary-color-hover !important;
+    transition: 0.3s;
+  }
 }
 
-.nav-link:hover {
-  color: $secondary-color-hover !important;
-
-  transition: 0.3s;
+.underline {
+  display: flex;
+  align-items: center;
+  height: 78px;
+  &:hover {
+    border-bottom: 2px solid $secondary-color;
+  }
 }

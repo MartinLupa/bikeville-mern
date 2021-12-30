@@ -1,14 +1,20 @@
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import "animate.css";
 import { useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { GlobalContext } from "../../App";
 import AddCartIcon from "../AddCartIcon/AddCartIcon";
 import "./ProductCard.css";
 
-export default function ProductCard({ img, model, type, full_price, id }) {
-  const { productID, setProductID } = useContext(GlobalContext);
-  const navigate = useNavigate();
+export default function ProductCard({
+  img,
+  model,
+  short_description,
+  type,
+  full_price,
+  id,
+}) {
+  const { setProductID } = useContext(GlobalContext);
 
   const handleDetailsClick = (e) => {
     setProductID(e.id);
@@ -29,6 +35,7 @@ export default function ProductCard({ img, model, type, full_price, id }) {
       <img className="card-img" src={img} alt={model} />
       <div className="card-info">
         <h4>{model}</h4>
+        <p>{short_description}</p>
         <p>{type}</p>
       </div>
 
