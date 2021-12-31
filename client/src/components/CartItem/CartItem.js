@@ -1,15 +1,25 @@
-import { useCounter } from "../../hooks/useCounter";
+import { useContext, useState } from "react";
+import { GlobalContext } from "../../App";
 import CartItemButton from "../CartItemButton/CartItemButton";
 import "./CartItem.css";
 
-export default function CartItem({ product, id }) {
-  const { state, increment, decrement } = useCounter();
+export default function CartItem({ product }) {
+  const { setShoppingCart } = useContext(GlobalContext);
+  const [qtyCounter, setQtyCounter] = useState(1);
+
+  //Lacks lower limit to 1.
+  const counterIncrement = () => {
+    setQtyCounter(qtyCounter + 1);
+  };
+  const counterDecrement = () => {
+    setQtyCounter(qtyCounter - 1);
+  };
 
   return (
     <div className="cart-item">
       <div className="cart-left">
         <div className="qty-container">
-          <div className="qty">{state}</div>
+          <div className="qty">{qtyCounter}</div>
         </div>
 
         <img className="cart-img" src={product[0].image} alt="" />
@@ -23,8 +33,8 @@ export default function CartItem({ product, id }) {
       <div className="cart-right">
         <div className="cart-price">€ {product[0].full_price}</div>
         <div>
-          <CartItemButton onClick={increment} text={"+"} />
-          <CartItemButton onClick={decrement} text={"-"} />
+          <CartItemButton passedEvent={counterIncrement} text={"+"} />
+          <CartItemButton passedEvent={counterDecrement} text={"-"} />
           <CartItemButton text={"x"} />
         </div>
       </div>

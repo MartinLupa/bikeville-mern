@@ -1,5 +1,9 @@
 import "./CartItemButton.css";
 
-export default function CartItemButton({ text }) {
-  return <button className="cart-item-btn">{text}</button>;
+export default function CartItemButton({ passedEvent, text }) {
+  return (
+    <button onClick={passedEvent} className="cart-item-btn">
+      {text}
+    </button>
+  );
 }
