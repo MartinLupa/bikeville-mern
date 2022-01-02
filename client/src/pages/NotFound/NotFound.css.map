@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "NotFound.scss",
+        "../../styles/Variables.scss"
+    ],
+    "names": [],
+    "file": "NotFound.css"
+}

@@ -1,5 +1,6 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useState } from "react";
 import "./App.css";
+import Footer from "./components/Footer/Footer";
 import Router from "./Router";
 
 export const GlobalContext = createContext();
@@ -9,21 +10,23 @@ function App() {
   const [productID, setProductID] = useState();
   const [shoppingCart, setShoppingCart] = useState([]);
 
-  useEffect(() => console.log(shoppingCart));
   return (
-    <div>
-      <GlobalContext.Provider
-        value={{
-          catalog,
-          setCatalog,
-          productID,
-          setProductID,
-          shoppingCart,
-          setShoppingCart,
-        }}
-      >
-        <Router />
-      </GlobalContext.Provider>
+    <div className="app-container">
+      <div>
+        <GlobalContext.Provider
+          value={{
+            catalog,
+            setCatalog,
+            productID,
+            setProductID,
+            shoppingCart,
+            setShoppingCart,
+          }}
+        >
+          <Router />
+        </GlobalContext.Provider>
+      </div>
+      <Footer />
     </div>
   );
 }

@@ -1,5 +1,4 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Footer from "./components/Footer/Footer";
 import Navbar from "./components/Navbar/Navbar";
 import ShoppingCart from "./components/ShoppingCart/ShoppingCart";
 import Contact from "./pages/Contact/Contact";
@@ -13,27 +12,24 @@ import Success from "./pages/Success/Success";
 
 export default function Router() {
   return (
-    <div>
-      <BrowserRouter>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Main />} />
-          <Route
-            path="/product_details/:productId"
-            element={<ProductDetails />}
-          />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/registration" element={<RegistrationAndLogin />} />
-          <Route path="/login" element={<RegistrationAndLogin />} />
-          <Route path="/shopping_cart/:userId" element={<ShoppingCart />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/pay" element={<Pay />} />
-          <Route path="/success" element={<Success />} />
+    <BrowserRouter>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Main />} />
+        <Route
+          path="/product_details/:productId"
+          element={<ProductDetails />}
+        />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/registration" element={<RegistrationAndLogin />} />
+        <Route path="/login" element={<RegistrationAndLogin />} />
+        <Route path="/shopping_cart/:userId" element={<ShoppingCart />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/pay" element={<Pay />} />
+        <Route path="/success" element={<Success />} />
 
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-        <Footer />
-      </BrowserRouter>
-    </div>
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </BrowserRouter>
   );
 }

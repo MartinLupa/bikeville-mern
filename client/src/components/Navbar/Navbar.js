@@ -7,8 +7,8 @@ import "./Navbar.css";
 
 export default function Navbar() {
   return (
-    <div className="navbar-container">
-      <NavLink to="/">
+    <nav className="navbar-container">
+      <NavLink activeclassname="underline" to="/">
         <div className="nav-left">
           <DirectionsBikeIcon className="nav-link" fontSize="large" />
           <h4 className="nav-link">BIKEVILLE</h4>
@@ -31,7 +31,7 @@ export default function Navbar() {
             <p>LOGIN</p>
           </div>
         </NavLink>
-        <NavLink to="/shopping_cart/martin">
+        <NavLink to="/shopping_cart/:userId">
           <Badge badgeContent={2} color="primary">
             <ShoppingCartOutlinedIcon
               fontSize="large"
@@ -41,6 +41,6 @@ export default function Navbar() {
           </Badge>
         </NavLink>
       </div>
-    </div>
+    </nav>
   );
 }

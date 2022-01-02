@@ -21,7 +21,7 @@ export default function ProductCard({
   };
 
   return (
-    <div className="card-container animate__animated animate__backInLeft">
+    <div className="card-container animate__animated animate__fadeIn">
       <div className="hover-effect">
         <Link
           className="more-info-icon"

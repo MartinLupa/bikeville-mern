@@ -29,6 +29,13 @@
   margin-left: 10px;
 }
 
+.nav-left:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
 .nav-center {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -76,6 +83,6 @@
 }
 
 .underline:hover {
-  border-bottom: 2px solid #ff5959;
+  border-bottom: 5px solid #ff5959;
 }
 /*# sourceMappingURL=Navbar.css.map */

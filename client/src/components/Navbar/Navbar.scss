@@ -18,6 +18,10 @@
     margin: 0;
     margin-left: 10px;
   }
+  &:hover {
+    transform: scale(1.1);
+    transition: 0.3s;
+  }
 }
 
 .nav-center {
@@ -53,6 +57,6 @@
   align-items: center;
   height: 78px;
   &:hover {
-    border-bottom: 2px solid $secondary-color;
+    border-bottom: 5px solid $secondary-color;
   }
 }
