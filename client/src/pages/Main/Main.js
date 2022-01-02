@@ -3,6 +3,7 @@ import { GlobalContext } from "../../App";
 import Newsletter from "../../components/Newsletter/Newsletter";
 import ProductCard from "../../components/ProductCard/ProductCard";
 import ProductFilter from "../../components/ProductFilter/ProductFilter";
+import { TopScroll } from "../../components/TopScroll/TopScroll";
 import "./Main.css";
 
 export default function Main() {
@@ -21,6 +22,7 @@ export default function Main() {
 
   return (
     <div>
+      <TopScroll />
       <div className="main-container">
         <ProductFilter />
         {catalog?.map((product) => {
@@ -37,6 +39,7 @@ export default function Main() {
           );
         })}
       </div>
+
       <div>
         <Newsletter />
       </div>

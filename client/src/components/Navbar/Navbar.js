@@ -7,7 +7,7 @@ import "./Navbar.css";
 
 export default function Navbar() {
   return (
-    <nav className="navbar-container">
+    <nav className="navbar-container sticky">
       <NavLink activeclassname="underline" to="/">
         <div className="nav-left">
           <DirectionsBikeIcon className="nav-link" fontSize="large" />
