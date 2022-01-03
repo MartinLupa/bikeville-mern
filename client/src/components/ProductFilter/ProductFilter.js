@@ -1,11 +1,24 @@
 import { useContext } from "react";
 import { GlobalContext } from "../../App";
+import { useForm } from "../../hooks/useForm";
+import GeneralButton from "../GeneralButton/GeneralButton";
 import "./ProductFilter.css";
 
 export default function ProductFilter() {
-  const { catalog, setCatalog } = useContext(GlobalContext);
+  const { catalog, setCatalog, setFilteredCatalog } = useContext(GlobalContext);
+  const [formValues, handleInputChange, reset] = useForm({ searchText: "" });
+  const { searchText } = formValues;
 
-  //Price sorting
+  const handleSearch = (e) => {
+    e.preventDefault();
+    setFilteredCatalog(
+      catalog.filter((product) =>
+        product.model.toLowerCase().includes(searchText.toLowerCase())
+      )
+    );
+  };
+
+  //Price sorting. Admits new criteria by adding new types.
   const sortCatalog = (type) => {
     const types = {
       by_price_higher_first: "full_price",
@@ -22,7 +35,6 @@ export default function ProductFilter() {
         (a, b) => a[sortProperty] - b[sortProperty]
       );
     }
-    // console.log("sorted catalog", sortedCatalog);
     setCatalog(sortedCatalog);
   };
 
@@ -30,7 +42,17 @@ export default function ProductFilter() {
     <div className="product-filter-container">
       <div className="left"></div>
       <div className="center">
-        <input type="text" placeholder="Filter product by name" />
+        <form onSubmit={handleSearch} action="">
+          <input
+            onChange={handleInputChange}
+            type="text"
+            name="searchText"
+            autoComplete="off"
+            placeholder="Filter product by name"
+            value={searchText}
+          />
+          <GeneralButton text={"Search"} />
+        </form>
       </div>
       <div className="right">
         <select

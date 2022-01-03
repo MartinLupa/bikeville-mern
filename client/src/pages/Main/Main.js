@@ -7,8 +7,13 @@ import { TopScroll } from "../../components/TopScroll/TopScroll";
 import "./Main.css";
 
 export default function Main() {
-  const { catalog, setCatalog } = useContext(GlobalContext);
-
+  const { catalog, setCatalog, filteredCatalog } = useContext(GlobalContext);
+  let productsToRender;
+  if (filteredCatalog.length > 0) {
+    productsToRender = filteredCatalog;
+  } else {
+    productsToRender = catalog;
+  }
   useEffect(() => {
     fetch("catalog.json", {
       headers: {
@@ -25,7 +30,8 @@ export default function Main() {
       <TopScroll />
       <div className="main-container">
         <ProductFilter />
-        {catalog?.map((product) => {
+
+        {productsToRender?.map((product) => {
           return (
             <ProductCard
               key={product.product_id}
