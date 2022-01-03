@@ -52,11 +52,9 @@
   }
 }
 
-.underline {
+.active {
   display: flex;
   align-items: center;
   height: 78px;
-  &:hover {
-    border-bottom: 5px solid $secondary-color;
-  }
+  border-bottom: 5px solid $secondary-color;
 }

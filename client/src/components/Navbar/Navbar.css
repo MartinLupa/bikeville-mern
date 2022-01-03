@@ -72,7 +72,7 @@
   transition: 0.3s;
 }
 
-.underline {
+.active {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -80,9 +80,6 @@
       -ms-flex-align: center;
           align-items: center;
   height: 78px;
-}
-
-.underline:hover {
   border-bottom: 5px solid #ff5959;
 }
 /*# sourceMappingURL=Navbar.css.map */

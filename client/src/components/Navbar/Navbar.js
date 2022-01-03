@@ -8,7 +8,10 @@ import "./Navbar.css";
 export default function Navbar() {
   return (
     <nav className="navbar-container sticky">
-      <NavLink activeclassname="underline" to="/">
+      <NavLink
+        className={(navData) => (navData.isActive ? "nav-link" : "nav-link")}
+        to="/"
+      >
         <div className="nav-left">
           <DirectionsBikeIcon className="nav-link" fontSize="large" />
           <h4 className="nav-link">BIKEVILLE</h4>
@@ -16,8 +19,13 @@ export default function Navbar() {
       </NavLink>
 
       <div className="nav-right">
-        <NavLink className="nav-link" to="/contact">
-          <div className="underline">
+        <NavLink
+          className={(navData) =>
+            navData.isActive ? "nav-link active" : "nav-link"
+          }
+          to="/contact"
+        >
+          <div>
             <p>CONTACT</p>
           </div>
         </NavLink>
