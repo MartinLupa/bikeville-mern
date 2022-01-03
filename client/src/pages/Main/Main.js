@@ -9,7 +9,7 @@ import "./Main.css";
 export default function Main() {
   const { catalog, setCatalog, filteredCatalog } = useContext(GlobalContext);
   let productsToRender;
-  if (filteredCatalog.length > 0) {
+  if (filteredCatalog?.length > 0) {
     productsToRender = filteredCatalog;
   } else {
     productsToRender = catalog;
