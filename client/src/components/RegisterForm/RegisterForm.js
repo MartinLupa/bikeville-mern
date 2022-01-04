@@ -1,66 +1,213 @@
+import { Formik } from "formik";
 import { Link } from "react-router-dom";
+import * as Yup from "yup";
 import GeneralButton from "../GeneralButton/GeneralButton";
 import "./RegisterForm.css";
 
+const initialValues = {
+  first_name: "",
+  last_name: "",
+  email: "",
+  address: {
+    street: "",
+    street_number: "",
+    postal_code: "",
+    city: "",
+    country: "",
+  },
+  password: "",
+};
+
+const onSubmit = (values) => {};
+
+const validationSchema = Yup.object({
+  first_name: Yup.string().required("Required"),
+  last_name: Yup.string().required("Required"),
+  email: Yup.string().email("Invalid email format").required("Required"),
+  street: Yup.string().required("Required"),
+  street_number: Yup.number().required("Required"),
+  postal_code: Yup.number().required("Required"),
+  city: Yup.string().required("Required"),
+  country: Yup.string().required("Required"),
+  password: Yup.string().required("Required"),
+});
+
 export default function RegisterForm() {
   return (
-    <form className="register-form" action="">
-      <h4>Create account</h4>
-      <div className="form-row">
-        <div className="form-col">
-          <label htmlFor="">First name</label>
-          <input type="text" placeholder="Enter first name" />
-        </div>
-        <div className="form-col">
-          <label htmlFor="">Last name</label>
-          <input type="text" placeholder="Enter first name" />
-        </div>
-      </div>
-
-      <div className="form-row">
-        <div className="form-col">
-          <label htmlFor="">Email</label>
-          <input type="email" placeholder="Enter your email" />
-        </div>
-        <div className="form-col">
-          <label htmlFor=""></label>
-          <input type="email" placeholder="Repeat your email" />
-        </div>
-      </div>
-
-      <div className="form-row">
-        <div className="form-col">
-          <label htmlFor="">Address</label>
-          <input type="text" placeholder="Street name" />
-        </div>
+    <Formik
+      initialValues={initialValues}
+      onSubmit={onSubmit}
+      validationSchema={validationSchema}
+    >
+      <form
+        onSubmit={formik.handleSubmit}
+        className="register-form"
+        action=""
+        method="POST"
+      >
+        <h4>Create account</h4>
         <div className="form-row">
-          <input className="short" type="number" placeholder="Number" />
-          <input className="short" type="number" placeholder="Postal Code" />
-        </div>
-      </div>
+          <div className="form-col">
+            <label htmlFor="first_name">First name</label>
+            <input
+              className={
+                formik.touched.first_name && formik.errors.first_name && "error"
+              }
+              id="first_name"
+              name="first_name"
+              type="text"
+              placeholder="Enter first name"
+              autoComplete="on"
+              {...formik.getFieldProps("first_name")}
+            />
+          </div>
 
-      <div className="form-row">
-        <div className="form-col">
-          <input type="text" placeholder="City" />
+          <div className="form-col">
+            <label htmlFor="last_name">Last name</label>
+            <input
+              className={
+                formik.touched.last_name && formik.errors.last_name && "error"
+              }
+              id="last_name"
+              name="last_name"
+              type="text"
+              placeholder="Enter last name"
+              autoComplete="on"
+              {...formik.getFieldProps("last_name")}
+            />
+          </div>
         </div>
-        <div className="form-col">
-          <input type="text" placeholder="Country" />
-        </div>
-      </div>
 
-      <div className="form-row">
-        <div className="form-col">
-          <label htmlFor="">Password</label>
-          <input type="password" placeholder="Enter your password" />
+        <div className="form-row">
+          <div className="form-col">
+            <label htmlFor="email">Email</label>
+            <input
+              className={formik.touched.email && formik.errors.email && "error"}
+              id="email"
+              name="email"
+              type="email"
+              placeholder="Enter your email"
+              autoComplete="on"
+              {...formik.getFieldProps("email")}
+            />
+          </div>
+          <div className="form-col">
+            <label htmlFor="repeat_email"></label>
+            <input
+              className={formik.touched.email && formik.errors.email && "error"}
+              id="repeat_email"
+              name="repeat_email"
+              type="email"
+              placeholder="Repeat your email"
+              autoComplete="on"
+            />
+          </div>
         </div>
-        <div className="form-col">
-          <input type="password" placeholder="Repeat your password" />
+
+        <div className="form-row">
+          <div className="form-col">
+            <label htmlFor="address">Address</label>
+            <input
+              className={
+                formik.touched.street && formik.errors.street && "error"
+              }
+              id="address"
+              name="street"
+              type="text"
+              placeholder="Street name"
+              autoComplete="on"
+              {...formik.getFieldProps("street")}
+            />
+          </div>
+          <div className="form-row">
+            <div className="form-col">
+              <input
+                className={`short ${
+                  formik.touched.street_number &&
+                  formik.errors.street_number &&
+                  "error"
+                }`}
+                name="street_number"
+                type="number"
+                placeholder="Number"
+                autoComplete="on"
+                {...formik.getFieldProps("street_number")}
+              />
+            </div>
+            <div className="form-col">
+              <input
+                className={`short ${
+                  formik.touched.postal_code &&
+                  formik.errors.postal_code &&
+                  "error"
+                }`}
+                name="postal_code"
+                type="number"
+                placeholder="Postal Code"
+                autoComplete="on"
+                {...formik.getFieldProps("postal_code")}
+              />
+            </div>
+          </div>
         </div>
-      </div>
-      <Link to="/login">Already have an account?</Link>
-      <div className="form-btn">
-        <GeneralButton text={"REGISTER"} />
-      </div>
-    </form>
+
+        <div className="form-row">
+          <div className="form-col">
+            <input
+              className={formik.touched.city && formik.errors.city && "error"}
+              name="city"
+              type="text"
+              placeholder="City"
+              autoComplete="on"
+              {...formik.getFieldProps("city")}
+            />
+          </div>
+          <div className="form-col">
+            <input
+              className={
+                formik.touched.country && formik.errors.country && "error"
+              }
+              name="country"
+              type="text"
+              placeholder="Country"
+              autoComplete="on"
+              {...formik.getFieldProps("country")}
+            />
+          </div>
+        </div>
+
+        <div className="form-row">
+          <div className="form-col">
+            <label htmlFor="password">Password</label>
+            <input
+              className={
+                formik.touched.password && formik.errors.password && "error"
+              }
+              id="password"
+              name="password"
+              type="password"
+              placeholder="Enter your password"
+              autoComplete="on"
+              {...formik.getFieldProps("password")}
+            />
+          </div>
+          <div className="form-col">
+            <input
+              className={
+                formik.touched.password && formik.errors.password && "error"
+              }
+              name="repeat_password"
+              type="password"
+              placeholder="Repeat your password"
+              autoComplete="on"
+            />
+          </div>
+        </div>
+        <Link to="/login">Already have an account?</Link>
+        <div className="form-btn">
+          <GeneralButton type={"submit"} text={"REGISTER"} />
+        </div>
+      </form>
+    </Formik>
   );
 }

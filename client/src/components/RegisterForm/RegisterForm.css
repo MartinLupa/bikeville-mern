@@ -43,6 +43,10 @@ form input {
           align-items: flex-end;
 }
 
+.error {
+  border: 1px solid red;
+}
+
 @media only screen and (max-width: 1300px) {
   .register-form {
     margin: 30px auto;
