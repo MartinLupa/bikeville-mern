@@ -32,17 +32,7 @@ export default function Main() {
         <ProductFilter />
 
         {productsToRender?.map((product) => {
-          return (
-            <ProductCard
-              key={product.product_id}
-              id={product.product_id}
-              img={product.image}
-              model={product.model}
-              short_description={product.short_description}
-              type={product.type}
-              full_price={product.full_price}
-            />
-          );
+          return <ProductCard key={product.product_id} {...product} />;
         })}
       </div>
 

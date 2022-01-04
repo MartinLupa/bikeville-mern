@@ -7,10 +7,11 @@ import AddCartIcon from "../AddCartIcon/AddCartIcon";
 import "./ProductCard.css";
 
 export default function ProductCard({
-  img,
+  image,
   model,
   short_description,
   type,
+  groupset,
   full_price,
   id,
 }) {
@@ -32,11 +33,16 @@ export default function ProductCard({
         </Link>
         <AddCartIcon id={id} />
       </div>
-      <img className="card-img" src={img} alt={model} />
+      <img className="card-img" src={image} alt={model} />
       <div className="card-info">
         <h4>{model}</h4>
         <p>{short_description}</p>
-        <p>{type}</p>
+        <p>
+          <b>Type:</b> {type}
+        </p>
+        <p>
+          <b>Groupset:</b> {groupset}
+        </p>
       </div>
 
       <div className="card-price">
