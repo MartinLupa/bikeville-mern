@@ -1,11 +1,14 @@
 import DirectionsBikeIcon from "@mui/icons-material/DirectionsBike";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import Badge from "@mui/material/Badge";
+import { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { GlobalContext } from "../../App";
 import "../../styles/Variables.scss";
 import "./Navbar.css";
 
 export default function Navbar() {
+  const { shoppingCart } = useContext(GlobalContext);
   return (
     <nav className="navbar-container sticky">
       <NavLink
@@ -29,18 +32,31 @@ export default function Navbar() {
             <p>CONTACT</p>
           </div>
         </NavLink>
-        <NavLink className="nav-link" to="/registration">
+        <NavLink
+          className={(navData) =>
+            navData.isActive ? "nav-link active" : "nav-link"
+          }
+          to="/registration"
+        >
           <div className="underline">
             <p>REGISTER</p>
           </div>
         </NavLink>
-        <NavLink className="nav-link" to="/login">
+        <NavLink
+          className={(navData) =>
+            navData.isActive ? "nav-link active" : "nav-link"
+          }
+          to="/login"
+        >
           <div className="underline">
             <p>LOGIN</p>
           </div>
         </NavLink>
-        <NavLink to="/shopping_cart/:userId">
-          <Badge badgeContent={2} color="primary">
+        <NavLink
+          className={(navData) => (navData.isActive ? "nav-link" : "nav-link")}
+          to="/shopping_cart/:userId"
+        >
+          <Badge badgeContent={shoppingCart.length} color="primary">
             <ShoppingCartOutlinedIcon
               fontSize="large"
               className="nav-link"
