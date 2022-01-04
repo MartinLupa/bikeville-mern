@@ -38,7 +38,7 @@ export default function ProductDetails() {
         <hr />
         <h4>SIZES:</h4>
         <div className="details-size">
-          {sizes.map((size) => (
+          {sizes?.map((size) => (
             <p key={size}>{size}</p>
           ))}
         </div>

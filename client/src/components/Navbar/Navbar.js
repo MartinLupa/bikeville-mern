@@ -26,6 +26,16 @@ export default function Navbar() {
           className={(navData) =>
             navData.isActive ? "nav-link active" : "nav-link"
           }
+          to="/showroom"
+        >
+          <div>
+            <p>PRODUCTS</p>
+          </div>
+        </NavLink>
+        <NavLink
+          className={(navData) =>
+            navData.isActive ? "nav-link active" : "nav-link"
+          }
           to="/contact"
         >
           <div>

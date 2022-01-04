@@ -4,10 +4,11 @@ import Newsletter from "../../components/Newsletter/Newsletter";
 import ProductCard from "../../components/ProductCard/ProductCard";
 import ProductFilter from "../../components/ProductFilter/ProductFilter";
 import { TopScroll } from "../../components/TopScroll/TopScroll";
-import "./Main.css";
+import "./Showroom.css";
 
-export default function Main() {
+export default function Showroom() {
   const { catalog, setCatalog, filteredCatalog } = useContext(GlobalContext);
+
   let productsToRender;
   if (filteredCatalog?.length > 0) {
     productsToRender = filteredCatalog;
@@ -32,7 +33,13 @@ export default function Main() {
         <ProductFilter />
 
         {productsToRender?.map((product) => {
-          return <ProductCard key={product.product_id} {...product} />;
+          return (
+            <ProductCard
+              key={product.product_id}
+              id={product.product_id}
+              {...product}
+            />
+          );
         })}
       </div>
 

@@ -82,4 +82,10 @@
   height: 78px;
   border-bottom: 5px solid #ff5959;
 }
+
+@media only screen and (max-width: 800px) {
+  .nav-left {
+    margin-left: 0px;
+  }
+}
 /*# sourceMappingURL=Navbar.css.map */
