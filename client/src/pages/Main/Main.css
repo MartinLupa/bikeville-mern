@@ -80,6 +80,7 @@ video {
 }
 
 .outline-btn h2 {
+  font-style: italic;
   color: #d7d3d3;
   font-size: 30px;
 }

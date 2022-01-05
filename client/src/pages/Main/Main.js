@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import racing_cyclists_video from "../../videos/racing-cyclists.mp4";
+import racing_cyclists_video from "../../videos/racing-cyclists2.mp4";
 import "./Main.css";
 
 export const Main = () => {
