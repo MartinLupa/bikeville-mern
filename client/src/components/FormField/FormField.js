@@ -1,5 +1,6 @@
 import { ErrorMessage, Field } from "formik";
 import React from "react";
+import "./FormField.css";
 
 export const FormField = ({
   fieldName,
@@ -20,7 +21,7 @@ export const FormField = ({
         placeholder={placeholder}
         autoComplete="on"
       />
-      <ErrorMessage name={fieldName} />
+      <ErrorMessage component="div" className="error" name={fieldName} />
     </div>
   );
 };

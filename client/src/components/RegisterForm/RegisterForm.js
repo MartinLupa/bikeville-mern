@@ -143,7 +143,9 @@ export default function RegisterForm() {
             type={"password"}
           />
         </div>
-        <Link to="/login">Already have an account?</Link>
+        <Link to="/login">
+          <p> Already have an account?</p>
+        </Link>
         <div className="form-btn">
           <GeneralButton type={"submit"} text={"REGISTER"} />
         </div>

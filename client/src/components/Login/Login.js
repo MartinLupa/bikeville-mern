@@ -46,7 +46,9 @@ export default function Login() {
 
         <div className="login-links">
           <Link to="/registration">Create an account</Link>
-          <Link to="/password_recovery">Forgot your password?</Link>
+          <Link to="/password_recovery">
+            <p> Forgot your password?</p>
+          </Link>
         </div>
         <div className="form-btn">
           <GeneralButton type={"submit"} text={"LOGIN"} />
