@@ -4,7 +4,7 @@ import CartItemButton from "../CartItemButton/CartItemButton";
 import "./CartItem.css";
 
 export default function CartItem({ product }) {
-  const { setShoppingCart } = useContext(GlobalContext);
+  const { shoppingCart, setShoppingCart } = useContext(GlobalContext);
   const [qtyCounter, setQtyCounter] = useState(1);
 
   //Lacks lower limit to 1.
@@ -15,6 +15,15 @@ export default function CartItem({ product }) {
     setQtyCounter(qtyCounter - 1);
   };
 
+  const deleteItem = () => {
+    console.log(product[0].product_id);
+    setShoppingCart(
+      shoppingCart.filter(
+        (item) => item[0].product_id !== product[0].product_id
+      )
+    );
+  };
+  // console.log(shoppingCart);
   return (
     <div className="cart-item">
       <div className="cart-left">
@@ -35,7 +44,7 @@ export default function CartItem({ product }) {
         <div>
           <CartItemButton passedEvent={counterIncrement} text={"+"} />
           <CartItemButton passedEvent={counterDecrement} text={"-"} />
-          <CartItemButton text={"x"} />
+          <CartItemButton passedEvent={deleteItem} text={"x"} />
         </div>
       </div>
     </div>
