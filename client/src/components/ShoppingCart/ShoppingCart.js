@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { GlobalContext } from "../../App";
 import dhl_logo from "../../images/dhl_logo.JPG";
@@ -13,6 +13,17 @@ import "./ShoppingCart.css";
 
 export default function ShoppingCart() {
   const { shoppingCart } = useContext(GlobalContext);
+  const [cartTotal, setCartTotal] = useState(0);
+
+  const calculateCartTotal = () => {
+    let total = 0;
+    shoppingCart.map((item) => (total += item[0].full_price));
+    setCartTotal(total);
+  };
+
+  useEffect(() => {
+    calculateCartTotal();
+  }, [shoppingCart]);
 
   return (
     <div className="cart-container">
@@ -33,7 +44,7 @@ export default function ShoppingCart() {
             <strong>TOTAL:</strong>
           </p>
           <p>
-            <strong>€ 4350</strong>
+            <strong>€ {cartTotal}</strong>
           </p>
         </div>
       </div>
