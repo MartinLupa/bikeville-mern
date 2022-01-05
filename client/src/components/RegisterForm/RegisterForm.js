@@ -21,8 +21,10 @@ const initialValues = {
   repeat_password: "",
 };
 
-const onSubmit = (values) => {
+const onSubmit = (values, { resetForm }) => {
   console.log(values);
+
+  resetForm();
 };
 
 const validationSchema = Yup.object({
