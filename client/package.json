@@ -26,6 +26,7 @@
     "react-router-dom": "^6.2.1",
     "react-scripts": "5.0.0",
     "react-stripe-checkout": "^2.6.3",
+    "react-transition-group": "^4.4.2",
     "sass": "^1.45.1",
     "web-vitals": "^2.1.2",
     "yup": "^0.32.11"

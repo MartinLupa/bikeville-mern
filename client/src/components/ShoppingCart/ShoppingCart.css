@@ -70,6 +70,12 @@
   margin: 5px 5px 5px auto;
 }
 
+.alert {
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #f7aaaa;
+}
+
 @media only screen and (max-width: 1200px) {
   .cart {
     width: 100%;

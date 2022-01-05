@@ -24,7 +24,7 @@ export default function CartItem({ product }) {
   };
 
   return (
-    <div className="cart-item">
+    <div className="cart-item animate__animated animate__fadeIn">
       <div className="cart-left">
         <div className="qty-container">
           <div className="qty">{qtyCounter}</div>

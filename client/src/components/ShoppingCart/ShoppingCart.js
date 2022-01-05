@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { GlobalContext } from "../../App";
 import dhl_logo from "../../images/dhl_logo.JPG";
@@ -13,7 +13,6 @@ import "./ShoppingCart.css";
 
 export default function ShoppingCart() {
   const { shoppingCart, cartTotal, setCartTotal } = useContext(GlobalContext);
-  
 
   const calculateCartTotal = () => {
     let total = 0;
@@ -29,9 +28,13 @@ export default function ShoppingCart() {
     <div className="cart-container">
       <div className="cart items-container">
         <h4>Cart Items</h4>
-        {shoppingCart?.map((product, id) => (
-          <CartItem key={id} product={product} />
-        ))}
+        {shoppingCart.length > 0 ? (
+          shoppingCart.map((product, id) => (
+            <CartItem key={id} product={product} />
+          ))
+        ) : (
+          <p className="alert">ShoppingCart is empty</p>
+        )}
       </div>
       <div className="cart payment-container">
         <h4>Payment</h4>

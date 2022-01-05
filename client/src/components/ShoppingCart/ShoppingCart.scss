@@ -56,6 +56,11 @@
   justify-content: space-between;
   margin: 5px 5px 5px auto;
 }
+.alert {
+  padding: 20px;
+  border-radius: 5px;
+  background-color: rgb(247, 170, 170);
+}
 
 @media only screen and (max-width: 1200px) {
   .cart {
