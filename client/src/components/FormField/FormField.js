@@ -4,6 +4,7 @@ import React from "react";
 export const FormField = ({
   fieldName,
   labelName,
+  name,
   placeholder,
   type,
   className,
@@ -14,7 +15,7 @@ export const FormField = ({
       <Field
         className={className}
         id={fieldName}
-        name={fieldName}
+        name={name}
         type={type}
         placeholder={placeholder}
         autoComplete="on"

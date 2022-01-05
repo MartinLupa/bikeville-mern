@@ -1,8 +1,8 @@
 import { Form, Formik } from "formik";
 import { Link } from "react-router-dom";
 import * as Yup from "yup";
+import { FormField } from "../FormField/FormField";
 import GeneralButton from "../GeneralButton/GeneralButton";
-import { FormField } from "./FormField";
 import "./RegisterForm.css";
 
 const initialValues = {
@@ -12,8 +12,8 @@ const initialValues = {
   repeat_email: "",
   address: {
     street: "",
-    street_number: "",
-    postal_code: "",
+    street_number: 0,
+    postal_code: 0,
     city: "",
     country: "",
   },
@@ -29,11 +29,13 @@ const validationSchema = Yup.object({
   first_name: Yup.string().required("Required"),
   last_name: Yup.string().required("Required"),
   email: Yup.string().email("Invalid email format").required("Required"),
-  street: Yup.string().required("Required"),
-  street_number: Yup.number().required("Required"),
-  postal_code: Yup.number().required("Required"),
-  city: Yup.string().required("Required"),
-  country: Yup.string().required("Required"),
+  address: Yup.object({
+    street: Yup.string().required("Required"),
+    street_number: Yup.number().required("Required"),
+    postal_code: Yup.number().required("Required"),
+    city: Yup.string().required("Required"),
+    country: Yup.string().required("Required"),
+  }),
   password: Yup.string().required("Required"),
 });
 
@@ -50,12 +52,14 @@ export default function RegisterForm() {
           <FormField
             fieldName={"first_name"}
             labelName={"First name"}
+            name={"first_name"}
             placeholder={"Enter first name"}
             type={"text"}
           />
           <FormField
             fieldName={"last_name"}
             labelName={"Last name"}
+            name={"last_name"}
             placeholder={"Enter last name"}
             type={"text"}
           />
@@ -65,12 +69,14 @@ export default function RegisterForm() {
           <FormField
             fieldName={"email"}
             labelName={"Email"}
+            name={"email"}
             placeholder={"Enter your email"}
             type={"email"}
           />
           <FormField
             fieldName={"repeat_email"}
             labelName={"Repeat email"}
+            name={"repeat_email"}
             placeholder={"Repeat your email"}
             type={"email"}
           />
@@ -80,6 +86,7 @@ export default function RegisterForm() {
           <FormField
             fieldName={"street"}
             labelName={"Street name"}
+            name={"address.street"}
             placeholder={"Street name"}
             type={"text"}
           />
@@ -87,12 +94,14 @@ export default function RegisterForm() {
             className="short"
             fieldName={"street_number"}
             labelName={"Number"}
+            name={"address.street_number"}
             placeholder={"Number"}
             type={"number"}
           />
           <FormField
             className="short"
             fieldName={"postal_code"}
+            name={"address.postal_code"}
             labelName={"CP"}
             placeholder={"CP"}
             type={"number"}
@@ -103,12 +112,14 @@ export default function RegisterForm() {
           <FormField
             fieldName={"city"}
             labelName={"City"}
+            name={"address.city"}
             placeholder={"City"}
             type={"text"}
           />
           <FormField
             fieldName={"country"}
             labelName={"Country"}
+            name={"address.country"}
             placeholder={"Country"}
             type={"text"}
           />
@@ -118,12 +129,14 @@ export default function RegisterForm() {
           <FormField
             fieldName={"password"}
             labelName={"Password"}
+            name={"password"}
             placeholder={"Enter your password"}
             type={"password"}
           />
           <FormField
             fieldName={"repeat_password"}
             labelName={"Repeat Password"}
+            name={"password"}
             placeholder={"Repeat your password"}
             type={"password"}
           />
