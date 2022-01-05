@@ -12,8 +12,8 @@ import ShippingItem from "../ShippingItem/ShippingItem";
 import "./ShoppingCart.css";
 
 export default function ShoppingCart() {
-  const { shoppingCart } = useContext(GlobalContext);
-  const [cartTotal, setCartTotal] = useState(0);
+  const { shoppingCart, cartTotal, setCartTotal } = useContext(GlobalContext);
+  
 
   const calculateCartTotal = () => {
     let total = 0;

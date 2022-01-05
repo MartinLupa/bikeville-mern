@@ -16,14 +16,13 @@ export default function CartItem({ product }) {
   };
 
   const deleteItem = () => {
-    console.log(product[0].product_id);
     setShoppingCart(
       shoppingCart.filter(
         (item) => item[0].product_id !== product[0].product_id
       )
     );
   };
-  // console.log(shoppingCart);
+
   return (
     <div className="cart-item">
       <div className="cart-left">

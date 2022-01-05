@@ -1,12 +1,14 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import StripeCheckout from "react-stripe-checkout";
+import { GlobalContext } from "../../App";
 import GeneralButton from "../../components/GeneralButton/GeneralButton";
 import "./Pay.css";
 
 export default function Pay() {
   const [stripeToken, setStripeToken] = useState(null);
+  const { cartTotal } = useContext(GlobalContext);
   const navigate = useNavigate();
 
   const onToken = (token) => {
@@ -38,8 +40,8 @@ export default function Pay() {
           name="Bike Ville"
           billingAddress
           shippingAddress
-          description="Your total is 20"
-          amount={2000}
+          description={`Your total is EUR ${cartTotal},00`}
+          amount={cartTotal}
           token={onToken}
           stripeKey="pk_test_51KC2PyFVmRibgb7cIfnBbyEhMhTQDOus9i0naKot6ArtGLdNLbI4WuJqtzbF4o4z87PiMjRBzQ9QTOuhwXmMUvRE00ZihdQeV2"
         >
