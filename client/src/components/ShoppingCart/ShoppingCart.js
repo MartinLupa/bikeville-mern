@@ -24,6 +24,8 @@ export default function ShoppingCart() {
     calculateCartTotal();
   }, [shoppingCart]);
 
+  console.log(shoppingCart);
+
   return (
     <div className="cart-container">
       <div className="cart items-container">

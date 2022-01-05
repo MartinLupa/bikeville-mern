@@ -7,7 +7,6 @@ export default function AddCartButton({ id }) {
   const { setShoppingCart, catalog } = useContext(GlobalContext);
 
   const handleAddClick = () => {
-    // console.log(id);
     const addedProduct = catalog.filter((product) => product.product_id === id);
     setShoppingCart((previousCart) => [...previousCart, addedProduct]);
   };

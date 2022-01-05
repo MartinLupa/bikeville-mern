@@ -21,10 +21,16 @@ const initialValues = {
   repeat_password: "",
 };
 
-const onSubmit = (values, { resetForm }) => {
-  console.log(values);
+// const onSubmit = (values, { resetForm }) => {
+//   console.log(values);
 
-  resetForm();
+//   resetForm();
+// };
+
+const handleSubmit = () => {
+  window.document
+    .querySelectorAll("#form input")
+    .forEach((input) => console.log(input.value));
 };
 
 const validationSchema = Yup.object({
@@ -45,10 +51,15 @@ export default function RegisterForm() {
   return (
     <Formik
       initialValues={initialValues}
-      onSubmit={onSubmit}
+      // onSubmit={onSubmit}
       validationSchema={validationSchema}
     >
-      <Form className="register-form" action="" method="POST">
+      <Form
+        id={"form"}
+        className="register-form"
+        // action="http://localhost:5000/registration"
+        // method="POST"
+      >
         <h4>Create account</h4>
         <div className="form-row">
           <FormField
@@ -147,7 +158,11 @@ export default function RegisterForm() {
           <p> Already have an account?</p>
         </Link>
         <div className="form-btn">
-          <GeneralButton type={"submit"} text={"REGISTER"} />
+          <GeneralButton
+            passedEvent={handleSubmit}
+            type={"button"}
+            text={"REGISTER"}
+          />
         </div>
       </Form>
     </Formik>

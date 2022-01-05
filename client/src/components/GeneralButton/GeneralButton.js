@@ -1,8 +1,8 @@
 import "./GeneralButton.css";
 
-export default function GeneralButton({ type, text }) {
+export default function GeneralButton({ type, text, passedEvent }) {
   return (
-    <button type={type} className="general-btn">
+    <button onClick={passedEvent} type={type} className="general-btn">
       {text}
     </button>
   );
