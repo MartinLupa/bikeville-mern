@@ -1,6 +1,6 @@
 import { useLocation } from "react-router-dom";
 import Login from "../../components/Login/Login";
-import OldRegisterForm from "../../components/RegisterForm/OldRegisterForm";
+import RegisterForm from "../../components/RegisterForm/RegisterForm";
 import "./RegistrationAndLogin.css";
 
 export default function RegistrationAndLogin() {
@@ -8,7 +8,7 @@ export default function RegistrationAndLogin() {
   return (
     <div className="registration-container">
       <div className="register-img"></div>
-      {location.pathname === "/registration" ? <OldRegisterForm /> : null}
+      {location.pathname === "/registration" ? <RegisterForm /> : null}
       {location.pathname === "/login" ? <Login /> : null}
     </div>
   );
