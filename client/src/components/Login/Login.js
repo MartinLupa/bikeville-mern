@@ -12,6 +12,18 @@ const initialValues = {
 
 const onSubmit = (values, { resetForm }) => {
   console.log(values);
+  fetch("http://localhost:5000/api/auth/login", {
+    method: "POST",
+    body: JSON.stringify({
+      email: values.email,
+      password: values.password,
+    }),
+    headers: { "Content-type": "application/json" },
+  }).then((req) => {
+    req.json().then((data) => {
+      console.log(data);
+    });
+  });
 
   resetForm();
 };
