@@ -26,6 +26,7 @@ export const OrderSummary = () => {
 
   return (
     <div className="summary-container">
+      <h1>Your are almost ready to hit the road!</h1>
       <h2>Order summary:</h2>
       {order?.products.map((product) => (
         <CartItem key={product.product_id} product={product} />

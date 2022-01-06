@@ -21,7 +21,7 @@ export default function Pay() {
       try {
         const res = await axios.post(
           "http://localhost:5000/api/checkout/payment",
-          { tokenId: stripeToken.id, amount: 2000 }
+          { tokenId: stripeToken.id, amount: order.total }
         );
         console.log(res.data);
         navigate("/success");
@@ -37,14 +37,14 @@ export default function Pay() {
       {stripeToken ? (
         <span>Processing. Please wait...</span>
       ) : (
-        <div>
+        <div className="summary-info">
           <OrderSummary />
           <StripeCheckout
             name="Bike Ville"
             billingAddress
             shippingAddress
-            description={`Your total is EUR ${cartTotal},00`}
-            amount={cartTotal}
+            description={`Your total is EUR ${order.total},00`}
+            amount={order.total}
             token={onToken}
             stripeKey="pk_test_51KC2PyFVmRibgb7cIfnBbyEhMhTQDOus9i0naKot6ArtGLdNLbI4WuJqtzbF4o4z87PiMjRBzQ9QTOuhwXmMUvRE00ZihdQeV2"
           >
