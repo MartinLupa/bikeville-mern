@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { GlobalContext } from "../../App";
 import dhl_logo from "../../images/dhl_logo.JPG";
 import present_packaging from "../../images/present_packaging.JPG";
@@ -12,16 +12,13 @@ import ShippingItem from "../ShippingItem/ShippingItem";
 import "./ShoppingCart.css";
 
 export default function ShoppingCart() {
-  const [order, setOrder] = useState({
-    products: [],
-    courier_company: {},
-    total: 0,
-  });
-  const { shoppingCart, cartTotal, setCartTotal } = useContext(GlobalContext);
+  const { shoppingCart, cartTotal, setCartTotal, order, setOrder } =
+    useContext(GlobalContext);
   const [courierCompany, setCourierCompany] = useState({
     company: "ups",
     cost: 14,
   });
+  const navigate = useNavigate();
 
   const calculateCartTotal = () => {
     let total = 0;
@@ -34,17 +31,22 @@ export default function ShoppingCart() {
   };
 
   const orderCheckout = () => {
-    setOrder({
-      products: shoppingCart,
-      courier_company: courierCompany,
-      total: cartTotal,
-    });
+    if (shoppingCart.length === 0) {
+      alert("Your shopping cart is empty");
+    } else {
+      setOrder({
+        products: shoppingCart,
+        courier_company: courierCompany,
+        total: cartTotal,
+      });
+      navigate("/pay");
+    }
   };
 
   useEffect(() => {
     calculateCartTotal();
   }, [shoppingCart]);
-  console.log("order", order);
+  console.log("order", order.products.length);
 
   return (
     <div className="cart-container">
@@ -96,9 +98,8 @@ export default function ShoppingCart() {
         <Link to="/">
           <GeneralButton text={"CONTINUE SHOPPING"} />
         </Link>
-        <Link to="/pay">
-          <GeneralButton passedEvent={orderCheckout} text={"CHECKOUT"} />
-        </Link>
+
+        <GeneralButton passedEvent={orderCheckout} text={"CHECKOUT"} />
       </div>
     </div>
   );

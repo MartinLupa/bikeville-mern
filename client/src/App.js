@@ -11,6 +11,11 @@ function App() {
   const [shoppingCart, setShoppingCart] = useState([]);
   const [filteredCatalog, setFilteredCatalog] = useState();
   const [cartTotal, setCartTotal] = useState(0);
+  const [order, setOrder] = useState({
+    products: [],
+    courier_company: {},
+    total: 0,
+  });
 
   return (
     <div className="app-container">
@@ -27,6 +32,8 @@ function App() {
             setFilteredCatalog,
             cartTotal,
             setCartTotal,
+            order,
+            setOrder,
           }}
         >
           <Router />

@@ -1,0 +1,8 @@
+@import "../../styles/Variables.scss";
+
+.summary-container {
+  border: 1px solid $light-border-color;
+  padding: 80px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}

@@ -1,4 +1,5 @@
 import { useContext, useState } from "react";
+import { useLocation } from "react-router-dom";
 import { GlobalContext } from "../../App";
 import CartItemButton from "../CartItemButton/CartItemButton";
 import "./CartItem.css";
@@ -6,6 +7,7 @@ import "./CartItem.css";
 export default function CartItem({ product }) {
   const { shoppingCart, setShoppingCart } = useContext(GlobalContext);
   const [qtyCounter, setQtyCounter] = useState(1);
+  const location = useLocation();
 
   //Lacks lower limit to 1.
   const counterIncrement = () => {
@@ -40,11 +42,13 @@ export default function CartItem({ product }) {
 
       <div className="cart-right">
         <div className="cart-price">€ {product[0].full_price}</div>
-        <div>
-          <CartItemButton passedEvent={counterIncrement} text={"+"} />
-          <CartItemButton passedEvent={counterDecrement} text={"-"} />
-          <CartItemButton passedEvent={deleteItem} text={"x"} />
-        </div>
+        {location.pathname !== "/pay" ? (
+          <div>
+            <CartItemButton passedEvent={counterIncrement} text={"+"} />
+            <CartItemButton passedEvent={counterDecrement} text={"-"} />
+            <CartItemButton passedEvent={deleteItem} text={"x"} />
+          </div>
+        ) : null}
       </div>
     </div>
   );
