@@ -12,8 +12,8 @@ const initialValues = {
   repeat_email: "",
   address: {
     street: "",
-    street_number: 0,
-    postal_code: 0,
+    street_number: null,
+    postal_code: null,
     city: "",
     country: "",
   },

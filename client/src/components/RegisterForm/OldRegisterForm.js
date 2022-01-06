@@ -18,26 +18,36 @@ import "./RegisterForm.css";
 export default function RegisterForm() {
   const formik = useFormik({
     initialValues: {
-      initialValues: {
-        // first_name: "",
-        // last_name: "",
-        email: "",
-        // address: {
-        //   street: "",
-        //   street_number: "",
-        //   postal_code: "",
-        //   city: "",
-        //   country: "",
-        // },
-        password: "",
+      first_name: "",
+      last_name: "",
+      email: "",
+      address: {
+        street: "",
+        street_number: "",
+        postal_code: "",
+        city: "",
+        country: "",
       },
+      password: "",
+      repeat_password: "",
     },
     onSubmit: (values) => {
+      console.log(values);
       fetch("http://localhost:5000/api/auth/registration", {
         method: "POST",
         body: JSON.stringify({
+          first_name: values.first_name,
+          last_name: values.last_name,
           email: values.email,
+          address: {
+            street: values.street,
+            street_number: values.street_number,
+            postal_code: values.postal_code,
+            city: values.city,
+            country: values.country,
+          },
           password: values.password,
+          repeat_password: values.repeat_password,
         }),
         headers: { "Content-type": "application/json" },
       }).then((req) => {
@@ -62,7 +72,7 @@ export default function RegisterForm() {
       <div className="form-row">
         <div className="form-col">
           <label htmlFor="first_name">First name</label>
-          {/* <input
+          <input
             className={
               formik.touched.first_name && formik.errors.first_name && "error"
             }
@@ -74,12 +84,12 @@ export default function RegisterForm() {
             onBlur={formik.handleBlur}
             onChange={formik.handleChange}
             value={formik.values.first_name}
-          /> */}
+          />
         </div>
 
         <div className="form-col">
           <label htmlFor="last_name">Last name</label>
-          {/* <input
+          <input
             className={
               formik.touched.last_name && formik.errors.last_name && "error"
             }
@@ -91,7 +101,7 @@ export default function RegisterForm() {
             onBlur={formik.handleBlur}
             onChange={formik.handleChange}
             value={formik.values.last_name}
-          /> */}
+          />
         </div>
       </div>
 
@@ -112,21 +122,21 @@ export default function RegisterForm() {
         </div>
         <div className="form-col">
           <label htmlFor="repeat_email"></label>
-          {/* <input
+          <input
             className={formik.touched.email && formik.errors.email && "error"}
             id="repeat_email"
             name="repeat_email"
             type="email"
             placeholder="Repeat your email"
             autoComplete="on"
-          /> */}
+          />
         </div>
       </div>
 
       <div className="form-row">
         <div className="form-col">
           <label htmlFor="address">Address</label>
-          {/* <input
+          <input
             className={formik.touched.street && formik.errors.street && "error"}
             id="address"
             name="street"
@@ -135,12 +145,12 @@ export default function RegisterForm() {
             autoComplete="on"
             onBlur={formik.handleBlur}
             onChange={formik.handleChange}
-            value={formik.values.street}
-          /> */}
+            value={formik.values.address.street}
+          />
         </div>
         <div className="form-row">
           <div className="form-col">
-            {/* <input
+            <input
               className={`short ${
                 formik.touched.street_number &&
                 formik.errors.street_number &&
@@ -152,11 +162,11 @@ export default function RegisterForm() {
               autoComplete="on"
               onBlur={formik.handleBlur}
               onChange={formik.handleChange}
-              value={formik.values.street_number}
-            /> */}
+              value={formik.values.address.street_number}
+            />
           </div>
           <div className="form-col">
-            {/* <input
+            <input
               className={`short ${
                 formik.touched.postal_code &&
                 formik.errors.postal_code &&
@@ -168,15 +178,15 @@ export default function RegisterForm() {
               autoComplete="on"
               onBlur={formik.handleBlur}
               onChange={formik.handleChange}
-              value={formik.values.postal_code}
-            /> */}
+              value={formik.values.address.postal_code}
+            />
           </div>
         </div>
       </div>
 
       <div className="form-row">
         <div className="form-col">
-          {/* <input
+          <input
             className={formik.touched.city && formik.errors.city && "error"}
             name="city"
             type="text"
@@ -184,11 +194,11 @@ export default function RegisterForm() {
             autoComplete="on"
             onBlur={formik.handleBlur}
             onChange={formik.handleChange}
-            value={formik.values.city}
-          /> */}
+            value={formik.values.address.city}
+          />
         </div>
         <div className="form-col">
-          {/* <input
+          <input
             className={
               formik.touched.country && formik.errors.country && "error"
             }
@@ -198,8 +208,8 @@ export default function RegisterForm() {
             autoComplete="on"
             onBlur={formik.handleBlur}
             onChange={formik.handleChange}
-            value={formik.values.country}
-          /> */}
+            value={formik.values.address.country}
+          />
         </div>
       </div>
 
@@ -221,7 +231,7 @@ export default function RegisterForm() {
           />
         </div>
         <div className="form-col">
-          {/* <input
+          <input
             className={
               formik.touched.password && formik.errors.password && "error"
             }
@@ -229,7 +239,10 @@ export default function RegisterForm() {
             type="password"
             placeholder="Repeat your password"
             autoComplete="on"
-          /> */}
+            onBlur={formik.handleBlur}
+            onChange={formik.handleChange}
+            value={formik.values.repeat_password}
+          />
         </div>
       </div>
       <Link to="/login">Already have an account?</Link>
