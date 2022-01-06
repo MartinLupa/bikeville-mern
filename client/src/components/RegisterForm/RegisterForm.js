@@ -12,8 +12,8 @@ const initialValues = {
   repeat_email: "",
   address: {
     street: "",
-    street_number: null,
-    postal_code: null,
+    street_number: "",
+    postal_code: "",
     city: "",
     country: "",
   },
@@ -23,15 +23,31 @@ const initialValues = {
 
 const onSubmit = (values, { resetForm }) => {
   console.log(values);
+  fetch("http://localhost:5000/api/auth/registration", {
+    method: "POST",
+    body: JSON.stringify({
+      first_name: values.first_name,
+      last_name: values.last_name,
+      email: values.email,
+      address: {
+        street: values.address.street,
+        street_number: values.address.street_number,
+        postal_code: values.address.postal_code,
+        city: values.address.city,
+        country: values.address.country,
+      },
+      password: values.password,
+      repeat_password: values.repeat_password,
+    }),
+    headers: { "Content-type": "application/json" },
+  }).then((req) => {
+    req.json().then((data) => {
+      console.log(data);
+    });
+  });
 
-  resetForm();
+  // resetForm();
 };
-
-// const handleSubmit = () => {
-//   window.document
-//     .querySelectorAll("#form input")
-//     .forEach((input) => console.log(input.value));
-// };
 
 const validationSchema = Yup.object({
   first_name: Yup.string().required("Required"),
@@ -144,7 +160,7 @@ export default function RegisterForm() {
           <FormField
             fieldName={"repeat_password"}
             labelName={"Repeat Password"}
-            name={"password"}
+            name={"repeat_password"}
             placeholder={"Repeat your password"}
             type={"password"}
           />

@@ -21,8 +21,14 @@ router.post("/registration", async (req, res) => {
       city: req.body.address.city,
       country: req.body.address.country,
     },
-    password: req.body.password,
-    repeat_password: req.body.repeat_password,
+    password: CryptoJS.AES.encrypt(
+      req.body.password,
+      process.env.PASS_SEC
+    ).toString(),
+    repeat_password: CryptoJS.AES.encrypt(
+      req.body.repeat_password,
+      process.env.PASS_SEC
+    ).toString(),
   });
 
   try {
@@ -32,11 +38,6 @@ router.post("/registration", async (req, res) => {
     res.status(500).json(err);
   }
 });
-
-// password: CryptoJS.AES.encrypt(
-//   req.body.password,
-//   process.env.PASS_SEC
-// ).toString(),
 
 //LOGIN
 router.post("/login", async (req, res) => {
