@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { GlobalContext } from "../../App";
 import dhl_logo from "../../images/dhl_logo.JPG";
@@ -12,7 +12,16 @@ import ShippingItem from "../ShippingItem/ShippingItem";
 import "./ShoppingCart.css";
 
 export default function ShoppingCart() {
+  const [order, setOrder] = useState({
+    products: [],
+    courier_company: {},
+    total: 0,
+  });
   const { shoppingCart, cartTotal, setCartTotal } = useContext(GlobalContext);
+  const [courierCompany, setCourierCompany] = useState({
+    company: "ups",
+    cost: 14,
+  });
 
   const calculateCartTotal = () => {
     let total = 0;
@@ -20,11 +29,22 @@ export default function ShoppingCart() {
     setCartTotal(total);
   };
 
+  const selectedCourier = (e) => {
+    setCourierCompany({ company: e.target.value, cost: 14 });
+  };
+
+  const orderCheckout = () => {
+    setOrder({
+      products: shoppingCart,
+      courier_company: courierCompany,
+      total: cartTotal,
+    });
+  };
+
   useEffect(() => {
     calculateCartTotal();
   }, [shoppingCart]);
-
-  console.log(shoppingCart);
+  console.log("order", order);
 
   return (
     <div className="cart-container">
@@ -55,8 +75,18 @@ export default function ShoppingCart() {
       </div>
       <div className="cart shipping-container">
         <h4>Shipping</h4>
-        <ShippingItem logo={ups_logo} price={14} />
-        <ShippingItem logo={dhl_logo} price={14} />
+        <ShippingItem
+          passedEvent={selectedCourier}
+          logo={ups_logo}
+          price={14}
+          courier_company={"ups"}
+        />
+        <ShippingItem
+          passedEvent={selectedCourier}
+          logo={dhl_logo}
+          price={14}
+          courier_company={"dhl"}
+        />
       </div>
       <div className="cart other-container">
         <h4>Other services</h4>
@@ -67,7 +97,7 @@ export default function ShoppingCart() {
           <GeneralButton text={"CONTINUE SHOPPING"} />
         </Link>
         <Link to="/pay">
-          <GeneralButton text={"CHECKOUT"} />
+          <GeneralButton passedEvent={orderCheckout} text={"CHECKOUT"} />
         </Link>
       </div>
     </div>
