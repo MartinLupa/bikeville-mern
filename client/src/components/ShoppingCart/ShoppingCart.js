@@ -45,6 +45,7 @@ export default function ShoppingCart() {
 
   useEffect(() => {
     calculateCartTotal();
+    window.localStorage.setItem("shoppingCart", JSON.stringify(shoppingCart));
   }, [shoppingCart]);
   console.log("order", order.products.length);
 

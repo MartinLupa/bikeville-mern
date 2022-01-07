@@ -28,8 +28,8 @@ export const OrderSummary = () => {
     <div className="summary-container">
       <h1>Your are almost ready to hit the road!</h1>
       <h2>Order summary:</h2>
-      {order?.products.map((product) => (
-        <CartItem key={product.product_id} product={product} />
+      {order?.products.map((product, index) => (
+        <CartItem key={index} product={product} />
       ))}
       Courier company: {order.courier_company.company.toUpperCase()}
       <p>Expected delivery: {`${date} / ${month} / ${year}`}</p>

@@ -1,7 +1,7 @@
 import { createContext, useState } from "react";
 import "./App.css";
 import Footer from "./components/Footer/Footer";
-import Router from "./Router";
+import PublicRouter from "./routers/PublicRouter";
 
 export const GlobalContext = createContext();
 
@@ -36,7 +36,7 @@ function App() {
             setOrder,
           }}
         >
-          <Router />
+          <PublicRouter />
         </GlobalContext.Provider>
       </div>
       <Footer />
