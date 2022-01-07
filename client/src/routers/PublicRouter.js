@@ -23,12 +23,10 @@ export default function PublicRouter() {
           element={<ProductDetails />}
         />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/shopping_cart/:userId" element={<ShoppingCart />} />
         <Route path="/registration" element={<RegistrationAndLogin />} />
         <Route path="/login" element={<RegistrationAndLogin />} />
         <Route path="/shopping_cart/:userId" element={<ShoppingCart />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/pay" element={<Pay />} />
-        <Route path="/success" element={<Success />} />
 
         <Route path="*" element={<NotFound />} />
       </Routes>
