@@ -10,7 +10,7 @@ import "./Pay.css";
 
 export default function Pay() {
   const [stripeToken, setStripeToken] = useState(null);
-  const { cartTotal, order } = useContext(GlobalContext);
+  const { order } = useContext(GlobalContext);
   const navigate = useNavigate();
 
   const onToken = (token) => {

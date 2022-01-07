@@ -7,6 +7,7 @@ const ProductSchema = new mongoose.Schema(
     trail_type: { type: String, required: true },
     product_id: { type: String, required: true, unique: true },
     image: { type: String, required: true },
+    short_description: { type: String, required: true },
     description: { type: String, required: true },
     type: { type: String, required: true },
     brake_type: { type: String, required: true },
@@ -15,7 +16,7 @@ const ProductSchema = new mongoose.Schema(
     net_price: { type: Number, required: true },
     vat: { type: Number, required: true },
     full_price: { type: Number, required: true },
-    stock: { type: Number, required: true },
+    inStock: { type: Boolean, required: true },
   },
   { timestamps: true }
 );
