@@ -1,6 +1,8 @@
 import { Form, Formik } from "formik";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 import * as Yup from "yup";
+import { GlobalContext } from "../../App";
 import { FormField } from "../FormField/FormField";
 import GeneralButton from "../GeneralButton/GeneralButton";
 import "./Login.css";
@@ -10,30 +12,32 @@ const initialValues = {
   password: "",
 };
 
-const onSubmit = (values, { resetForm }) => {
-  console.log(values);
-  fetch("http://localhost:5000/api/auth/login", {
-    method: "POST",
-    body: JSON.stringify({
-      email: values.email,
-      password: values.password,
-    }),
-    headers: { "Content-type": "application/json" },
-  }).then((req) => {
-    req.json().then((data) => {
-      console.log(data);
-    });
-  });
-
-  resetForm();
-};
-
 const validationSchema = Yup.object({
   email: Yup.string().email("Invalid email format").required("Required"),
   password: Yup.string().required("Required"),
 });
 
 export default function Login() {
+  const { setUser } = useContext(GlobalContext);
+
+  const onSubmit = (values, { resetForm }) => {
+    console.log(values);
+    fetch("http://localhost:5000/api/auth/login", {
+      method: "POST",
+      body: JSON.stringify({
+        email: values.email,
+        password: values.password,
+      }),
+      headers: { "Content-type": "application/json" },
+    }).then((req) => {
+      req.json().then((data) => {
+        setUser(data);
+      });
+    });
+
+    resetForm();
+  };
+
   return (
     <Formik
       initialValues={initialValues}

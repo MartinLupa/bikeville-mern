@@ -5,6 +5,7 @@ import "./RegistrationAndLogin.css";
 
 export default function RegistrationAndLogin() {
   const location = useLocation();
+
   return (
     <div className="registration-container">
       <div className="register-img"></div>

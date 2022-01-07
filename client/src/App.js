@@ -16,6 +16,7 @@ function App() {
     courier_company: {},
     total: 0,
   });
+  const [user, setUser] = useState();
 
   return (
     <div className="app-container">
@@ -34,6 +35,8 @@ function App() {
             setCartTotal,
             order,
             setOrder,
+            user,
+            setUser,
           }}
         >
           <PublicRouter />

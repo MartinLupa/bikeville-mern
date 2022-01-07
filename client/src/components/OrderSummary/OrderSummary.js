@@ -4,7 +4,8 @@ import CartItem from "../CartItem/CartItem";
 import "./OrderSummary.css";
 
 export const OrderSummary = () => {
-  const { order } = useContext(GlobalContext);
+  const { order, user } = useContext(GlobalContext);
+  console.log(user);
 
   const monthNames = [
     "January",
@@ -26,13 +27,22 @@ export const OrderSummary = () => {
 
   return (
     <div className="summary-container">
-      <h1>Your are almost ready to hit the road!</h1>
+      <h1>{user.first_name} you are almost ready to hit the road!</h1>
       <h2>Order summary:</h2>
       {order?.products.map((product, index) => (
         <CartItem key={index} product={product} />
       ))}
       Courier company: {order.courier_company.company.toUpperCase()}
       <p>Expected delivery: {`${date} / ${month} / ${year}`}</p>
+      <p>Delivery address: </p>
+      <ul>
+        <li>
+          Street: {`${user.address.street} ${user.address.street_number}`}
+        </li>
+        <li>Postal code: {user.address.postal_code}</li>
+        <li>City: {user.address.city}</li>
+        <li>Country: {user.address.country}</li>
+      </ul>
       <h3>Total: € {order?.total}</h3>
     </div>
   );

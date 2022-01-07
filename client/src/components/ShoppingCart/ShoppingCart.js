@@ -12,13 +12,17 @@ import ShippingItem from "../ShippingItem/ShippingItem";
 import "./ShoppingCart.css";
 
 export default function ShoppingCart() {
-  const { shoppingCart, cartTotal, setCartTotal, order, setOrder } =
+  const { shoppingCart, cartTotal, setCartTotal, order, setOrder, user } =
     useContext(GlobalContext);
   const [courierCompany, setCourierCompany] = useState({
     company: "ups",
     cost: 14,
   });
   const navigate = useNavigate();
+
+  //--------------------
+
+  //--------------------
 
   const calculateCartTotal = () => {
     let total = 0;
@@ -33,12 +37,16 @@ export default function ShoppingCart() {
   const orderCheckout = () => {
     if (shoppingCart.length === 0) {
       alert("Your shopping cart is empty");
+    } else if (!user) {
+      alert("You need to be logged in to proceed. You will be redirected..");
+      navigate("/login");
     } else {
       setOrder({
         products: shoppingCart,
         courier_company: courierCompany,
         total: cartTotal,
       });
+
       navigate("/pay");
     }
   };

@@ -22,7 +22,7 @@ export default function Pay() {
       try {
         const res = await axios.post(
           "http://localhost:5000/api/checkout/payment",
-          { tokenId: stripeToken.id, amount: order.total }
+          { tokenId: stripeToken.id, amount: order.total * 100 }
         );
         console.log(res.data);
         navigate("/success");
