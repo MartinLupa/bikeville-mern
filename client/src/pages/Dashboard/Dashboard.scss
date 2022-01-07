@@ -2,30 +2,25 @@
 
 .dashboard-container {
   margin: 20px;
-  border: 1px solid $light-border-color;
+  padding: 10px;
   border-radius: 5px;
-  min-height: 100vh;
-}
-
-.kpi-container {
-  margin-left: 10px;
-  margin-right: 10px;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
 }
 
-.kpi {
-  margin: 25px 15px;
-  width: 23%;
-  border: 1px solid $light-border-color;
-  border-radius: 3px;
-}
+// .dashboard-aside {
+//   display: flex;
+//   flex-direction: column;
+//   padding: 10px;
+//   border: 1px solid $light-border-color;
+//   border-radius: 5px;
+//   min-width: 300px;
+// }
 
-.dashboard-orders {
-  border: 1px solid $light-border-color;
-  border-radius: 3px;
-  margin: 0px 25px;
+.dashboard-links {
+  display: flex;
+  align-items: space-between;
 }
 
 .dashboard-btn {

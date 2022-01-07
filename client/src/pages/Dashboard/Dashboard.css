@@ -1,34 +1,26 @@
 .dashboard-container {
   margin: 20px;
-  border: 1px solid #d7d3d3;
+  padding: 10px;
   border-radius: 5px;
-  min-height: 100vh;
-}
-
-.kpi-container {
-  margin-left: 10px;
-  margin-right: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.kpi {
-  margin: 25px 15px;
-  width: 23%;
-  border: 1px solid #d7d3d3;
-  border-radius: 3px;
-}
-
-.dashboard-orders {
-  border: 1px solid #d7d3d3;
-  border-radius: 3px;
-  margin: 0px 25px;
+.dashboard-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: space-between;
+      -ms-flex-align: space-between;
+          align-items: space-between;
 }
 
 .dashboard-btn {
