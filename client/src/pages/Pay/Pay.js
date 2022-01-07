@@ -10,7 +10,7 @@ import "./Pay.css";
 
 export default function Pay() {
   const [stripeToken, setStripeToken] = useState(null);
-  const { order } = useContext(GlobalContext);
+  const { order, setShoppingCart } = useContext(GlobalContext);
   const navigate = useNavigate();
 
   const onToken = (token) => {
@@ -26,6 +26,7 @@ export default function Pay() {
         );
         console.log(res.data);
         navigate("/success");
+        setShoppingCart([]);
       } catch (err) {
         console.log(err);
       }
@@ -50,9 +51,11 @@ export default function Pay() {
             billingAddress
             shippingAddress
             description={`Your total is EUR ${order.total},00`}
-            amount={order.total}
+            amount={order.total * 100}
             token={onToken}
-            stripeKey="pk_test_51KC2PyFVmRibgb7cIfnBbyEhMhTQDOus9i0naKot6ArtGLdNLbI4WuJqtzbF4o4z87PiMjRBzQ9QTOuhwXmMUvRE00ZihdQeV2"
+            stripeKey={
+              "pk_test_51KC2PyFVmRibgb7cIfnBbyEhMhTQDOus9i0naKot6ArtGLdNLbI4WuJqtzbF4o4z87PiMjRBzQ9QTOuhwXmMUvRE00ZihdQeV2"
+            }
           >
             <GeneralButton text={"PAY"} />
           </StripeCheckout>
