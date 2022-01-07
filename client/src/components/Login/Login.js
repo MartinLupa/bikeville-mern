@@ -18,7 +18,7 @@ const validationSchema = Yup.object({
 });
 
 export default function Login() {
-  const { setUser } = useContext(GlobalContext);
+  const { user, setUser } = useContext(GlobalContext);
   const navigate = useNavigate();
 
   const onSubmit = (values, { resetForm }) => {
@@ -35,7 +35,6 @@ export default function Login() {
         setUser(data);
       });
     });
-
     resetForm();
     navigate(-1);
   };
