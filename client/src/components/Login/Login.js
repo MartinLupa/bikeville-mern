@@ -1,6 +1,6 @@
 import { Form, Formik } from "formik";
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import * as Yup from "yup";
 import { GlobalContext } from "../../App";
 import { FormField } from "../FormField/FormField";
@@ -19,6 +19,7 @@ const validationSchema = Yup.object({
 
 export default function Login() {
   const { setUser } = useContext(GlobalContext);
+  const navigate = useNavigate();
 
   const onSubmit = (values, { resetForm }) => {
     console.log(values);
@@ -36,6 +37,7 @@ export default function Login() {
     });
 
     resetForm();
+    navigate(-1);
   };
 
   return (

@@ -20,10 +20,6 @@ export default function ShoppingCart() {
   });
   const navigate = useNavigate();
 
-  //--------------------
-
-  //--------------------
-
   const calculateCartTotal = () => {
     let total = 0;
     shoppingCart.map((item) => (total += item[0].full_price));
