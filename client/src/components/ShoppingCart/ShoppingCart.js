@@ -95,7 +95,7 @@ export default function ShoppingCart() {
         <OtherServiceItem text={"Present packaging"} img={present_packaging} />
       </div>
       <div className="cart-btn">
-        <Link to="/">
+        <Link to="/showroom">
           <GeneralButton text={"CONTINUE SHOPPING"} />
         </Link>
 
