@@ -3,6 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import StripeCheckout from "react-stripe-checkout";
 import { GlobalContext } from "../../App";
+import CircularIndeterminate from "../../components/CircularProgress/CircularProgress";
 import GeneralButton from "../../components/GeneralButton/GeneralButton";
 import { OrderSummary } from "../../components/OrderSummary/OrderSummary";
 import "./Pay.css";
@@ -35,7 +36,12 @@ export default function Pay() {
   return (
     <div className="pay-container">
       {stripeToken ? (
-        <span>Processing. Please wait...</span>
+        <div className="processing-info">
+          <CircularIndeterminate />
+          <h2>
+            <span>Processing. Please wait...</span>
+          </h2>
+        </div>
       ) : (
         <div className="summary-info">
           <OrderSummary />
