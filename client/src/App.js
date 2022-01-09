@@ -1,7 +1,7 @@
 import { createContext, useState } from "react";
 import "./App.css";
 import Footer from "./components/Footer/Footer";
-import PublicRouter from "./routers/PublicRouter";
+import { PublicRouter } from "./routers/PublicRouter";
 
 export const GlobalContext = createContext();
 

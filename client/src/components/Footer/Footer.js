@@ -2,7 +2,7 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import "./Footer.css";
 
-export default function Footer() {
+export const Footer = () => {
   const date = new Date();
   const year = date.getFullYear();
 
@@ -22,4 +22,4 @@ export default function Footer() {
       </div>
     </footer>
   );
-}
+};

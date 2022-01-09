@@ -10,7 +10,7 @@ import { RegistrationAndLogin } from "../pages/RegistrationAndLogin/Registration
 import { Showroom } from "../pages/Showroom/Showroom";
 import { Success } from "../pages/Success/Success";
 
-export default function PublicRouter() {
+export const PublicRouter = () => {
   return (
     <>
       <BrowserRouter>
@@ -35,4 +35,4 @@ export default function PublicRouter() {
       </BrowserRouter>
     </>
   );
-}
+};
