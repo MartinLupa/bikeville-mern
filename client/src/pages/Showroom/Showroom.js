@@ -6,8 +6,8 @@ import { ProductFilter } from "../../components/ProductFilter/ProductFilter";
 import { TopScroll } from "../../components/TopScroll/TopScroll";
 import "./Showroom.css";
 
-export const Showroom = () => {
-  const { catalog, setCatalog, filteredCatalog } = useContext(GlobalContext);
+export const Showroom = ({ filteredCatalog, setFilteredCatalog }) => {
+  const { catalog, setCatalog } = useContext(GlobalContext);
 
   let productsToRender;
   if (filteredCatalog?.length > 0) {
@@ -34,7 +34,11 @@ export const Showroom = () => {
     <div>
       <TopScroll />
       <div className="main-container">
-        <ProductFilter />
+        <ProductFilter
+          catalog={catalog}
+          setCatalog={setCatalog}
+          setFilteredCatalog={setFilteredCatalog}
+        />
         {productsToRender?.map((product) => {
           return (
             <ProductCard

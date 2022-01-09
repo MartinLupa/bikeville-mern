@@ -4,11 +4,11 @@ import { GlobalContext } from "../../App";
 import dhl_logo from "../../images/dhl_logo.JPG";
 import present_packaging from "../../images/present_packaging.JPG";
 import ups_logo from "../../images/ups_logo.JPG";
-import { CartItem } from "../CartItem/CartItem";
-import { GeneralButton } from "../GeneralButton/GeneralButton";
-import { OtherServiceItem } from "../OtherServiceItem/OtherServiceItem";
-import { PaymentItem } from "../PaymentItem/PaymentItem";
-import { ShippingItem } from "../ShippingItem/ShippingItem";
+import { CartItem } from "../../components/CartItem/CartItem";
+import { GeneralButton } from "../../components/GeneralButton/GeneralButton";
+import { OtherServiceItem } from "../../components/OtherServiceItem/OtherServiceItem";
+import { PaymentItem } from "../../components/PaymentItem/PaymentItem";
+import { ShippingItem } from "../../components/ShippingItem/ShippingItem";
 import "./ShoppingCart.css";
 
 export const ShoppingCart = () => {

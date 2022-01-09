@@ -1,6 +1,6 @@
 import { createContext, useState } from "react";
 import "./App.css";
-import Footer from "./components/Footer/Footer";
+import { Footer } from "./components/Footer/Footer";
 import { PublicRouter } from "./routers/PublicRouter";
 
 export const GlobalContext = createContext();
@@ -29,8 +29,6 @@ function App() {
             setProductID,
             shoppingCart,
             setShoppingCart,
-            filteredCatalog,
-            setFilteredCatalog,
             cartTotal,
             setCartTotal,
             order,
@@ -39,7 +37,10 @@ function App() {
             setUser,
           }}
         >
-          <PublicRouter />
+          <PublicRouter
+            filteredCatalog={filteredCatalog}
+            setFilteredCatalog={setFilteredCatalog}
+          />
         </GlobalContext.Provider>
       </div>
       <Footer />

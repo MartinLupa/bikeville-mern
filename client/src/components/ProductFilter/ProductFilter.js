@@ -1,11 +1,8 @@
-import { useContext } from "react";
-import { GlobalContext } from "../../App";
 import { useForm } from "../../hooks/useForm";
 import { GeneralButton } from "../GeneralButton/GeneralButton";
 import "./ProductFilter.css";
 
-export const ProductFilter = () => {
-  const { catalog, setCatalog, setFilteredCatalog } = useContext(GlobalContext);
+export const ProductFilter = ({ catalog, setCatalog, setFilteredCatalog }) => {
   const [formValues, handleInputChange, reset] = useForm({ searchText: "" });
   const { searchText } = formValues;
 
