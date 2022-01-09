@@ -48,7 +48,7 @@ export const ShoppingCart = () => {
 
   useEffect(() => {
     calculateCartTotal();
-    localStorage.setItem("shoppingCart", JSON.stringify(shoppingCart));
+    console.log(user);
   }, [shoppingCart]);
 
   return (

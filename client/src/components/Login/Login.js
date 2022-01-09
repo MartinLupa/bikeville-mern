@@ -1,5 +1,5 @@
 import { Form, Formik } from "formik";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import * as Yup from "yup";
 import { GlobalContext } from "../../App";
@@ -32,21 +32,12 @@ export const Login = () => {
       headers: { "Content-type": "application/json" },
     }).then((req) => {
       req.json().then((data) => {
-        if (data === "Wrong credentials.") {
-          alert("Invalid password or email.");
-          return;
-        } else {
-          setUser(data);
-          resetForm();
-          navigate(-1);
-        }
+        setUser(data);
+        resetForm();
+        navigate(-1);
       });
     });
   };
-
-  useEffect(() => {
-    localStorage.setItem("loggedUser", JSON.stringify(user));
-  }, [user]);
 
   return (
     <Formik
