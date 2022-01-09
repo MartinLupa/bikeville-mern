@@ -8,7 +8,8 @@ import "../../styles/Variables.scss";
 import "./Navbar.css";
 
 export const Navbar = () => {
-  const { shoppingCart } = useContext(GlobalContext);
+  const { shoppingCart, user } = useContext(GlobalContext);
+
   return (
     <nav className="navbar-container sticky">
       <NavLink
@@ -52,6 +53,7 @@ export const Navbar = () => {
             <p>REGISTER</p>
           </div>
         </NavLink>
+
         <NavLink
           className={(navData) =>
             navData.isActive ? "nav-link active" : "nav-link"
@@ -62,6 +64,7 @@ export const Navbar = () => {
             <p>LOGIN</p>
           </div>
         </NavLink>
+
         <NavLink
           className={(navData) => (navData.isActive ? "nav-link" : "nav-link")}
           to="/shopping_cart/:userId"

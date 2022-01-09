@@ -32,12 +32,17 @@ export const Login = () => {
       headers: { "Content-type": "application/json" },
     }).then((req) => {
       req.json().then((data) => {
-        setUser(data);
-        localStorage.setItem("loggedUser", JSON.stringify(user));
+        if (data === "Wrong credentials.") {
+          alert("Invalid password or user email.");
+          return;
+        } else {
+          setUser(data);
+          localStorage.setItem("loggedUser", JSON.stringify(user));
+          resetForm();
+          navigate(-1);
+        }
       });
     });
-    resetForm();
-    navigate(-1);
   };
 
   return (
