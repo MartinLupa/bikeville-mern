@@ -12,7 +12,7 @@ import ups_logo from "../../images/ups_logo.JPG";
 import "./ShoppingCart.css";
 
 export const ShoppingCart = () => {
-  const { shoppingCart, cartTotal, setCartTotal, order, setOrder, user } =
+  const { shoppingCart, cartTotal, setCartTotal, setOrder, user } =
     useContext(GlobalContext);
   const [courierCompany, setCourierCompany] = useState({
     company: "ups",
@@ -48,7 +48,7 @@ export const ShoppingCart = () => {
 
   useEffect(() => {
     calculateCartTotal();
-    window.localStorage.setItem("shoppingCart", JSON.stringify(shoppingCart));
+    localStorage.setItem("shoppingCart", JSON.stringify(shoppingCart));
   }, [shoppingCart]);
 
   return (

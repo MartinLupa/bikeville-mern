@@ -1,5 +1,5 @@
 import { Form, Formik } from "formik";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import * as Yup from "yup";
 import { GlobalContext } from "../../App";
@@ -37,13 +37,16 @@ export const Login = () => {
           return;
         } else {
           setUser(data);
-          localStorage.setItem("loggedUser", JSON.stringify(user));
           resetForm();
           navigate(-1);
         }
       });
     });
   };
+
+  useEffect(() => {
+    localStorage.setItem("loggedUser", JSON.stringify(user));
+  }, [user]);
 
   return (
     <Formik
