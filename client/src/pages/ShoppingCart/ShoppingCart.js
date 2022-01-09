@@ -1,14 +1,14 @@
 import { useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { GlobalContext } from "../../App";
-import dhl_logo from "../../images/dhl_logo.JPG";
-import present_packaging from "../../images/present_packaging.JPG";
-import ups_logo from "../../images/ups_logo.JPG";
 import { CartItem } from "../../components/CartItem/CartItem";
 import { GeneralButton } from "../../components/GeneralButton/GeneralButton";
 import { OtherServiceItem } from "../../components/OtherServiceItem/OtherServiceItem";
 import { PaymentItem } from "../../components/PaymentItem/PaymentItem";
 import { ShippingItem } from "../../components/ShippingItem/ShippingItem";
+import dhl_logo from "../../images/dhl_logo.JPG";
+import present_packaging from "../../images/present_packaging.JPG";
+import ups_logo from "../../images/ups_logo.JPG";
 import "./ShoppingCart.css";
 
 export const ShoppingCart = () => {
@@ -42,7 +42,6 @@ export const ShoppingCart = () => {
         courier_company: courierCompany,
         total: cartTotal,
       });
-
       navigate("/pay");
     }
   };
@@ -51,7 +50,6 @@ export const ShoppingCart = () => {
     calculateCartTotal();
     window.localStorage.setItem("shoppingCart", JSON.stringify(shoppingCart));
   }, [shoppingCart]);
-  console.log("order", order.products.length);
 
   return (
     <div className="cart-container">

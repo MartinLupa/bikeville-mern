@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import "./App.css";
 import { Footer } from "./components/Footer/Footer";
 import { PublicRouter } from "./routers/PublicRouter";
@@ -18,6 +18,11 @@ function App() {
   });
   const [user, setUser] = useState();
 
+  //JSON.parse of something null, returns null. So I need an or conditional to render an empty array if there are no items in the shoppingCart, otherwise app will crash.
+  useEffect(() => {
+    setShoppingCart(JSON.parse(localStorage.getItem("shoppingCart")) || []);
+  }, []);
+
   return (
     <div className="app-container">
       <div>
@@ -25,6 +30,9 @@ function App() {
           value={{
             catalog,
             setCatalog,
+            //TO COMPARE:
+            // filteredCatalog,
+            // setFilteredCatalog,
             productID,
             setProductID,
             shoppingCart,
