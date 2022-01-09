@@ -3,12 +3,12 @@ import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import StripeCheckout from "react-stripe-checkout";
 import { GlobalContext } from "../../App";
-import CircularIndeterminate from "../../components/CircularProgress/CircularProgress";
-import GeneralButton from "../../components/GeneralButton/GeneralButton";
+import { CircularIndeterminate } from "../../components/CircularProgress/CircularProgress";
+import { GeneralButton } from "../../components/GeneralButton/GeneralButton";
 import { OrderSummary } from "../../components/OrderSummary/OrderSummary";
 import "./Pay.css";
 
-export default function Pay() {
+export const Pay = () => {
   const [stripeToken, setStripeToken] = useState(null);
   const { order, setShoppingCart } = useContext(GlobalContext);
   const navigate = useNavigate();
@@ -63,4 +63,4 @@ export default function Pay() {
       )}
     </div>
   );
-}
+};

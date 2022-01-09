@@ -2,7 +2,7 @@ import { Form, Formik } from "formik";
 import { Link } from "react-router-dom";
 import * as Yup from "yup";
 import { FormField } from "../FormField/FormField";
-import GeneralButton from "../GeneralButton/GeneralButton";
+import { GeneralButton } from "../GeneralButton/GeneralButton";
 import "./RegisterForm.css";
 
 const initialValues = {
@@ -62,7 +62,7 @@ const validationSchema = Yup.object({
   password: Yup.string().required("Required"),
 });
 
-export default function RegisterForm() {
+export const RegisterForm = () => {
   return (
     <Formik
       initialValues={initialValues}
@@ -173,4 +173,4 @@ export default function RegisterForm() {
       </Form>
     </Formik>
   );
-}
+};

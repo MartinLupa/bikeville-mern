@@ -1,7 +1,7 @@
 // import MapContainer from "../../components/Map/MapContainer";
 import "./Contact.css";
 
-export default function Contact() {
+export const Contact = () => {
   return (
     <div className="contact-container">
       <h1>Map goes here</h1>
@@ -10,4 +10,4 @@ export default function Contact() {
       </div> */}
     </div>
   );
-}
+};

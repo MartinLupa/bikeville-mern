@@ -3,10 +3,10 @@ import "animate.css";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { GlobalContext } from "../../App";
-import AddCartIcon from "../AddCartIcon/AddCartIcon";
+import { AddCartIcon } from "../AddCartIcon/AddCartIcon";
 import "./ProductCard.css";
 
-export default function ProductCard({
+export const ProductCard = ({
   image,
   model,
   short_description,
@@ -14,7 +14,7 @@ export default function ProductCard({
   groupset,
   full_price,
   id,
-}) {
+}) => {
   const { setProductID } = useContext(GlobalContext);
 
   const handleDetailsClick = (e) => {
@@ -50,4 +50,4 @@ export default function ProductCard({
       </div>
     </div>
   );
-}
+};

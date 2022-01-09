@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import * as Yup from "yup";
 import { GlobalContext } from "../../App";
 import { FormField } from "../FormField/FormField";
-import GeneralButton from "../GeneralButton/GeneralButton";
+import { GeneralButton } from "../GeneralButton/GeneralButton";
 import "./Login.css";
 
 const initialValues = {
@@ -17,8 +17,8 @@ const validationSchema = Yup.object({
   password: Yup.string().required("Required"),
 });
 
-export default function Login() {
-  const { user, setUser } = useContext(GlobalContext);
+export const Login = () => {
+  const { setUser } = useContext(GlobalContext);
   const navigate = useNavigate();
 
   const onSubmit = (values, { resetForm }) => {
@@ -73,4 +73,4 @@ export default function Login() {
       </Form>
     </Formik>
   );
-}
+};

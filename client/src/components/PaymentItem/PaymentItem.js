@@ -1,6 +1,6 @@
 import "./PaymentItem.css";
 
-export default function PaymentItem({ product }) {
+export const PaymentItem = ({ product }) => {
   return (
     <div className="payment-item">
       <div>
@@ -25,4 +25,4 @@ export default function PaymentItem({ product }) {
       </div>
     </div>
   );
-}
+};

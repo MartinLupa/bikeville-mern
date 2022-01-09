@@ -1,10 +1,10 @@
 import { useContext, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { GlobalContext } from "../../App";
-import CartItemButton from "../CartItemButton/CartItemButton";
+import { CartItemButton } from "../CartItemButton/CartItemButton";
 import "./CartItem.css";
 
-export default function CartItem({ product }) {
+export const CartItem = ({ product }) => {
   const { shoppingCart, setShoppingCart } = useContext(GlobalContext);
   const [qtyCounter, setQtyCounter] = useState(1);
   const location = useLocation();
@@ -52,4 +52,4 @@ export default function CartItem({ product }) {
       </div>
     </div>
   );
-}
+};

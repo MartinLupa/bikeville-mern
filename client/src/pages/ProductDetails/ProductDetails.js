@@ -1,9 +1,9 @@
 import { useContext } from "react";
 import { GlobalContext } from "../../App";
-import AddCartButton from "../../components/AddCartButton/AddCartButton";
+import { AddCartButton } from "../../components/AddCartButton/AddCartButton";
 import "./ProductDetails.css";
 
-export default function ProductDetails() {
+export const ProductDetails = () => {
   const { catalog, productID } = useContext(GlobalContext);
 
   const filteredProduct = catalog?.filter(
@@ -48,4 +48,4 @@ export default function ProductDetails() {
       </div>
     </div>
   );
-}
+};

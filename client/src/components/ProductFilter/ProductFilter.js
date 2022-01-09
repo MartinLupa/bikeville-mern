@@ -1,10 +1,10 @@
 import { useContext } from "react";
 import { GlobalContext } from "../../App";
 import { useForm } from "../../hooks/useForm";
-import GeneralButton from "../GeneralButton/GeneralButton";
+import { GeneralButton } from "../GeneralButton/GeneralButton";
 import "./ProductFilter.css";
 
-export default function ProductFilter() {
+export const ProductFilter = () => {
   const { catalog, setCatalog, setFilteredCatalog } = useContext(GlobalContext);
   const [formValues, handleInputChange, reset] = useForm({ searchText: "" });
   const { searchText } = formValues;
@@ -66,4 +66,4 @@ export default function ProductFilter() {
       </div>
     </div>
   );
-}
+};

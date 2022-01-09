@@ -1,12 +1,12 @@
 import { useContext, useEffect } from "react";
 import { GlobalContext } from "../../App";
-import Newsletter from "../../components/Newsletter/Newsletter";
-import ProductCard from "../../components/ProductCard/ProductCard";
-import ProductFilter from "../../components/ProductFilter/ProductFilter";
+import { Newsletter } from "../../components/Newsletter/Newsletter";
+import { ProductCard } from "../../components/ProductCard/ProductCard";
+import { ProductFilter } from "../../components/ProductFilter/ProductFilter";
 import { TopScroll } from "../../components/TopScroll/TopScroll";
 import "./Showroom.css";
 
-export default function Showroom() {
+export const Showroom = () => {
   const { catalog, setCatalog, filteredCatalog } = useContext(GlobalContext);
 
   let productsToRender;
@@ -16,13 +16,6 @@ export default function Showroom() {
     productsToRender = catalog;
   }
   useEffect(() => {
-    // fetch("catalog.json", {
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //     Accept: "application/json",
-    //   },
-    // })
-
     fetch("http://localhost:5000/api/products", {
       method: "GET",
 
@@ -42,7 +35,6 @@ export default function Showroom() {
       <TopScroll />
       <div className="main-container">
         <ProductFilter />
-
         {productsToRender?.map((product) => {
           return (
             <ProductCard
@@ -59,4 +51,4 @@ export default function Showroom() {
       </div>
     </div>
   );
-}
+};

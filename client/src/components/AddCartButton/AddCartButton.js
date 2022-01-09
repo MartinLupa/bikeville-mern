@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { GlobalContext } from "../../App";
 import "./AddCartButton.css";
 
-export default function AddCartButton({ id }) {
+export const AddCartButton = ({ id }) => {
   const { setShoppingCart, catalog } = useContext(GlobalContext);
 
   const handleAddClick = () => {
@@ -17,4 +17,4 @@ export default function AddCartButton({ id }) {
       ADD TO CART
     </button>
   );
-}
+};

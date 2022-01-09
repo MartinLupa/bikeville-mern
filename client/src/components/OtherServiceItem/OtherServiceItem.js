@@ -1,6 +1,6 @@
 import "./OtherServiceItem.css";
 
-export default function OtherServiceItem({ img, text }) {
+export const OtherServiceItem = ({ img, text }) => {
   return (
     <div className="other-service-container">
       <input type="radio" />
@@ -8,4 +8,4 @@ export default function OtherServiceItem({ img, text }) {
       <p>{text}</p>
     </div>
   );
-}
+};

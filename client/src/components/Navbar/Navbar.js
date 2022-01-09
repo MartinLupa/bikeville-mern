@@ -7,7 +7,7 @@ import { GlobalContext } from "../../App";
 import "../../styles/Variables.scss";
 import "./Navbar.css";
 
-export default function Navbar() {
+export const Navbar = () => {
   const { shoppingCart } = useContext(GlobalContext);
   return (
     <nav className="navbar-container sticky">
@@ -77,4 +77,4 @@ export default function Navbar() {
       </div>
     </nav>
   );
-}
+};

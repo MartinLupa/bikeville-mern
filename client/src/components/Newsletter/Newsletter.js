@@ -1,7 +1,7 @@
 import SendOutlinedIcon from "@mui/icons-material/SendOutlined";
 import "./Newsletter.css";
 
-export default function Newsletter() {
+export const Newsletter = () => {
   return (
     <div className="newsletter-container">
       <h2>Newsletter</h2>
@@ -14,4 +14,4 @@ export default function Newsletter() {
       </div>
     </div>
   );
-}
+};

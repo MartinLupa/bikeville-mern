@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { GlobalContext } from "../../App";
 import "./AddCartIcon.css";
 
-export default function AddCartIcon({ id }) {
+export const AddCartIcon = ({ id }) => {
   const { setShoppingCart, catalog } = useContext(GlobalContext);
   const handleAddClick = () => {
     const addedProduct = catalog.filter((product) => product.product_id === id);
@@ -19,4 +19,4 @@ export default function AddCartIcon({ id }) {
       />
     </div>
   );
-}
+};

@@ -1,12 +1,6 @@
 import "./ShippingItem.css";
 
-export default function ShippingItem({
-  logo,
-  price,
-  courier_company,
-  passedEvent,
-  checked,
-}) {
+export const ShippingItem = ({ logo, price, courier_company, passedEvent }) => {
   return (
     <div className="shipping-courier">
       <input
@@ -22,4 +16,4 @@ export default function ShippingItem({
       </div>
     </div>
   );
-}
+};

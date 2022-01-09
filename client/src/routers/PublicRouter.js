@@ -1,14 +1,14 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Navbar from "../components/Navbar/Navbar";
-import ShoppingCart from "../components/ShoppingCart/ShoppingCart";
-import Contact from "../pages/Contact/Contact";
+import { Navbar } from "../components/Navbar/Navbar";
+import { ShoppingCart } from "../components/ShoppingCart/ShoppingCart";
+import { Contact } from "../pages/Contact/Contact";
 import { Main } from "../pages/Main/Main";
-import NotFound from "../pages/NotFound/NotFound";
-import Pay from "../pages/Pay/Pay";
-import ProductDetails from "../pages/ProductDetails/ProductDetails";
-import RegistrationAndLogin from "../pages/RegistrationAndLogin/RegistrationAndLogin";
-import Showroom from "../pages/Showroom/Showroom";
-import Success from "../pages/Success/Success";
+import { NotFound } from "../pages/NotFound/NotFound";
+import { Pay } from "../pages/Pay/Pay";
+import { ProductDetails } from "../pages/ProductDetails/ProductDetails";
+import { RegistrationAndLogin } from "../pages/RegistrationAndLogin/RegistrationAndLogin";
+import { Showroom } from "../pages/Showroom/Showroom";
+import { Success } from "../pages/Success/Success";
 
 export default function PublicRouter() {
   return (

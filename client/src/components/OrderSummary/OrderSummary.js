@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { GlobalContext } from "../../App";
-import CartItem from "../CartItem/CartItem";
+import { CartItem } from "../CartItem/CartItem";
 import "./OrderSummary.css";
 
 export const OrderSummary = () => {
