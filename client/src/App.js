@@ -21,7 +21,9 @@ function App() {
   //JSON.parse of something null, returns null. So I need an or conditional to render an empty array if there are no items in the shoppingCart, otherwise app will crash.
   useEffect(() => {
     setShoppingCart(JSON.parse(localStorage.getItem("shoppingCart")) || []);
-    setUser(JSON.parse(localStorage.getItem("loggedUser")));
+    setUser(
+      JSON.parse(localStorage.getItem("loggedUser")) || { logged: false }
+    );
   }, []);
 
   return (

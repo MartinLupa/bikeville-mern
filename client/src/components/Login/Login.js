@@ -33,7 +33,7 @@ export const Login = () => {
     }).then((req) => {
       req.json().then((data) => {
         if (data === "Wrong credentials.") {
-          alert("Invalid password or user email.");
+          alert("Invalid password or email.");
           return;
         } else {
           setUser(data);
