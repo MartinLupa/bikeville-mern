@@ -18,7 +18,7 @@ const validationSchema = Yup.object({
 });
 
 export const Login = () => {
-  const { setUser } = useContext(GlobalContext);
+  const { user, setUser } = useContext(GlobalContext);
   const navigate = useNavigate();
 
   const onSubmit = (values, { resetForm }) => {
@@ -33,6 +33,7 @@ export const Login = () => {
     }).then((req) => {
       req.json().then((data) => {
         setUser(data);
+        localStorage.setItem("loggedUser", JSON.stringify(user));
       });
     });
     resetForm();

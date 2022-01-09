@@ -67,7 +67,7 @@ router.post("/login", async (req, res) => {
     );
 
     //Prevents sending password
-    const { password, ...others } = user._doc;
+    const { password, repeat_password, ...others } = user._doc;
 
     res.status(200).json({ ...others, accessToken });
   } catch (err) {
