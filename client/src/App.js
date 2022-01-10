@@ -1,10 +1,9 @@
 import { createContext, useState } from "react";
 import "./App.css";
 import { Footer } from "./components/Footer/Footer";
-import { PublicRouter } from "./routers/PublicRouter";
+import { UsersRouter } from "./routers/UsersRouter";
 
 export const GlobalContext = createContext();
-export const AuthContext = createContext();
 
 function App() {
   const [catalog, setCatalog] = useState();
@@ -26,9 +25,8 @@ function App() {
           value={{
             catalog,
             setCatalog,
-            //TO COMPARE:
-            // filteredCatalog,
-            // setFilteredCatalog,
+            filteredCatalog,
+            setFilteredCatalog,
             productID,
             setProductID,
             shoppingCart,
@@ -41,10 +39,7 @@ function App() {
             setUser,
           }}
         >
-          <PublicRouter
-            filteredCatalog={filteredCatalog}
-            setFilteredCatalog={setFilteredCatalog}
-          />
+          <UsersRouter />
         </GlobalContext.Provider>
       </div>
       <Footer />

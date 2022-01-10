@@ -32,7 +32,7 @@ export const Login = () => {
       headers: { "Content-type": "application/json" },
     }).then((req) => {
       req.json().then((data) => {
-        setUser(data);
+        setUser({ userInfo: data, isLogged: true });
         resetForm();
         navigate(-1);
       });
