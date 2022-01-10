@@ -1,9 +1,14 @@
-import { createContext, useState } from "react";
+import { createContext, useReducer, useState } from "react";
 import "./App.css";
 import { Footer } from "./components/Footer/Footer";
+import { authReducer } from "./reducers/authReducer";
 import { UsersRouter } from "./routers/UsersRouter";
 
 export const GlobalContext = createContext();
+
+const init = () => {
+  return JSON.parse(localStorage.getItem("user")) || { logged: false };
+};
 
 function App() {
   const [catalog, setCatalog] = useState();
@@ -16,7 +21,8 @@ function App() {
     courier_company: {},
     total: 0,
   });
-  const [user, setUser] = useState();
+  // const [user, setUser] = useState();
+  const [user, dispatch] = useReducer(authReducer, {}, init);
 
   return (
     <div className="app-container">
@@ -36,7 +42,7 @@ function App() {
             order,
             setOrder,
             user,
-            setUser,
+            dispatch,
           }}
         >
           <UsersRouter />

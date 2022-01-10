@@ -60,6 +60,19 @@
   margin-right: 40px;
 }
 
+.logged {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.logged p {
+  margin-bottom: 20px;
+}
+
 .nav-link {
   color: #ff5959 !important;
   margin-left: 20px;

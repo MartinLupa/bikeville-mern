@@ -42,6 +42,14 @@
   margin-right: 40px;
 }
 
+.logged {
+  display: flex;
+  align-items: center;
+  p {
+    margin-bottom: 20px;
+  }
+}
+
 .nav-link {
   color: $secondary-color !important;
   margin-left: 20px;

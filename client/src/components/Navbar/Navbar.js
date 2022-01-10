@@ -2,13 +2,20 @@ import DirectionsBikeIcon from "@mui/icons-material/DirectionsBike";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import Badge from "@mui/material/Badge";
 import { useContext } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { GlobalContext } from "../../App";
 import "../../styles/Variables.scss";
+import { authTypes } from "../../types/types";
 import "./Navbar.css";
 
 export const Navbar = () => {
-  const { shoppingCart, setUser } = useContext(GlobalContext);
+  const { shoppingCart, user, dispatch } = useContext(GlobalContext);
+
+  const handleLogout = () => {
+    dispatch({
+      type: authTypes.logout,
+    });
+  };
 
   return (
     <nav className="navbar-container sticky">
@@ -44,40 +51,70 @@ export const Navbar = () => {
           </div>
         </NavLink>
 
-        <NavLink
-          className={(navData) =>
-            navData.isActive ? "nav-link active" : "nav-link"
-          }
-          to="/registration"
-        >
-          <div className="underline">
-            <p>REGISTER</p>
-          </div>
-        </NavLink>
+        {/* REGISTER CONDITIONAL RENDERING */}
+        {user.logged === true ? null : (
+          <NavLink
+            className={(navData) =>
+              navData.isActive ? "nav-link active" : "nav-link"
+            }
+            to="/registration"
+          >
+            <div className="underline">
+              <p>REGISTER</p>
+            </div>
+          </NavLink>
+        )}
 
-        <NavLink
-          className={(navData) =>
-            navData.isActive ? "nav-link active" : "nav-link"
-          }
-          to="/login"
-        >
-          <div className="underline">
-            <p>LOGIN</p>
-          </div>
-        </NavLink>
+        {/* LOGIN / LOGOUT CONDITIONAL RENDERING */}
+        {user.logged === true ? (
+          <NavLink
+            onClick={handleLogout}
+            className={(navData) =>
+              navData.isActive ? "nav-link active" : "nav-link"
+            }
+            to="/login"
+          >
+            <div className="underline">
+              <p>LOGOUT</p>
+            </div>
+          </NavLink>
+        ) : (
+          <NavLink
+            className={(navData) =>
+              navData.isActive ? "nav-link active" : "nav-link"
+            }
+            to="/login"
+          >
+            <div className="underline">
+              <p>LOGIN</p>
+            </div>
+          </NavLink>
+        )}
 
-        <NavLink
-          className={(navData) => (navData.isActive ? "nav-link" : "nav-link")}
-          to="/shopping_cart/:userId"
-        >
-          <Badge badgeContent={shoppingCart?.length} color="primary">
-            <ShoppingCartOutlinedIcon
-              fontSize="large"
-              className="nav-link"
-              color="action"
-            />
-          </Badge>
-        </NavLink>
+        {user.logged === true ? (
+          <div className="nav-link logged">
+            <p>{user.userInfo.first_name}</p>
+            <Link to="/shopping_cart/:userId">
+              <Badge badgeContent={shoppingCart?.length} color="primary">
+                <ShoppingCartOutlinedIcon
+                  fontSize="large"
+                  className="nav-link"
+                  color="action"
+                />
+              </Badge>
+            </Link>
+          </div>
+        ) : (
+          <Link to="/shopping_cart/:userId">
+            <Badge badgeContent={shoppingCart?.length} color="primary">
+              <ShoppingCartOutlinedIcon
+                fontSize="large"
+                className="nav-link"
+                color="action"
+              />
+            </Badge>
+          </Link>
+        )}
       </div>
     </nav>
   );

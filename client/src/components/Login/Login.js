@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import * as Yup from "yup";
 import { GlobalContext } from "../../App";
+import { authTypes } from "../../types/types";
 import { FormField } from "../FormField/FormField";
 import { GeneralButton } from "../GeneralButton/GeneralButton";
 import "./Login.css";
@@ -18,7 +19,7 @@ const validationSchema = Yup.object({
 });
 
 export const Login = () => {
-  const { user, setUser } = useContext(GlobalContext);
+  const { dispatch } = useContext(GlobalContext);
   const navigate = useNavigate();
 
   const onSubmit = (values, { resetForm }) => {
@@ -32,7 +33,12 @@ export const Login = () => {
       headers: { "Content-type": "application/json" },
     }).then((req) => {
       req.json().then((data) => {
-        setUser({ userInfo: data, isLogged: true });
+        dispatch({
+          type: authTypes.login,
+          payload: { ...data },
+        });
+
+        // setUser(data);
         resetForm();
         navigate(-1);
       });

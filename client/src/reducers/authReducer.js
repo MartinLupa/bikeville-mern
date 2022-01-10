@@ -26,4 +26,17 @@
 //   isLogged: true,
 // };
 
-export const authReducer = (state = {}, action) => {};
+import { authTypes } from "../types/types";
+
+export const authReducer = (state = {}, action) => {
+  switch (action.type) {
+    case authTypes.login:
+      return { userInfo: { ...action.payload }, logged: true };
+
+    case authTypes.logout:
+      return { logged: false };
+
+    default:
+      return state;
+  }
+};
