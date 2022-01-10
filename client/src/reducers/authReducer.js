@@ -26,7 +26,7 @@
 //   isLogged: true,
 // };
 
-import { authTypes } from "../types/types";
+import { authTypes } from "../types/authTypes";
 
 export const authReducer = (state = {}, action) => {
   switch (action.type) {

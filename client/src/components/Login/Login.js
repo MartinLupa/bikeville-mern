@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import * as Yup from "yup";
 import { GlobalContext } from "../../App";
-import { authTypes } from "../../types/types";
+import { authTypes } from "../../types/authTypes";
 import { FormField } from "../FormField/FormField";
 import { GeneralButton } from "../GeneralButton/GeneralButton";
 import "./Login.css";
@@ -38,7 +38,7 @@ export const Login = () => {
           payload: { ...data },
         });
         resetForm();
-        navigate(-1);
+        navigate("/showroom");
       });
     });
   };

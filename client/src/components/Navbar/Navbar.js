@@ -1,21 +1,27 @@
 import DirectionsBikeIcon from "@mui/icons-material/DirectionsBike";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import Badge from "@mui/material/Badge";
-import { useContext } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { useContext, useEffect } from "react";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { GlobalContext } from "../../App";
 import "../../styles/Variables.scss";
-import { authTypes } from "../../types/types";
+import { authTypes } from "../../types/authTypes";
 import "./Navbar.css";
 
 export const Navbar = () => {
   const { shoppingCart, user, dispatch } = useContext(GlobalContext);
-
+  const navigate = useNavigate();
   const handleLogout = () => {
     dispatch({
       type: authTypes.logout,
     });
+
+    navigate("/");
   };
+
+  useEffect(() => {
+    localStorage.setItem("user", JSON.stringify(user));
+  }, [user]);
 
   return (
     <nav className="navbar-container sticky">
