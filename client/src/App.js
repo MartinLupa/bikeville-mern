@@ -1,4 +1,4 @@
-import { createContext, useReducer, useState } from "react";
+import { createContext, useEffect, useReducer, useState } from "react";
 import "./App.css";
 import { Footer } from "./components/Footer/Footer";
 import { authReducer } from "./reducers/authReducer";
@@ -23,6 +23,11 @@ function App() {
   });
   // const [user, setUser] = useState();
   const [user, dispatch] = useReducer(authReducer, {}, init);
+
+  useEffect(() => {
+    if (user.logged === false) return;
+    localStorage.setItem("user", JSON.stringify(user));
+  }, [user]);
 
   return (
     <div className="app-container">

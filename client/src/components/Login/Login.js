@@ -37,8 +37,6 @@ export const Login = () => {
           type: authTypes.login,
           payload: { ...data },
         });
-
-        // setUser(data);
         resetForm();
         navigate(-1);
       });
