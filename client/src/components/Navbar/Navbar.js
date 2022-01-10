@@ -92,7 +92,7 @@ export const Navbar = () => {
         )}
 
         {user.logged === true ? (
-          <div className="nav-link logged">
+          <div className="logged">
             <p>{user.userInfo.first_name}</p>
             <Link to="/shopping_cart/:userId">
               <Badge badgeContent={shoppingCart?.length} color="primary">
