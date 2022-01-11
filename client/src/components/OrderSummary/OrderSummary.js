@@ -27,7 +27,7 @@ export const OrderSummary = () => {
 
   return (
     <div className="summary-container">
-      <h1>{user.first_name} you are almost ready to hit the road!</h1>
+      <h1>{user.userInfo.first_name} you are almost ready to hit the road!</h1>
       <h2>Order summary:</h2>
       {order?.products.map((product, index) => (
         <CartItem key={index} product={product} />
@@ -37,11 +37,12 @@ export const OrderSummary = () => {
       <p>Delivery address: </p>
       <ul>
         <li>
-          Street: {`${user.address.street} ${user.address.street_number}`}
+          Street:{" "}
+          {`${user.userInfo.address.street} ${user.userInfo.address.street_number}`}
         </li>
-        <li>Postal code: {user.address.postal_code}</li>
-        <li>City: {user.address.city}</li>
-        <li>Country: {user.address.country}</li>
+        <li>Postal code: {user.userInfo.address.postal_code}</li>
+        <li>City: {user.userInfo.address.city}</li>
+        <li>Country: {user.userInfo.address.country}</li>
       </ul>
       <h3>Total: € {order?.total}</h3>
     </div>
