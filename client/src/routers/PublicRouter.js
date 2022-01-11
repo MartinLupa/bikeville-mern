@@ -1,14 +1,18 @@
-import { Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Navbar } from "../components/Navbar/Navbar";
 import { Contact } from "../pages/Contact/Contact";
 import { Main } from "../pages/Main/Main";
 import { NotFound } from "../pages/NotFound/NotFound";
 import { ProductDetails } from "../pages/ProductDetails/ProductDetails";
 import { RegistrationAndLogin } from "../pages/RegistrationAndLogin/RegistrationAndLogin";
 import { Showroom } from "../pages/Showroom/Showroom";
+import { PrivateRoute } from "./PrivateRoute";
+import { PrivateRouter } from "./PrivateRouter";
 
 export const PublicRouter = () => {
   return (
-    <>
+    <BrowserRouter>
+      <Navbar />
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/showroom" element={<Showroom />} />
@@ -19,9 +23,16 @@ export const PublicRouter = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="/registration" element={<RegistrationAndLogin />} />
         <Route path="/login" element={<RegistrationAndLogin />} />
-
-        <Route path="*" element={<NotFound />} />
+        <Route
+          path="/*"
+          element={
+            <PrivateRoute>
+              <PrivateRouter />
+            </PrivateRoute>
+          }
+        />
+        <Route path="/" element={<NotFound />} />
       </Routes>
-    </>
+    </BrowserRouter>
   );
 };

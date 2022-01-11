@@ -100,7 +100,7 @@ export const Navbar = () => {
         {user.logged === true ? (
           <div className="logged">
             <p>{user.userInfo.first_name}</p>
-            <Link to="/shopping_cart/:userId">
+            <Link to="/shopping_cart">
               <Badge badgeContent={shoppingCart?.length} color="primary">
                 <ShoppingCartOutlinedIcon
                   fontSize="large"
@@ -111,7 +111,7 @@ export const Navbar = () => {
             </Link>
           </div>
         ) : (
-          <Link to="/shopping_cart/:userId">
+          <Link to="/shopping_cart">
             <Badge badgeContent={shoppingCart?.length} color="primary">
               <ShoppingCartOutlinedIcon
                 fontSize="large"

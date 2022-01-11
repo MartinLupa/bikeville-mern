@@ -2,7 +2,7 @@ import { createContext, useEffect, useReducer, useState } from "react";
 import "./App.css";
 import { Footer } from "./components/Footer/Footer";
 import { authReducer } from "./reducers/authReducer";
-import { UsersRouter } from "./routers/UsersRouter";
+import { PublicRouter } from "./routers/PublicRouter";
 
 export const GlobalContext = createContext();
 
@@ -50,7 +50,7 @@ function App() {
             dispatch,
           }}
         >
-          <UsersRouter />
+          <PublicRouter />
         </GlobalContext.Provider>
       </div>
       <Footer />
