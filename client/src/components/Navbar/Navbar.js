@@ -104,7 +104,7 @@ export const Navbar = () => {
               <Badge badgeContent={shoppingCart?.length} color="primary">
                 <ShoppingCartOutlinedIcon
                   fontSize="large"
-                  className="nav-link"
+                  className="nav-link nav-icon"
                   color="action"
                 />
               </Badge>
@@ -115,7 +115,7 @@ export const Navbar = () => {
             <Badge badgeContent={shoppingCart?.length} color="primary">
               <ShoppingCartOutlinedIcon
                 fontSize="large"
-                className="nav-link"
+                className="nav-link nav-icon"
                 color="action"
               />
             </Badge>

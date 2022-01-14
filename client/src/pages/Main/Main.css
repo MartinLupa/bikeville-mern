@@ -21,6 +21,7 @@
 }
 
 video {
+  z-index: -1;
   margin-top: 80px;
   -o-object-fit: cover;
      object-fit: cover;
