@@ -32,19 +32,21 @@ export const OrderSummary = () => {
       {order?.products.map((product, index) => (
         <CartItem key={index} product={product} />
       ))}
-      Courier company: {order.courier_company.company.toUpperCase()}
-      <p>Expected delivery: {`${date} / ${month} / ${year}`}</p>
-      <p>Delivery address: </p>
-      <ul>
-        <li>
-          Street:{" "}
-          {`${user.userInfo.address.street} ${user.userInfo.address.street_number}`}
-        </li>
-        <li>Postal code: {user.userInfo.address.postal_code}</li>
-        <li>City: {user.userInfo.address.city}</li>
-        <li>Country: {user.userInfo.address.country}</li>
-      </ul>
-      <h3>Total: € {order?.total}</h3>
+      <div className="order-info">
+        Courier company: {order.courier_company.company.toUpperCase()}
+        <p>Expected delivery: {`${date} / ${month} / ${year}`}</p>
+        <p>Delivery address: </p>
+        <ul>
+          <li>
+            Street:
+            {`${user.userInfo.address.street} ${user.userInfo.address.street_number}`}
+          </li>
+          <li>Postal code: {user.userInfo.address.postal_code}</li>
+          <li>City: {user.userInfo.address.city}</li>
+          <li>Country: {user.userInfo.address.country}</li>
+        </ul>
+        <h3>Total: € {order?.total}</h3>
+      </div>
     </div>
   );
 };

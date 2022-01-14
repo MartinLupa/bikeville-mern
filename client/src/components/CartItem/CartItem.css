@@ -60,4 +60,10 @@
   width: 150px;
   margin: 10px;
 }
+
+@media only screen and (max-width: 730px) {
+  .cart-item {
+    font-size: 0.8em;
+  }
+}
 /*# sourceMappingURL=CartItem.css.map */
