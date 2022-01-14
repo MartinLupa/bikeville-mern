@@ -38,6 +38,7 @@ Tested with Node v14.16.1 and npm 6.14.12.
   <li>Use of localStorage to maintain user session and shopping cart states.
   <li>SASS.
   <li>Libraries: Material UI, CSS Animate.
+</ul>
 
 ### Back-end | NODE, EXPRESS, MONGO, MONGOOSE
 
@@ -46,3 +47,4 @@ Tested with Node v14.16.1 and npm 6.14.12.
   <li>Payment via Stripe.
   <li>Authentification/verification: JSON Web Token, Crypto JS, JWT.
   <li>MongoDB, Mongoose.
+</ul>
