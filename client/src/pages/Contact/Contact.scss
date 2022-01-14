@@ -1,5 +1,59 @@
 @import "../../styles/Variables.scss";
 
 .contact-container {
-  margin: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+  margin: 60px;
+}
+
+.leaflet-container {
+  width: 40%;
+  height: 85%;
+}
+
+.contact-info {
+  margin: 30px;
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  width: 600px;
+  height: 300px;
+  p {
+    margin: 0;
+  }
+}
+
+.icon {
+  color: $secondary-color;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  input {
+    width: 100%;
+  }
+  textarea {
+    padding-left: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    width: 100%;
+    border: 1px solid $light-border-color;
+    border-radius: 5px;
+  }
+  button {
+    margin: auto;
+  }
+}
+
+.contact {
+  display: flex;
+  align-items: center;
+  p {
+    margin-left: 10px;
+  }
 }
