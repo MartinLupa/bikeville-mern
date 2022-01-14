@@ -1,6 +1,6 @@
 import { createContext, useEffect, useReducer, useState } from "react";
 import "./App.css";
-import { Footer } from "./components/Footer/Footer";
+
 import { authReducer } from "./reducers/authReducer";
 import { PublicRouter } from "./routers/PublicRouter";
 
@@ -52,7 +52,6 @@ function App() {
           <PublicRouter />
         </GlobalContext.Provider>
       </div>
-      <Footer />
     </div>
   );
 }
