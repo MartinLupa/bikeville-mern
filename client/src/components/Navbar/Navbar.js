@@ -101,6 +101,20 @@ export const Navbar = () => {
           <div className="logged">
             <p>{user.userInfo.first_name}</p>
             <Link to="/shopping_cart">
+              <div className="cart-icon">
+                <Badge badgeContent={shoppingCart?.length} color="primary">
+                  <ShoppingCartOutlinedIcon
+                    fontSize="large"
+                    className="nav-link nav-icon"
+                    color="action"
+                  />
+                </Badge>
+              </div>
+            </Link>
+          </div>
+        ) : (
+          <Link to="/shopping_cart">
+            <div className="cart-icon">
               <Badge badgeContent={shoppingCart?.length} color="primary">
                 <ShoppingCartOutlinedIcon
                   fontSize="large"
@@ -108,17 +122,7 @@ export const Navbar = () => {
                   color="action"
                 />
               </Badge>
-            </Link>
-          </div>
-        ) : (
-          <Link to="/shopping_cart">
-            <Badge badgeContent={shoppingCart?.length} color="primary">
-              <ShoppingCartOutlinedIcon
-                fontSize="large"
-                className="nav-link nav-icon"
-                color="action"
-              />
-            </Badge>
+            </div>
           </Link>
         )}
       </div>
