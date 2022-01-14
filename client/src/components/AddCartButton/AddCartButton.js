@@ -9,6 +9,7 @@ export const AddCartButton = ({ id }) => {
   const handleAddClick = () => {
     const addedProduct = catalog.filter((product) => product.product_id === id);
     setShoppingCart((previousCart) => [...previousCart, addedProduct]);
+    console.log(addedProduct);
   };
 
   return (

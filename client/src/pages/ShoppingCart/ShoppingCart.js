@@ -48,7 +48,6 @@ export const ShoppingCart = () => {
 
   useEffect(() => {
     calculateCartTotal();
-    console.log(user);
   }, [shoppingCart]);
 
   return (

@@ -30,7 +30,7 @@ export const Navbar = () => {
         to="/"
       >
         <div className="nav-left">
-          <DirectionsBikeIcon className="nav-link" fontSize="large" />
+          <DirectionsBikeIcon className="" fontSize="large" />
           <h4 className="nav-link">BIKEVILLE</h4>
         </div>
       </NavLink>
