@@ -30,21 +30,17 @@ Tested with Node v14.16.1 and npm 6.14.12.
 
 ### Front-end | REACT
 
-<ul>
-  <li>useState, useEffect, useContext.
-  <li>React Router v6 | Public router and Private router.
-  <li>Protected routes: ShoppingCart, Pay and Success page.
-  <li>Use of third party APIs: Mailchimp(Newsletter), OpenStreetMap(map on Contact page).
-  <li>Use of localStorage to maintain user session and shopping cart states.
-  <li>SASS.
-  <li>Libraries: Material UI, CSS Animate.
-</ul>
+- useState, useEffect, useContext.
+- React Router v6 | Public router and Private router.
+- Protected routes: ShoppingCart, Pay and Success page.
+- Use of third party APIs: Mailchimp(Newsletter), OpenStreetMap(map on Contact page).
+- Use of localStorage to maintain user session and shopping cart states.
+- SASS.
+- Libraries: Material UI, CSS Animate.
 
 ### Back-end | NODE, EXPRESS, MONGO, MONGOOSE
 
-<ul>
-  <li>REST Api made with Node and Express | Full CRUD. 
-  <li>Payment via Stripe.
-  <li>Authentification/verification: JSON Web Token, Crypto JS, JWT.
-  <li>MongoDB, Mongoose.
-</ul>
+- REST Api made with Node and Express | Full CRUD.
+- Payment via Stripe.
+- Authentification/verification: JSON Web Token, Crypto JS, JWT.
+- MongoDB, Mongoose.
