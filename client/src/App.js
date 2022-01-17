@@ -28,7 +28,7 @@ function App() {
 
   return (
     <div className="app-container">
-      <div>
+      <div className="app-content">
         <GlobalContext.Provider
           value={{
             catalog,
