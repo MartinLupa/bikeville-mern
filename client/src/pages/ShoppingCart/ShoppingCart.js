@@ -16,6 +16,7 @@ import "./ShoppingCart.css";
 export const ShoppingCart = () => {
   const { shoppingCart, cartTotal, setCartTotal, setOrder } =
     useContext(GlobalContext);
+
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const user = useSelector((state) => state.auth);
@@ -37,10 +38,8 @@ export const ShoppingCart = () => {
 
   const orderCheckout = () => {
     if (shoppingCart.length === 0) {
-      dispatch(show());
-    } else if (user.logged === false) {
-      alert("You need to be logged in to proceed. You will be redirected..");
-      navigate("/login");
+      dispatch(show("Shopping cart is empty."));
+      navigate("/showroom");
     } else {
       setOrder({
         products: shoppingCart,
@@ -54,10 +53,6 @@ export const ShoppingCart = () => {
   useEffect(() => {
     calculateCartTotal();
   }, [shoppingCart]);
-
-  useEffect(() => {
-    console.log(user);
-  }, [user]);
 
   return (
     <div className="cart-container">

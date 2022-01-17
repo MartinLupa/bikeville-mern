@@ -3,6 +3,10 @@
   padding: 50px;
 }
 
+.login-form input {
+  margin-right: 0px;
+}
+
 .login-form button {
   width: 100%;
 }

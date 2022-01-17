@@ -1,7 +1,8 @@
 import { popupTypes } from "../types/popupTypes";
 
-export const show = () => ({
+export const show = (message) => ({
   type: popupTypes.show,
+  payload: message,
 });
 
 export const hidden = () => ({

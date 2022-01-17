@@ -11,10 +11,10 @@ import "./Navbar.css";
 
 export const Navbar = () => {
   const { shoppingCart } = useContext(GlobalContext);
+  const user = useSelector((state) => state.auth);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const user = useSelector((state) => state.auth);
   const handleLogout = () => {
     dispatch(logout());
 
@@ -80,7 +80,7 @@ export const Navbar = () => {
             className={(navData) =>
               navData.isActive ? "nav-link active" : "nav-link"
             }
-            to="/login"
+            to="/"
           >
             <div className="underline">
               <p>LOGOUT</p>
