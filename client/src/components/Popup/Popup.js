@@ -17,7 +17,9 @@ export const Popup = ({ content }) => {
       <div className="popup-container animate__animated animate__bounceIn">
         <div>
           <h2>OOPSS!</h2>
-          <h4>{popup.message}</h4>
+          <div className="popup-message">
+            <h4>{popup.message}</h4>
+          </div>
         </div>
         <div className="popup-btn">
           <CartItemButton passedEvent={handleTrigger} text={"X"} />

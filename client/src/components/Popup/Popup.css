@@ -35,4 +35,14 @@
   border-radius: 5px;
   background-color: white;
 }
+
+.popup-message {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: auto;
+}
 /*# sourceMappingURL=Popup.css.map */
