@@ -1,10 +1,12 @@
 import { applyMiddleware, combineReducers, compose, createStore } from "redux";
 import thunk from "redux-thunk";
 import { authReducer } from "./authReducer";
+import { popupReducer } from "./popupReducer";
 
 const reducers = combineReducers({
   // cart: cartReducer,
   auth: authReducer,
+  popup: popupReducer,
 });
 
 const composeEnhancers =

@@ -1,5 +1,4 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Footer } from "../components/Footer/Footer";
 import { Navbar } from "../components/Navbar/Navbar";
 import { Popup } from "../components/Popup/Popup";
 import { Contact } from "../pages/Contact/Contact";
@@ -36,7 +35,6 @@ export const PublicRouter = () => {
         />
         <Route path="/" element={<NotFound />} />
       </Routes>
-      <Footer />
     </BrowserRouter>
   );
 };

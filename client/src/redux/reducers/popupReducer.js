@@ -1,14 +1,16 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { popupTypes } from "../types/popupTypes";
 
-const popupSlice = createSlice({
-  name: "popup",
-  initialState: { trigger: false },
-  reducers: {
-    changeTrigger: (state, action) => {
-      state.trigger = !action.payload;
-    },
-  },
-});
+const initialState = { trigger: false };
 
-export const { changeTrigger } = popupSlice.actions;
-export default popupSlice.reducer;
+export const popupReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case popupTypes.show:
+      return { trigger: true };
+
+    case popupTypes.hidde:
+      return { trigger: false };
+
+    default:
+      return state;
+  }
+};

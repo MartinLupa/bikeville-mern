@@ -1,9 +1,8 @@
-import { useContext } from "react";
+import { useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
-import { GlobalContext } from "../App";
 
 export const PrivateRoute = ({ children }) => {
-  const { user } = useContext(GlobalContext);
+  const user = useSelector((state) => state.auth);
 
   return user.logged ? children : <Navigate to="/login" />;
 };

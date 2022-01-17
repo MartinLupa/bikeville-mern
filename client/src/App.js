@@ -1,5 +1,6 @@
 import { createContext, useState } from "react";
 import "./App.css";
+import { Footer } from "./components/Footer/Footer";
 import { PublicRouter } from "./routers/PublicRouter";
 
 export const GlobalContext = createContext();
@@ -50,6 +51,7 @@ function App() {
           <PublicRouter />
         </GlobalContext.Provider>
       </div>
+      <Footer />
     </div>
   );
 }

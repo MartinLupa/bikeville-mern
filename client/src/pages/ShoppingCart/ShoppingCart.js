@@ -1,4 +1,5 @@
 import { useContext, useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { GlobalContext } from "../../App";
 import { CartItem } from "../../components/CartItem/CartItem";
@@ -12,13 +13,15 @@ import ups_logo from "../../images/ups_logo.JPG";
 import "./ShoppingCart.css";
 
 export const ShoppingCart = () => {
-  const { shoppingCart, cartTotal, setCartTotal, setOrder, user } =
+  const { shoppingCart, cartTotal, setCartTotal, setOrder } =
     useContext(GlobalContext);
+  const navigate = useNavigate();
+  const user = useSelector((state) => state.auth);
+
   const [courierCompany, setCourierCompany] = useState({
     company: "ups",
     cost: 14,
   });
-  const navigate = useNavigate();
 
   const calculateCartTotal = () => {
     let total = 0;
@@ -33,7 +36,7 @@ export const ShoppingCart = () => {
   const orderCheckout = () => {
     if (shoppingCart.length === 0) {
       alert("Your shopping cart is empty");
-    } else if (!user) {
+    } else if (user.logged === false) {
       alert("You need to be logged in to proceed. You will be redirected..");
       navigate("/login");
     } else {
@@ -49,6 +52,10 @@ export const ShoppingCart = () => {
   useEffect(() => {
     calculateCartTotal();
   }, [shoppingCart]);
+
+  useEffect(() => {
+    console.log(user);
+  }, [user]);
 
   return (
     <div className="cart-container">

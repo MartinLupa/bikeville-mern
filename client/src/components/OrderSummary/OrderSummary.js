@@ -1,11 +1,12 @@
 import React, { useContext } from "react";
+import { useSelector } from "react-redux";
 import { GlobalContext } from "../../App";
 import { CartItem } from "../CartItem/CartItem";
 import "./OrderSummary.css";
 
 export const OrderSummary = () => {
-  const { order, user } = useContext(GlobalContext);
-  console.log(user);
+  const { order } = useContext(GlobalContext);
+  const user = useSelector((state) => state.auth);
 
   const monthNames = [
     "January",

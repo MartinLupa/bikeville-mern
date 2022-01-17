@@ -19,12 +19,10 @@ const validationSchema = Yup.object({
 });
 
 export const Login = () => {
-  // const { dispatch } = useContext(GlobalContext);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const onSubmit = (values, { resetForm }) => {
-    console.log(values);
     fetch("http://localhost:5000/api/auth/login", {
       method: "POST",
       body: JSON.stringify({
@@ -35,12 +33,6 @@ export const Login = () => {
     }).then((req) => {
       req.json().then((data) => {
         dispatch(login(data));
-        // dispatch({
-        //   type: authTypes.login,
-        //   payload: { ...data },
-        // });
-        console.log(data);
-
         resetForm();
         navigate("/showroom");
       });
