@@ -6,6 +6,7 @@
   border: 1px solid #d7d3d3;
   border-radius: 5px;
   width: 200px;
+  height: 48px;
 }
 
 .general-btn:hover {

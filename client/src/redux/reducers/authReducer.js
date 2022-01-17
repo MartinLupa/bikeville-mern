@@ -27,8 +27,11 @@
 // };
 
 import { authTypes } from "../types/authTypes";
+const initialState = {
+  logged: false,
+};
 
-export const authReducer = (state = {}, action) => {
+export const authReducer = (state = initialState, action) => {
   switch (action.type) {
     case authTypes.login:
       return { userInfo: { ...action.payload }, logged: true };

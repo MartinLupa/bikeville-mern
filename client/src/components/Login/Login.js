@@ -1,11 +1,11 @@
 import { Form, Formik } from "formik";
-import { useContext } from "react";
+import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import * as Yup from "yup";
-import { GlobalContext } from "../../App";
-import { authTypes } from "../../types/authTypes";
+import { login } from "../../redux/actions/auth";
 import { FormField } from "../FormField/FormField";
 import { GeneralButton } from "../GeneralButton/GeneralButton";
+import { GoogleButton } from "../GoogleButton/GoogleButton";
 import "./Login.css";
 
 const initialValues = {
@@ -19,7 +19,8 @@ const validationSchema = Yup.object({
 });
 
 export const Login = () => {
-  const { dispatch } = useContext(GlobalContext);
+  // const { dispatch } = useContext(GlobalContext);
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const onSubmit = (values, { resetForm }) => {
@@ -33,10 +34,13 @@ export const Login = () => {
       headers: { "Content-type": "application/json" },
     }).then((req) => {
       req.json().then((data) => {
-        dispatch({
-          type: authTypes.login,
-          payload: { ...data },
-        });
+        dispatch(login(data));
+        // dispatch({
+        //   type: authTypes.login,
+        //   payload: { ...data },
+        // });
+        console.log(data);
+
         resetForm();
         navigate("/showroom");
       });
@@ -64,15 +68,15 @@ export const Login = () => {
           placeholder={"Enter your password"}
           type={"password"}
         />
-
+        <div className="form-btn">
+          <GeneralButton type={"submit"} text={"LOGIN"} />
+          <GoogleButton />
+        </div>
         <div className="login-links">
           <Link to="/registration">Create an account</Link>
           <Link to="/password_recovery">
             <p> Forgot your password?</p>
           </Link>
-        </div>
-        <div className="form-btn">
-          <GeneralButton type={"submit"} text={"LOGIN"} />
         </div>
       </Form>
     </Formik>

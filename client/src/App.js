@@ -1,7 +1,5 @@
-import { createContext, useEffect, useReducer, useState } from "react";
+import { createContext, useState } from "react";
 import "./App.css";
-
-import { authReducer } from "./reducers/authReducer";
 import { PublicRouter } from "./routers/PublicRouter";
 
 export const GlobalContext = createContext();
@@ -21,12 +19,12 @@ function App() {
     courier_company: {},
     total: 0,
   });
-  const [user, dispatch] = useReducer(authReducer, {}, init);
+  // const [user, dispatch] = useReducer(authReducer, {}, init);
 
-  useEffect(() => {
-    if (user.logged === false) return;
-    localStorage.setItem("user", JSON.stringify(user));
-  }, [user]);
+  // useEffect(() => {
+  //   if (user.logged === false) return;
+  //   localStorage.setItem("user", JSON.stringify(user));
+  // }, [user]);
 
   return (
     <div className="app-container">
@@ -45,8 +43,8 @@ function App() {
             setCartTotal,
             order,
             setOrder,
-            user,
-            dispatch,
+            // user,
+            // dispatch,
           }}
         >
           <PublicRouter />

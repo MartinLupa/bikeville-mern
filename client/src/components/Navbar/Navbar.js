@@ -2,19 +2,21 @@ import DirectionsBikeIcon from "@mui/icons-material/DirectionsBike";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import Badge from "@mui/material/Badge";
 import { useContext, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { GlobalContext } from "../../App";
+import { logout } from "../../redux/actions/auth";
 import "../../styles/Variables.scss";
-import { authTypes } from "../../types/authTypes";
 import "./Navbar.css";
 
 export const Navbar = () => {
-  const { shoppingCart, user, dispatch } = useContext(GlobalContext);
+  const { shoppingCart } = useContext(GlobalContext);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const user = useSelector((state) => state.auth);
   const handleLogout = () => {
-    dispatch({
-      type: authTypes.logout,
-    });
+    dispatch(logout());
 
     navigate("/");
   };
@@ -58,7 +60,7 @@ export const Navbar = () => {
         </NavLink>
 
         {/* REGISTER CONDITIONAL RENDERING */}
-        {user.logged === true ? null : (
+        {user?.logged === true ? null : (
           <NavLink
             className={(navData) =>
               navData.isActive ? "nav-link active" : "nav-link"
@@ -72,7 +74,7 @@ export const Navbar = () => {
         )}
 
         {/* LOGIN / LOGOUT CONDITIONAL RENDERING */}
-        {user.logged === true ? (
+        {user?.logged === true ? (
           <NavLink
             onClick={handleLogout}
             className={(navData) =>
@@ -97,7 +99,7 @@ export const Navbar = () => {
           </NavLink>
         )}
 
-        {user.logged === true ? (
+        {user?.logged === true ? (
           <div className="logged">
             <p>{user.userInfo.first_name}</p>
             <Link to="/shopping_cart">

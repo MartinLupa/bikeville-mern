@@ -3,6 +3,10 @@
   padding: 50px;
 }
 
+.login-form button {
+  width: 100%;
+}
+
 .login-links {
   display: -webkit-box;
   display: -ms-flexbox;
