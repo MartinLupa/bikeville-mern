@@ -7,7 +7,7 @@ export const popupReducer = (state = initialState, action) => {
     case popupTypes.show:
       return { trigger: true };
 
-    case popupTypes.hidde:
+    case popupTypes.hidden:
       return { trigger: false };
 
     default:

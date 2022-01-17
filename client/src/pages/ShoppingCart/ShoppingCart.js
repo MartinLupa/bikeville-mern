@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { GlobalContext } from "../../App";
 import { CartItem } from "../../components/CartItem/CartItem";
@@ -10,12 +10,14 @@ import { ShippingItem } from "../../components/ShippingItem/ShippingItem";
 import dhl_logo from "../../images/dhl_logo.JPG";
 import present_packaging from "../../images/present_packaging.JPG";
 import ups_logo from "../../images/ups_logo.JPG";
+import { show } from "../../redux/actions/popup";
 import "./ShoppingCart.css";
 
 export const ShoppingCart = () => {
   const { shoppingCart, cartTotal, setCartTotal, setOrder } =
     useContext(GlobalContext);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const user = useSelector((state) => state.auth);
 
   const [courierCompany, setCourierCompany] = useState({
@@ -35,7 +37,7 @@ export const ShoppingCart = () => {
 
   const orderCheckout = () => {
     if (shoppingCart.length === 0) {
-      alert("Your shopping cart is empty");
+      dispatch(show());
     } else if (user.logged === false) {
       alert("You need to be logged in to proceed. You will be redirected..");
       navigate("/login");

@@ -20,7 +20,6 @@ function App() {
     courier_company: {},
     total: 0,
   });
-  // const [user, dispatch] = useReducer(authReducer, {}, init);
 
   // useEffect(() => {
   //   if (user.logged === false) return;

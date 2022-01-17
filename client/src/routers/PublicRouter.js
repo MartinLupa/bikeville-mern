@@ -1,6 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Navbar } from "../components/Navbar/Navbar";
-import { Popup } from "../components/Popup/Popup";
 import { Contact } from "../pages/Contact/Contact";
 import { Main } from "../pages/Main/Main";
 import { NotFound } from "../pages/NotFound/NotFound";
@@ -14,7 +13,6 @@ export const PublicRouter = () => {
   return (
     <BrowserRouter>
       <Navbar />
-      <Popup trigger={true} />
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/showroom" element={<Showroom />} />

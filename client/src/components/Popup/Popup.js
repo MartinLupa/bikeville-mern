@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { CartItemButton } from "../CartItemButton/CartItemButton";
 import "./Popup.css";
+
 export const Popup = ({ content, trigger }) => {
-  const [popupTrigger, setPopupTrigger] = useState(false);
+  const [popupTrigger, setPopupTrigger] = useState(true);
   const handleTrigger = () => {
     setPopupTrigger(false);
   };
