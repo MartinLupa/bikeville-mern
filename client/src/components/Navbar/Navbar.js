@@ -60,6 +60,19 @@ export const Navbar = () => {
         </NavLink>
 
         {/* REGISTER CONDITIONAL RENDERING */}
+        {user?.logged === true && user.userInfo.isAdmin ? (
+          <NavLink
+            className={(navData) =>
+              navData.isActive ? "nav-link active" : "nav-link"
+            }
+            to="/dashboard"
+          >
+            <div className="underline">
+              <p>DASHBOARD</p>
+            </div>
+          </NavLink>
+        ) : null}
+
         {user?.logged === true ? null : (
           <NavLink
             className={(navData) =>

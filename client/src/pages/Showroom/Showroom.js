@@ -6,8 +6,9 @@ import { ProductFilter } from "../../components/ProductFilter/ProductFilter";
 import { TopScroll } from "../../components/TopScroll/TopScroll";
 import "./Showroom.css";
 
-export const Showroom = ({ filteredCatalog, setFilteredCatalog }) => {
-  const { catalog, setCatalog } = useContext(GlobalContext);
+export const Showroom = () => {
+  const { catalog, setCatalog, filteredCatalog, setFilteredCatalog } =
+    useContext(GlobalContext);
 
   let productsToRender;
   if (filteredCatalog?.length > 0) {

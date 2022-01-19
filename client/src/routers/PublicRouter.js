@@ -7,8 +7,11 @@ import { NotFound } from "../pages/NotFound/NotFound";
 import { ProductDetails } from "../pages/ProductDetails/ProductDetails";
 import { RegistrationAndLogin } from "../pages/RegistrationAndLogin/RegistrationAndLogin";
 import { Showroom } from "../pages/Showroom/Showroom";
+import { AdminRouter } from "./AdminRouter";
 import { PrivateRoute } from "./PrivateRoute";
-import { PrivateRouter } from "./PrivateRouter";
+import { UsersRouter } from "./UsersRouter";
+
+// import { AdminRouter } from "./AdminRouter";
 
 export const PublicRouter = () => {
   return (
@@ -29,7 +32,8 @@ export const PublicRouter = () => {
           path="/*"
           element={
             <PrivateRoute>
-              <PrivateRouter />
+              <AdminRouter />
+              <UsersRouter />
             </PrivateRoute>
           }
         />

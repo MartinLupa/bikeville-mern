@@ -1,6 +1,6 @@
 import { popupTypes } from "../types/popupTypes";
 
-const initialState = { trigger: true, message: "" };
+const initialState = { trigger: false, message: "" };
 
 export const popupReducer = (state = initialState, action) => {
   switch (action.type) {

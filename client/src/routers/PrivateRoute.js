@@ -4,7 +4,6 @@ import { show } from "../redux/actions/popup";
 
 export const PrivateRoute = ({ children }) => {
   const dispatch = useDispatch();
-
   const user = useSelector((state) => state.auth);
 
   const redirect = () => {
@@ -12,5 +11,13 @@ export const PrivateRoute = ({ children }) => {
     return <Navigate to="/login" />;
   };
 
-  return user.logged ? children : redirect();
+  if (user.logged && user.userInfo.isAdmin === true) {
+    return children[0];
+  }
+  if (user.logged && user.userInfo.isAdmin === false) {
+    return children[1];
+  }
+  if (!user.logged) {
+    return redirect();
+  }
 };

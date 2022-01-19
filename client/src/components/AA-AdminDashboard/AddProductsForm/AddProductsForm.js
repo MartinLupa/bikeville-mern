@@ -2,7 +2,7 @@ import { Form, Formik } from "formik";
 import React from "react";
 import * as Yup from "yup";
 import { FormField } from "../../FormField/FormField";
-import GeneralButton from "../../GeneralButton/GeneralButton";
+import { GeneralButton } from "../../GeneralButton/GeneralButton";
 import "./AddProductsForm.css";
 
 const initialValues = {

@@ -3,7 +3,7 @@ import { Pay } from "../pages/Pay/Pay";
 import { ShoppingCart } from "../pages/ShoppingCart/ShoppingCart";
 import { Success } from "../pages/Success/Success";
 
-export const PrivateRouter = () => {
+export const UsersRouter = () => {
   return (
     <Routes>
       <Route path="/shopping_cart" element={<ShoppingCart />} />

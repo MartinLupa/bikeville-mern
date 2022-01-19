@@ -4,7 +4,7 @@ import { hidden } from "../../redux/actions/popup";
 import { CartItemButton } from "../CartItemButton/CartItemButton";
 import "./Popup.css";
 
-export const Popup = ({ content }) => {
+export const Popup = () => {
   const dispatch = useDispatch();
   const popup = useSelector((state) => state.popup);
 
