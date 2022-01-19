@@ -5,9 +5,8 @@ Author: Martin I. Lupa Groppelli, January 2022.
 Presentational video:
 
 Full-stack MERN E-Commerce. List of products, product details, Contact info, Registration and Login. Shopping cart, Payment area and Order summary as protected routes that can only be accesed by logged users (Use of two routers).
-Backend allows future implementation of basic Dashboard with statistics and summary info about orders.
 
-DISCLAIMER: use of Redux for shopping cart management not totally implemented yet.
+UPDATE 19-01: Redux implemented in authentication process and popup window, working on admin Dashboard with full CRUD over displayed products (It will allow admin user to Create, Read, Update and Delete products from the database using a Dashboard from the frontend).
 
 ## Repository
 
@@ -34,7 +33,7 @@ Tested with Node v14.16.1 and npm 6.14.12.
 - React Router v6 | Public router and Private router.
 - Protected routes: ShoppingCart, Pay and Success page.
 - Use of third party APIs: Mailchimp(Newsletter), Leaflet(map on Contact page).
-- Formik, Yup.
+- Form management: Formik, Yup.
 - Use of localStorage to maintain user session and shopping cart states.
 - SASS.
 - Libraries: Material UI, CSS Animate.
