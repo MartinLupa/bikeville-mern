@@ -3,7 +3,7 @@ import React from "react";
 import * as Yup from "yup";
 import { FormField } from "../../FormField/FormField";
 import { GeneralButton } from "../../GeneralButton/GeneralButton";
-import "./AddProductsForm.css";
+import "./AddProductsView.css";
 
 const initialValues = {
   model: "Test model",
@@ -63,7 +63,7 @@ const onSubmit = (values, { resetForm }) => {
   // resetForm();
 };
 
-export const AddProductsForm = () => {
+export const AddProductsView = () => {
   return (
     <Formik
       initialValues={initialValues}

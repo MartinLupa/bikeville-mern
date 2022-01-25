@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { AddProductsForm } from "../../components/AA-AdminDashboard/AddProductsForm/AddProductsForm";
+import { AddProductsView } from "../../components/AA-AdminDashboard/AddProductsForm/AddProductsView";
 import { UpdateProductsView } from "../../components/AA-AdminDashboard/UpdateProduct/UpdateProductsView";
 import "./Dashboard.css";
 
@@ -18,7 +18,7 @@ export default function Dashboard() {
         <option value="delete">Delete product</option>
       </select>
 
-      {adminAction === "add" && <AddProductsForm />}
+      {adminAction === "add" && <AddProductsView />}
       {adminAction === "get" && <h2>GET</h2>}
       {adminAction === "update" && <UpdateProductsView />}
       {adminAction === "delete" && <h2>DELETE</h2>}

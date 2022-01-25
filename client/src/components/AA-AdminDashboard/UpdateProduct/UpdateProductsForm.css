@@ -26,4 +26,12 @@
 .products-list {
   padding: 40px;
 }
+
+.dashboard-table img {
+  width: 80px;
+}
+
+.dashboard-table tr {
+  border-bottom: 1px solid black;
+}
 /*# sourceMappingURL=UpdateProductsForm.css.map */

@@ -1,25 +1,24 @@
 import { Form, Formik } from "formik";
-import React from "react";
+import React, { useEffect } from "react";
 import * as Yup from "yup";
 import { FormField } from "../../FormField/FormField";
 import { GeneralButton } from "../../GeneralButton/GeneralButton";
 import "./UpdateProductsForm.css";
 
-const initialValues = {
-  model: "Test model",
-  trail_type: "Test model",
-  product_id: "TEST01",
-  image:
-    "https://content.roadbikereview.com/channels/roadbikereview/images/products/large/product_490188_25643.jpg",
-  short_description: "Test model",
-  description: "Test model",
-  type: "Test model",
-  brake_type: "Test model",
-  groupset: "Test model",
+let initialValues = {
+  model: "",
+  trail_type: "",
+  product_id: "",
+  image: "",
+  short_description: "",
+  description: "",
+  type: "",
+  brake_type: "",
+  groupset: "",
   sizes: [],
-  net_price: "Test model",
-  vat: "Test model",
-  full_price: "Test model",
+  net_price: "",
+  vat: "",
+  full_price: "",
   inStock: true,
 };
 
@@ -58,12 +57,13 @@ const onSubmit = (values, { resetForm }) => {
     }),
   });
 
-  console.log(modifiedValues);
-
   // resetForm();
 };
 
-export const UpdateProductsForm = () => {
+export const UpdateProductsForm = ({ currentProduct }) => {
+  useEffect(() => {
+    initialValues = { ...currentProduct };
+  }, [currentProduct, initialValues]);
   return (
     <Formik
       initialValues={initialValues}
@@ -181,7 +181,7 @@ export const UpdateProductsForm = () => {
         </div>
 
         <div className="form-btn">
-          <GeneralButton type={"submit"} text={"ADD PRODUCT"} />
+          <GeneralButton type={"submit"} text={"EDIT PRODUCT"} />
         </div>
       </Form>
     </Formik>
