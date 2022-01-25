@@ -1,0 +1,22 @@
+@import "../../../styles/Variables.scss";
+
+.update-container {
+  display: flex;
+}
+
+.products-form {
+  // border: 1px solid $light-border-color;
+  // border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 900px;
+  padding: 40px;
+  h1 {
+    margin: 0;
+  }
+}
+
+.products-list {
+  padding: 40px;
+}

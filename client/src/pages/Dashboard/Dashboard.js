@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { AddProductsForm } from "../../components/AA-AdminDashboard/AddProductsForm/AddProductsForm";
+import { UpdateProductsView } from "../../components/AA-AdminDashboard/UpdateProduct/UpdateProductsView";
 import "./Dashboard.css";
 
 export default function Dashboard() {
@@ -19,7 +20,7 @@ export default function Dashboard() {
 
       {adminAction === "add" && <AddProductsForm />}
       {adminAction === "get" && <h2>GET</h2>}
-      {adminAction === "update" && <h2>UPDATE</h2>}
+      {adminAction === "update" && <UpdateProductsView />}
       {adminAction === "delete" && <h2>DELETE</h2>}
     </div>
   );
