@@ -6,60 +6,27 @@ import { GeneralButton } from "../../GeneralButton/GeneralButton";
 import "./AddProductsForm.css";
 
 const initialValues = {
-  model: "Test model",
-  trail_type: "Test model",
-  product_id: "TEST01",
-  image:
-    "https://content.roadbikereview.com/channels/roadbikereview/images/products/large/product_490188_25643.jpg",
-  short_description: "Test model",
-  description: "Test model",
-  type: "Test model",
-  brake_type: "Test model",
-  groupset: "Test model",
-  sizes: [],
-  net_price: "Test model",
-  vat: "Test model",
-  full_price: "Test model",
-  inStock: true,
+  product_id: "",
 };
 
 const validationSchema = Yup.object({
-  model: Yup.string().required("Required"),
-  trail_type: Yup.string().required("Required"),
   product_id: Yup.string().required("Required"),
-  image: Yup.string().required("Required"),
-  short_description: Yup.string().required("Required"),
-  description: Yup.string().required("Required"),
-  type: Yup.string().required("Required"),
-  brake_type: Yup.string().required("Required"),
-  groupset: Yup.string().required("Required"),
-  sizes: Yup.string().required("Required"),
-  net_price: Yup.number().required("Required"),
-  vat: Yup.number().required("Required"),
-  full_price: Yup.number().required("Required"),
 });
 
 const onSubmit = (values, { resetForm }) => {
-  //Sizes need to be modificed, since they are received as a string, but need to reach the db as an Array.
-  const { sizes, ...rest } = values;
-  const transformedSizes = sizes.split(", ").map((item) => parseInt(item, 10));
-  const modifiedValues = { sizes: transformedSizes, ...rest };
-
-  fetch("http://localhost:5000/api/products", {
-    method: "POST",
-    headers: {
-      "Content-type": "application/json",
-      token:
-        "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZDgyNzk2YTNlNzY5NzcwOTE0ZjVhOSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY0MTU1NjM5NiwiZXhwIjoxNzI3ODY5OTk2fQ.2It5EWX_Pvxh2Di3z5zJ9kbIoDcM7ejW96KX534wllg",
-    },
-
-    body: JSON.stringify({
-      ...modifiedValues,
-    }),
+  console.log(values);
+  const headers = new Headers();
+  const token =
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZDgyNzk2YTNlNzY5NzcwOTE0ZjVhOSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY0MTU1NjM5NiwiZXhwIjoxNzI3ODY5OTk2fQ.2It5EWX_Pvxh2Di3z5zJ9kbIoDcM7ejW96KX534wllg";
+  headers.append("Content-Type", "application/json");
+  headers.append("authorization", "Bearer" + token);
+  fetch("http://localhost:5000/api/find/:id", {
+    method: "GET",
+  }).then((req) => {
+    req.json().then((data) => {
+      console.log(data);
+    });
   });
-
-  console.log(modifiedValues);
-
   // resetForm();
 };
 
@@ -187,35 +154,3 @@ export const AddProductsForm = () => {
     </Formik>
   );
 };
-
-// const headers = new Headers();
-// const token =
-//   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZDgyNzk2YTNlNzY5NzcwOTE0ZjVhOSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY0MTU1NjM5NiwiZXhwIjoxNzI3ODY5OTk2fQ.2It5EWX_Pvxh2Di3z5zJ9kbIoDcM7ejW96KX534wllg";
-// headers.append("Content-Type", "application/json");
-// headers.append("authorization", "Bearer" + token);
-// fetch("http://localhost:5000/api/products", {
-//   method: "POST",
-
-//   body: JSON.stringify({
-//     model: values.model,
-//     trail_type: values.trail_type,
-//     product_id: values.product_id,
-//     image: values.image,
-//     short_description: values.short_description,
-//     description: values.description,
-//     type: values.type,
-//     brake_type: values.brake_type,
-//     groupset: values.groupset,
-//     sizes: transformedSizes,
-//     net_price: values.net_price,
-//     vat: values.vat,
-//     full_price: values.full_price,
-//     inStock: true,
-//   }),
-//   headers: headers,
-// }).then((req) => {
-//   req.json().then((data) => {
-//     console.log(data);
-//   });
-// });
-// resetForm();

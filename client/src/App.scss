@@ -11,3 +11,14 @@ body {
   flex-direction: column;
   justify-content: space-between;
 }
+
+input,
+select {
+  margin-right: 10px;
+  padding-left: 10px;
+  margin-bottom: 10px;
+  width: 300px;
+  height: 40px;
+  border: 1px solid $light-border-color;
+  border-radius: 5px;
+}
