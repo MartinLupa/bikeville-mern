@@ -7,6 +7,7 @@ import { CircularIndeterminate } from "../../components/CircularProgress/Circula
 import { GeneralButton } from "../../components/GeneralButton/GeneralButton";
 import { OrderSummary } from "../../components/OrderSummary/OrderSummary";
 import "./Pay.css";
+const { REACT_APP_API_PAYMENT: PAYMENT_URL, STRIPE_PUBLIC_KEY } = process.env;
 
 export const Pay = () => {
   const [stripeToken, setStripeToken] = useState(null);
@@ -20,10 +21,10 @@ export const Pay = () => {
   useEffect(() => {
     const makeRequest = async () => {
       try {
-        const res = await axios.post(
-          "http://localhost:5000/api/checkout/payment",
-          { tokenId: stripeToken.id, amount: order.total * 100 }
-        );
+        const res = await axios.post(PAYMENT_URL, {
+          tokenId: stripeToken.id,
+          amount: order.total * 100,
+        });
         console.log(res.data);
         navigate("/success");
         setShoppingCart([]);
@@ -53,9 +54,7 @@ export const Pay = () => {
             description={`Your total is EUR ${order.total},00`}
             amount={order.total * 100}
             token={onToken}
-            stripeKey={
-              "pk_test_51KC2PyFVmRibgb7cIfnBbyEhMhTQDOus9i0naKot6ArtGLdNLbI4WuJqtzbF4o4z87PiMjRBzQ9QTOuhwXmMUvRE00ZihdQeV2"
-            }
+            stripeKey={STRIPE_PUBLIC_KEY}
           >
             <GeneralButton text={"PAY"} />
           </StripeCheckout>

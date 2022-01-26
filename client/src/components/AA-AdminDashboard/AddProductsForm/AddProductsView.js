@@ -4,6 +4,7 @@ import * as Yup from "yup";
 import { FormField } from "../../FormField/FormField";
 import { GeneralButton } from "../../GeneralButton/GeneralButton";
 import "./AddProductsView.css";
+const { REACT_APP_TOKEN: token } = process.env;
 
 const initialValues = {
   model: "Test model",
@@ -49,8 +50,7 @@ const onSubmit = (values, { resetForm }) => {
     method: "POST",
     headers: {
       "Content-type": "application/json",
-      token:
-        "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZDgyNzk2YTNlNzY5NzcwOTE0ZjVhOSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY0MTU1NjM5NiwiZXhwIjoxNzI3ODY5OTk2fQ.2It5EWX_Pvxh2Di3z5zJ9kbIoDcM7ejW96KX534wllg",
+      token: `Bearer ${token}`,
     },
 
     body: JSON.stringify({

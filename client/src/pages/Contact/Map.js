@@ -24,18 +24,6 @@ export const Map = () => {
           icon: myIcon,
         }).addTo(map);
       });
-
-    // // create map
-    // L.map("map", {
-    //   center: [36.7212, 4.4217],
-    //   zoom: 16,
-    //   layers: [
-    //     L.tileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png", {
-    //       attribution:
-    //         '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
-    //     }),
-    //   ],
-    // });
   }, []);
 
   return <div className="map" id="map"></div>;

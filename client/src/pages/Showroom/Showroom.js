@@ -5,8 +5,10 @@ import { ProductCard } from "../../components/ProductCard/ProductCard";
 import { ProductFilter } from "../../components/ProductFilter/ProductFilter";
 import { TopScroll } from "../../components/TopScroll/TopScroll";
 import "./Showroom.css";
+const { REACT_APP_API_CATALOG: CATALOG_URL } = process.env;
 
 export const Showroom = () => {
+  console.log(URL);
   const { catalog, setCatalog, filteredCatalog, setFilteredCatalog } =
     useContext(GlobalContext);
 
@@ -17,9 +19,8 @@ export const Showroom = () => {
     productsToRender = catalog;
   }
   useEffect(() => {
-    fetch("http://localhost:5000/api/products", {
+    fetch(CATALOG_URL, {
       method: "GET",
-
       headers: {
         "Content-Type": "application/json",
         "Access-Control-Allow-Origin": "*",

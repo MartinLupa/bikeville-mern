@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { AddProductsView } from "../../components/AA-AdminDashboard/AddProductsForm/AddProductsView";
 import { UpdateProductsView } from "../../components/AA-AdminDashboard/UpdateProduct/UpdateProductsView";
 import "./Dashboard.css";

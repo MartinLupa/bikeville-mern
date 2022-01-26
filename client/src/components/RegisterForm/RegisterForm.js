@@ -4,6 +4,7 @@ import * as Yup from "yup";
 import { FormField } from "../FormField/FormField";
 import { GeneralButton } from "../GeneralButton/GeneralButton";
 import "./RegisterForm.css";
+const { REACT_APP_API_USER_REGISTRATION: REGISTRATION_URL } = process.env;
 
 const initialValues = {
   first_name: "",
@@ -23,7 +24,7 @@ const initialValues = {
 
 const onSubmit = (values, { resetForm }) => {
   console.log(values);
-  fetch("http://localhost:5000/api/auth/registration", {
+  fetch(REGISTRATION_URL, {
     method: "POST",
     body: JSON.stringify({
       first_name: values.first_name,

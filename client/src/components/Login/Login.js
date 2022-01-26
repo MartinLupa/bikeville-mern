@@ -7,6 +7,7 @@ import { FormField } from "../FormField/FormField";
 import { GeneralButton } from "../GeneralButton/GeneralButton";
 import { GoogleButton } from "../GoogleButton/GoogleButton";
 import "./Login.css";
+const { REACT_APP_API_USER_LOGIN: LOGIN_URL } = process.env;
 
 const initialValues = {
   email: "",
@@ -23,7 +24,7 @@ export const Login = () => {
   const navigate = useNavigate();
 
   const onSubmit = (values, { resetForm }) => {
-    fetch("http://localhost:5000/api/auth/login", {
+    fetch(LOGIN_URL, {
       method: "POST",
       body: JSON.stringify({
         email: values.email,
