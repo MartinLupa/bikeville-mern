@@ -63,6 +63,17 @@ const onSubmit = (values, { resetForm }) => {
   // resetForm();
 };
 
+// {
+//   "stringValue": "\"TEST01\"",
+//   "valueType": "string",
+//   "kind": "ObjectId",
+//   "value": "TEST01",
+//   "path": "_id",
+//   "reason": {},
+//   "name": "CastError",
+//   "message": "Cast to ObjectId failed for value \"TEST01\" (type string) at path \"_id\" for model \"Product\""
+// }
+
 export const AddProductsView = () => {
   return (
     <Formik

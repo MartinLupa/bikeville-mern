@@ -9,7 +9,7 @@ export const ProductsList = ({ setCurrentProduct }) => {
 
   useEffect(() => {
     setProductsList(catalog);
-  }, []);
+  }, [catalog]);
 
   const handleEdit = (product) => {
     setCurrentProduct(product);
@@ -43,7 +43,6 @@ export const ProductsList = ({ setCurrentProduct }) => {
                 <td>
                   <CartItemButton
                     passedEvent={(e) => handleEdit(product)}
-                    className="edit-btn"
                     text={"Edit"}
                   />
                 </td>

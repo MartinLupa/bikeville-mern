@@ -1,11 +1,11 @@
 import { Form, Formik } from "formik";
-import React, { useEffect } from "react";
+import React from "react";
 import * as Yup from "yup";
 import { FormField } from "../../FormField/FormField";
 import { GeneralButton } from "../../GeneralButton/GeneralButton";
 import "./UpdateProductsForm.css";
 
-let initialValues = {
+const initialValues = {
   model: "",
   trail_type: "",
   product_id: "",
@@ -21,7 +21,6 @@ let initialValues = {
   full_price: "",
   inStock: true,
 };
-
 const validationSchema = Yup.object({
   model: Yup.string().required("Required"),
   trail_type: Yup.string().required("Required"),
@@ -38,14 +37,17 @@ const validationSchema = Yup.object({
   full_price: Yup.number().required("Required"),
 });
 
-const onSubmit = (values, { resetForm }) => {
+const onSubmit = (values = {}, { resetForm }) => {
   //Sizes need to be modificed, since they are received as a string, but need to reach the db as an Array.
   const { sizes, ...rest } = values;
   const transformedSizes = sizes.split(", ").map((item) => parseInt(item, 10));
   const modifiedValues = { sizes: transformedSizes, ...rest };
 
-  fetch("http://localhost:5000/api/products", {
-    method: "POST",
+  const { _id, createdAt, updatedAt, __v, ...updatedProduct } = modifiedValues;
+  console.log("UPDATED", updatedProduct);
+
+  fetch(`http://localhost:5000/api/products/${_id}`, {
+    method: "PUT",
     headers: {
       "Content-type": "application/json",
       token:
@@ -53,20 +55,20 @@ const onSubmit = (values, { resetForm }) => {
     },
 
     body: JSON.stringify({
-      ...modifiedValues,
+      ...updatedProduct,
     }),
   });
+
+  console.log(modifiedValues);
 
   // resetForm();
 };
 
 export const UpdateProductsForm = ({ currentProduct }) => {
-  useEffect(() => {
-    initialValues = { ...currentProduct };
-  }, [currentProduct, initialValues]);
   return (
     <Formik
-      initialValues={initialValues}
+      enableReinitialize
+      initialValues={currentProduct ? currentProduct : initialValues}
       onSubmit={onSubmit}
       validationSchema={validationSchema}
     >
