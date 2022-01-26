@@ -5,9 +5,9 @@ import { PublicRouter } from "./routers/PublicRouter";
 
 export const GlobalContext = createContext();
 
-const init = () => {
-  return JSON.parse(localStorage.getItem("user")) || { logged: false };
-};
+// const init = () => {
+//   return JSON.parse(localStorage.getItem("user")) || { logged: false };
+// };
 
 function App() {
   const [catalog, setCatalog] = useState();

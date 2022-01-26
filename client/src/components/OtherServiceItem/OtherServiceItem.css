@@ -7,11 +7,14 @@
           align-items: center;
   height: 84px;
   width: 100%;
-  margin: 15px;
+}
+
+.other-service-container input {
+  width: 20px;
 }
 
 .other-img {
-  width: 50px;
+  width: 45px;
   height: 40px;
   margin: 0px 15px;
 }

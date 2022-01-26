@@ -5,6 +5,32 @@
   padding: 10px;
   border-radius: 5px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
+
+  button {
+    color: $white-text;
+    border: 1px solid $light-border-color;
+    border-radius: 5px;
+    padding: 10px 10px;
+  }
+}
+
+.dashboard-link {
+  text-decoration: none;
+}
+
+.edit-btn {
+  background-color: $edit-btn-color;
+  transition: 0.3s;
+  &:hover {
+    background-color: $edit-btn-color-hover;
+  }
+}
+
+.delete-btn {
+  background-color: $delete-btn-color;
+  transition: 0.3s;
+  &:hover {
+    background-color: $delete-btn-color-hover;
+  }
 }

@@ -5,12 +5,39 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.dashboard-container button {
+  color: #ffffff;
+  border: 1px solid #d7d3d3;
+  border-radius: 5px;
+  padding: 10px 10px;
+}
+
+.dashboard-link {
+  text-decoration: none;
+}
+
+.edit-btn {
+  background-color: #25d366;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.edit-btn:hover {
+  background-color: #7dce9b;
+}
+
+.delete-btn {
+  background-color: #ee0808;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.delete-btn:hover {
+  background-color: #ec4e4e;
 }
 /*# sourceMappingURL=Dashboard.css.map */

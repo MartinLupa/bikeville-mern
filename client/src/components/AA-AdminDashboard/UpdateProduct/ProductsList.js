@@ -1,11 +1,11 @@
 import React, { useContext, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { GlobalContext } from "../../../App";
-import { CartItemButton } from "../../CartItemButton/CartItemButton";
 
 export const ProductsList = ({ setCurrentProduct }) => {
   const { catalog } = useContext(GlobalContext);
   const [productsList, setProductsList] = useState([]);
-  const [filteredProducts, setFilteredProducts] = useState([]);
+  // const [filteredProducts, setFilteredProducts] = useState([]);
 
   useEffect(() => {
     setProductsList(catalog);
@@ -16,8 +16,6 @@ export const ProductsList = ({ setCurrentProduct }) => {
   };
   return (
     <div className="products-list">
-      <h2>Search for products</h2>
-      <label htmlFor="">Search for products: </label>
       <input type="text" placeholder="Search products by ID" />
       <table className="dashboard-table">
         <thead>
@@ -25,7 +23,7 @@ export const ProductsList = ({ setCurrentProduct }) => {
             <th>{/* Image */}</th>
             <th>ID</th>
             <th>Model</th>
-            <th>In stock</th>
+            <th>{/* View details */}</th>
             <th>{/* Edit Button */}</th>
             <th>{/* Delete Button */}</th>
           </tr>
@@ -39,15 +37,21 @@ export const ProductsList = ({ setCurrentProduct }) => {
                 </td>
                 <td>{product.product_id}</td>
                 <td>{product.model}</td>
-                <td>{product.inStock ? "Yes" : "No"}</td>
                 <td>
-                  <CartItemButton
-                    passedEvent={(e) => handleEdit(product)}
-                    text={"Edit"}
-                  />
+                  <Link className="dashboard-link" to="/details">
+                    View details
+                  </Link>
                 </td>
                 <td>
-                  <CartItemButton text={"Delete"} />
+                  <button
+                    className="edit-btn"
+                    onClick={(e) => handleEdit(product)}
+                  >
+                    Edit
+                  </button>
+                </td>
+                <td>
+                  <button className="delete-btn">Delete</button>
                 </td>
               </tr>
             ))
