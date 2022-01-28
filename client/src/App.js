@@ -43,8 +43,6 @@ function App() {
             setCartTotal,
             order,
             setOrder,
-            // user,
-            // dispatch,
           }}
         >
           <PublicRouter />

@@ -25,11 +25,16 @@ const { REACT_APP_TOKEN: token } = process.env;
 //   "inStock": true
 // }
 
-export const ProductsList = ({ setCurrentProduct, productsList }) => {
+export const ProductsList = ({
+  setCurrentProduct,
+  productsList,
+  setIsEditing,
+}) => {
   // const [filteredProducts, setFilteredProducts] = useState([]);
 
   const handleEdit = (product) => {
     setCurrentProduct(product);
+    setIsEditing(true);
   };
 
   const handleDelete = (product) => {
@@ -43,7 +48,6 @@ export const ProductsList = ({ setCurrentProduct, productsList }) => {
   };
   return (
     <div className="products-list">
-      <input type="text" placeholder="Search products by ID" />
       <table className="dashboard-table">
         <thead>
           <tr>

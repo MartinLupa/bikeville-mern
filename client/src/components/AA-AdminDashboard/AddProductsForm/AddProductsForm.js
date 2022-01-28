@@ -3,26 +3,26 @@ import React from "react";
 import * as Yup from "yup";
 import { FormField } from "../../FormField/FormField";
 import { GeneralButton } from "../../GeneralButton/GeneralButton";
-import "./AddProductsView.css";
+import "./AddProductsForm.css";
 const { REACT_APP_TOKEN: token } = process.env;
 
-const initialValues = {
-  model: "Test model",
-  trail_type: "Test model",
-  product_id: "TEST01",
-  image:
-    "https://content.roadbikereview.com/channels/roadbikereview/images/products/large/product_490188_25643.jpg",
-  short_description: "Test model",
-  description: "Test model",
-  type: "Test model",
-  brake_type: "Test model",
-  groupset: "Test model",
-  sizes: [],
-  net_price: "Test model",
-  vat: "Test model",
-  full_price: "Test model",
-  inStock: true,
-};
+// const initialValues = {
+//   model: "Test model",
+//   trail_type: "Test model",
+//   product_id: "TEST01",
+//   image:
+//     "https://content.roadbikereview.com/channels/roadbikereview/images/products/large/product_490188_25643.jpg",
+//   short_description: "Test model",
+//   description: "Test model",
+//   type: "Test model",
+//   brake_type: "Test model",
+//   groupset: "Test model",
+//   sizes: [],
+//   net_price: "Test model",
+//   vat: "Test model",
+//   full_price: "Test model",
+//   inStock: true,
+// };
 
 const validationSchema = Yup.object({
   model: Yup.string().required("Required"),
@@ -63,26 +63,15 @@ const onSubmit = (values, { resetForm }) => {
   // resetForm();
 };
 
-// {
-//   "stringValue": "\"TEST01\"",
-//   "valueType": "string",
-//   "kind": "ObjectId",
-//   "value": "TEST01",
-//   "path": "_id",
-//   "reason": {},
-//   "name": "CastError",
-//   "message": "Cast to ObjectId failed for value \"TEST01\" (type string) at path \"_id\" for model \"Product\""
-// }
-
-export const AddProductsView = () => {
+export const AddProductsForm = () => {
   return (
     <Formik
-      initialValues={initialValues}
+      initialValues={""}
       onSubmit={onSubmit}
       validationSchema={validationSchema}
     >
       <Form className="products-form" method="POST">
-        <h1>ADD PRODUCT</h1>
+        <h2>Add product</h2>
         <div className="form-row">
           <FormField
             fieldName={"model"}

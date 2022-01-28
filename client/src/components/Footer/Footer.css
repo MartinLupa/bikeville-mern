@@ -1,5 +1,5 @@
 .footer-container {
-  height: 80px;
+  height: 200px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -13,7 +13,7 @@
   background-color: #283148;
   color: #ffffff;
   text-align: center;
-  bottom: 0;
+  margin-bottom: 0;
 }
 
 .icon {

@@ -1,5 +1,7 @@
+import AddBoxOutlinedIcon from "@mui/icons-material/AddBoxOutlined";
 import { useContext, useEffect, useState } from "react";
 import { GlobalContext } from "../../App";
+import { AddProductsForm } from "../../components/AA-AdminDashboard/AddProductsForm/AddProductsForm";
 import { ProductsList } from "../../components/AA-AdminDashboard/UpdateProduct/ProductsList";
 import { UpdateProductsForm } from "../../components/AA-AdminDashboard/UpdateProduct/UpdateProductsForm";
 import { fetchAndUpdateCatalog } from "../../helpers/fetchAndUpdateCatalog";
@@ -27,25 +29,40 @@ export default function Dashboard() {
   const { catalog, setCatalog } = useContext(GlobalContext);
   const [currentProduct, setCurrentProduct] = useState(initialValues);
   const [productsList, setProductsList] = useState([]);
+  const [isEditing, setIsEditing] = useState(false);
 
-  fetchAndUpdateCatalog(CATALOG_URL, setCatalog);
+  const handleSwitchForm = () => {
+    setIsEditing(false);
+  };
 
   useEffect(() => {
+    fetchAndUpdateCatalog(CATALOG_URL, setCatalog);
     setProductsList(catalog);
-  }, [catalog]);
+  }, [catalog, isEditing]);
 
   return (
     <div className="dashboard-container">
-      <UpdateProductsForm
-        setCatalog={setCatalog}
-        currentProduct={currentProduct}
-        setCurrentProduct={setCurrentProduct}
-        initialValues={initialValues}
-      />
-      <ProductsList
-        productsList={productsList}
-        setCurrentProduct={setCurrentProduct}
-      />
+      <div className="dashboard-top">
+        <input type="text" placeholder="Search products by ID" />
+        <AddBoxOutlinedIcon className="add-icon" onClick={handleSwitchForm} />
+      </div>
+      <div className="dashboard-bottom">
+        {isEditing ? (
+          <UpdateProductsForm
+            setCatalog={setCatalog}
+            currentProduct={currentProduct}
+            setCurrentProduct={setCurrentProduct}
+            initialValues={initialValues}
+          />
+        ) : (
+          <AddProductsForm />
+        )}
+        <ProductsList
+          setIsEditing={setIsEditing}
+          productsList={productsList}
+          setCurrentProduct={setCurrentProduct}
+        />
+      </div>
     </div>
   );
 }
