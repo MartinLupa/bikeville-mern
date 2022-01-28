@@ -50,6 +50,10 @@ export const ProductsList = ({
       },
     });
   };
+
+  const handleViewDetails = (product) => {
+    // console.log(product);
+  };
   return (
     <div className="products-list">
       <table className="dashboard-table">
@@ -73,7 +77,11 @@ export const ProductsList = ({
                 <td>{product.product_id}</td>
                 <td>{product.model}</td>
                 <td>
-                  <Link className="dashboard-link" to="/details">
+                  <Link
+                    onClick={() => handleViewDetails(product)}
+                    className="dashboard-link"
+                    to={`/dashboard/${product._id}`}
+                  >
                     View details
                   </Link>
                 </td>
