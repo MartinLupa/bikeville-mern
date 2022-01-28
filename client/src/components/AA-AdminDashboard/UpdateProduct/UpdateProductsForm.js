@@ -7,6 +7,23 @@ import "./UpdateProductsForm.css";
 const { REACT_APP_TOKEN: token, REACT_APP_API_CATALOG: CATALOG_URL } =
   process.env;
 
+const initialValues = {
+  model: "",
+  trail_type: "",
+  product_id: "",
+  image: "",
+  short_description: "",
+  description: "",
+  type: "",
+  brake_type: "",
+  groupset: "",
+  sizes: [],
+  net_price: "",
+  vat: "",
+  full_price: "",
+  inStock: true,
+};
+
 const validationSchema = Yup.object({
   model: Yup.string().required("Required"),
   trail_type: Yup.string().required("Required"),

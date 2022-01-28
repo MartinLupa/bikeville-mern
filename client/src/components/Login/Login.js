@@ -48,6 +48,7 @@ export const Login = () => {
     >
       <Form className="login-form" action="" method="POST">
         <FormField
+          autoFocus={true}
           fieldName={"email"}
           labelName={"Email"}
           name={"email"}

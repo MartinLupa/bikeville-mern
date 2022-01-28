@@ -72,6 +72,7 @@ export const RegisterForm = () => {
         <h4>Create account</h4>
         <div className="form-row">
           <FormField
+            autoFocus={true}
             fieldName={"first_name"}
             labelName={"First name"}
             name={"first_name"}

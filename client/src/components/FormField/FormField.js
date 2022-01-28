@@ -9,11 +9,13 @@ export const FormField = ({
   placeholder,
   type,
   className,
+  autoFocus,
 }) => {
   return (
     <div className="form-col">
       <label htmlFor={{ fieldName }}>{labelName}</label>
       <Field
+        autoFocus={autoFocus}
         className={className}
         id={fieldName}
         name={name}

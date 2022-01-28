@@ -3,12 +3,35 @@ import ModeEditOutlineOutlinedIcon from "@mui/icons-material/ModeEditOutlineOutl
 import React from "react";
 import { Link } from "react-router-dom";
 
+// {
+//   "sizes": [
+//       48,
+//       51,
+//       52
+//   ],
+//   "model": "lili",
+//   "trail_type": "Test model",
+//   "product_id": "TEST01",
+//   "image": "https://content.roadbikereview.com/channels/roadbikereview/images/products/large/product_490188_25643.jpg",
+//   "short_description": "Test model",
+//   "description": "Test model",
+//   "type": "Test model",
+//   "brake_type": "Test model",
+//   "groupset": "Test model",
+//   "net_price": 999,
+//   "vat": 999,
+//   "full_price": 999,
+//   "inStock": true
+// }
+
 export const ProductsList = ({ setCurrentProduct, productsList }) => {
   // const [filteredProducts, setFilteredProducts] = useState([]);
 
   const handleEdit = (product) => {
     setCurrentProduct(product);
   };
+
+  const handleDelete = (product) => {};
   return (
     <div className="products-list">
       <input type="text" placeholder="Search products by ID" />
