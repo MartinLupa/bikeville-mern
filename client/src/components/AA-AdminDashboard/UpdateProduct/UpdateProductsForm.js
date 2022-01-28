@@ -4,24 +4,8 @@ import * as Yup from "yup";
 import { FormField } from "../../FormField/FormField";
 import { GeneralButton } from "../../GeneralButton/GeneralButton";
 import "./UpdateProductsForm.css";
-const { REACT_APP_TOKEN: token } = process.env;
-
-const initialValues = {
-  model: "",
-  trail_type: "",
-  product_id: "",
-  image: "",
-  short_description: "",
-  description: "",
-  type: "",
-  brake_type: "",
-  groupset: "",
-  sizes: [],
-  net_price: "",
-  vat: "",
-  full_price: "",
-  inStock: true,
-};
+const { REACT_APP_TOKEN: token, REACT_APP_API_CATALOG: CATALOG_URL } =
+  process.env;
 
 const validationSchema = Yup.object({
   model: Yup.string().required("Required"),
@@ -39,12 +23,11 @@ const validationSchema = Yup.object({
   full_price: Yup.number().required("Required"),
 });
 
-const onSubmit = (values = {}, { resetForm }) => {
-  //Sizes need to be modificed, since they are received as a string, but need to reach the db as an Array.
+const onSubmit = (values = {}) => {
+  //Sizes need to be modified, since they are received as a string, but need to reach the db as an Array.
   const { sizes, ...rest } = values;
   const transformedSizes = sizes.split(", ").map((item) => parseInt(item, 10));
   const modifiedValues = { sizes: transformedSizes, ...rest };
-
   const { _id, createdAt, updatedAt, __v, ...updatedProduct } = modifiedValues;
   console.log("UPDATED", updatedProduct);
 
@@ -54,22 +37,17 @@ const onSubmit = (values = {}, { resetForm }) => {
       "Content-type": "application/json",
       token: `Bearer ${token}`,
     },
-
     body: JSON.stringify({
       ...updatedProduct,
     }),
   });
-
-  console.log(modifiedValues);
-
-  // resetForm();
 };
 
 export const UpdateProductsForm = ({ currentProduct }) => {
   return (
     <Formik
       enableReinitialize
-      initialValues={currentProduct ? currentProduct : initialValues}
+      initialValues={currentProduct}
       onSubmit={onSubmit}
       validationSchema={validationSchema}
     >

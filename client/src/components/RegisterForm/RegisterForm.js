@@ -1,12 +1,12 @@
 import { Form, Formik } from "formik";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import * as Yup from "yup";
 import { FormField } from "../FormField/FormField";
 import { GeneralButton } from "../GeneralButton/GeneralButton";
 import "./RegisterForm.css";
 const { REACT_APP_API_USER_REGISTRATION: REGISTRATION_URL } = process.env;
 
-const initialValues = {
+let initialValues = {
   first_name: "",
   last_name: "",
   email: "",
@@ -41,12 +41,10 @@ const onSubmit = (values, { resetForm }) => {
       repeat_password: values.repeat_password,
     }),
     headers: { "Content-type": "application/json" },
-  }).then((req) => {
-    req.json().then((data) => {
-      console.log(data);
-    });
   });
-  // resetForm();
+
+  resetForm();
+  Navigate("/login");
 };
 
 const validationSchema = Yup.object({

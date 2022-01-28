@@ -33,7 +33,7 @@ export const Pay = () => {
       }
     };
     stripeToken && makeRequest();
-  }, [stripeToken]);
+  }, [stripeToken, navigate, order.total, setShoppingCart]);
 
   return (
     <div className="pay-container">

@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { GlobalContext } from "../../App";
 import { CartItem } from "../../components/CartItem/CartItem";
@@ -16,10 +16,8 @@ import "./ShoppingCart.css";
 export const ShoppingCart = () => {
   const { shoppingCart, cartTotal, setCartTotal, setOrder } =
     useContext(GlobalContext);
-
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const user = useSelector((state) => state.auth);
 
   const [courierCompany, setCourierCompany] = useState({
     company: "ups",

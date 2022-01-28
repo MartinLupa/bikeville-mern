@@ -6,7 +6,7 @@ import "./ProductFilter.css";
 
 export const ProductFilter = () => {
   const { catalog, setCatalog, setFilteredCatalog } = useContext(GlobalContext);
-  const [formValues, handleInputChange, reset] = useForm({ searchText: "" });
+  const [formValues, handleInputChange] = useForm({ searchText: "" });
   const { searchText } = formValues;
 
   const handleSearch = (e) => {

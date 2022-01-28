@@ -24,4 +24,30 @@
 .dashboard-table tr {
   border-bottom: 1px solid black;
 }
+
+.edit-icon {
+  margin-left: 10px;
+  color: #25d366;
+  width: 20px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.edit-icon:hover {
+  -webkit-transform: scale(1.2) rotate(10deg);
+          transform: scale(1.2) rotate(10deg);
+  color: #7dce9b;
+}
+
+.delete-icon {
+  color: #ee0808;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.delete-icon:hover {
+  -webkit-transform: scale(1.2) rotate(10deg);
+          transform: scale(1.2) rotate(10deg);
+  color: #ec4e4e;
+}
 /*# sourceMappingURL=UpdateProductsForm.css.map */

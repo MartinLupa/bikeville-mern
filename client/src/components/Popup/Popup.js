@@ -8,7 +8,6 @@ export const Popup = () => {
   const dispatch = useDispatch();
   const popup = useSelector((state) => state.popup);
 
-  console.log(popup);
   const handleTrigger = () => {
     dispatch(hidden());
   };

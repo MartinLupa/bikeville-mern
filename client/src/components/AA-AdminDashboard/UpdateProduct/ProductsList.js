@@ -1,15 +1,10 @@
-import React, { useContext, useEffect, useState } from "react";
+import DeleteForeverOutlinedIcon from "@mui/icons-material/DeleteForeverOutlined";
+import ModeEditOutlineOutlinedIcon from "@mui/icons-material/ModeEditOutlineOutlined";
+import React from "react";
 import { Link } from "react-router-dom";
-import { GlobalContext } from "../../../App";
 
-export const ProductsList = ({ setCurrentProduct }) => {
-  const { catalog } = useContext(GlobalContext);
-  const [productsList, setProductsList] = useState([]);
+export const ProductsList = ({ setCurrentProduct, productsList }) => {
   // const [filteredProducts, setFilteredProducts] = useState([]);
-
-  useEffect(() => {
-    setProductsList(catalog);
-  }, [catalog]);
 
   const handleEdit = (product) => {
     setCurrentProduct(product);
@@ -24,8 +19,8 @@ export const ProductsList = ({ setCurrentProduct }) => {
             <th>ID</th>
             <th>Model</th>
             <th>{/* View details */}</th>
-            <th>{/* Edit Button */}</th>
-            <th>{/* Delete Button */}</th>
+            <th>{/* Edit icon */}</th>
+            <th>{/* Delete icon */}</th>
           </tr>
         </thead>
         <tbody>
@@ -43,15 +38,13 @@ export const ProductsList = ({ setCurrentProduct }) => {
                   </Link>
                 </td>
                 <td>
-                  <button
-                    className="edit-btn"
+                  <ModeEditOutlineOutlinedIcon
+                    className="edit-icon"
                     onClick={(e) => handleEdit(product)}
-                  >
-                    Edit
-                  </button>
+                  />
                 </td>
                 <td>
-                  <button className="delete-btn">Delete</button>
+                  <DeleteForeverOutlinedIcon className="delete-icon" />
                 </td>
               </tr>
             ))

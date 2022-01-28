@@ -18,19 +18,3 @@
 .dashboard-link {
   text-decoration: none;
 }
-
-.edit-btn {
-  background-color: $edit-btn-color;
-  transition: 0.3s;
-  &:hover {
-    background-color: $edit-btn-color-hover;
-  }
-}
-
-.delete-btn {
-  background-color: $delete-btn-color;
-  transition: 0.3s;
-  &:hover {
-    background-color: $delete-btn-color-hover;
-  }
-}

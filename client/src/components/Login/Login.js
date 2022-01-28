@@ -35,7 +35,7 @@ export const Login = () => {
       req.json().then((data) => {
         dispatch(login(data));
         resetForm();
-        navigate("/showroom");
+        // navigate("/showroom");
       });
     });
   };

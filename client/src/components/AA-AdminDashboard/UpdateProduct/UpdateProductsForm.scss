@@ -23,3 +23,23 @@
     border-bottom: 1px solid black;
   }
 }
+
+.edit-icon {
+  margin-left: 10px;
+  color: $edit-btn-color;
+  width: 20px;
+  transition: 0.3s;
+  &:hover {
+    transform: scale(1.2) rotate(10deg);
+    color: $edit-btn-color-hover;
+  }
+}
+
+.delete-icon {
+  color: $delete-btn-color;
+  transition: 0.3s;
+  &:hover {
+    transform: scale(1.2) rotate(10deg);
+    color: $delete-btn-color-hover;
+  }
+}

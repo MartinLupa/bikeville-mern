@@ -20,24 +20,4 @@
 .dashboard-link {
   text-decoration: none;
 }
-
-.edit-btn {
-  background-color: #25d366;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-}
-
-.edit-btn:hover {
-  background-color: #7dce9b;
-}
-
-.delete-btn {
-  background-color: #ee0808;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-}
-
-.delete-btn:hover {
-  background-color: #ec4e4e;
-}
 /*# sourceMappingURL=Dashboard.css.map */
