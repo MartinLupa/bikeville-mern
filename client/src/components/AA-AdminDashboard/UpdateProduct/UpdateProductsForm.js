@@ -4,25 +4,7 @@ import * as Yup from "yup";
 import { FormField } from "../../FormField/FormField";
 import { GeneralButton } from "../../GeneralButton/GeneralButton";
 import "./UpdateProductsForm.css";
-const { REACT_APP_TOKEN: token, REACT_APP_API_CATALOG: CATALOG_URL } =
-  process.env;
-
-const initialValues = {
-  model: "",
-  trail_type: "",
-  product_id: "",
-  image: "",
-  short_description: "",
-  description: "",
-  type: "",
-  brake_type: "",
-  groupset: "",
-  sizes: [],
-  net_price: "",
-  vat: "",
-  full_price: "",
-  inStock: true,
-};
+const { REACT_APP_TOKEN: token } = process.env;
 
 const validationSchema = Yup.object({
   model: Yup.string().required("Required"),

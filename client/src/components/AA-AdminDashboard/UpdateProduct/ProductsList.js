@@ -2,6 +2,7 @@ import DeleteForeverOutlinedIcon from "@mui/icons-material/DeleteForeverOutlined
 import ModeEditOutlineOutlinedIcon from "@mui/icons-material/ModeEditOutlineOutlined";
 import React from "react";
 import { Link } from "react-router-dom";
+const { REACT_APP_TOKEN: token } = process.env;
 
 // {
 //   "sizes": [
@@ -31,7 +32,15 @@ export const ProductsList = ({ setCurrentProduct, productsList }) => {
     setCurrentProduct(product);
   };
 
-  const handleDelete = (product) => {};
+  const handleDelete = (product) => {
+    fetch(`http://localhost:5000/api/products/${product._id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-type": "application/json",
+        token: `Bearer ${token}`,
+      },
+    });
+  };
   return (
     <div className="products-list">
       <input type="text" placeholder="Search products by ID" />
@@ -63,11 +72,14 @@ export const ProductsList = ({ setCurrentProduct, productsList }) => {
                 <td>
                   <ModeEditOutlineOutlinedIcon
                     className="edit-icon"
-                    onClick={(e) => handleEdit(product)}
+                    onClick={() => handleEdit(product)}
                   />
                 </td>
                 <td>
-                  <DeleteForeverOutlinedIcon className="delete-icon" />
+                  <DeleteForeverOutlinedIcon
+                    className="delete-icon"
+                    onClick={() => handleDelete(product)}
+                  />
                 </td>
               </tr>
             ))
