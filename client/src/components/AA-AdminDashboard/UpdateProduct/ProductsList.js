@@ -1,7 +1,9 @@
 import DeleteForeverOutlinedIcon from "@mui/icons-material/DeleteForeverOutlined";
 import ModeEditOutlineOutlinedIcon from "@mui/icons-material/ModeEditOutlineOutlined";
 import React from "react";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { show } from "../../../redux/actions/popup";
 const { REACT_APP_TOKEN: token } = process.env;
 
 // {
@@ -30,6 +32,7 @@ export const ProductsList = ({
   productsList,
   setIsEditing,
 }) => {
+  const dispatch = useDispatch();
   // const [filteredProducts, setFilteredProducts] = useState([]);
 
   const handleEdit = (product) => {
@@ -38,6 +41,7 @@ export const ProductsList = ({
   };
 
   const handleDelete = (product) => {
+    dispatch(show("You are about to delete a product, are you sure?"));
     fetch(`http://localhost:5000/api/products/${product._id}`, {
       method: "DELETE",
       headers: {

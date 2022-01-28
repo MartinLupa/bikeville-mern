@@ -7,22 +7,38 @@ import "./AddProductsForm.css";
 const { REACT_APP_TOKEN: token } = process.env;
 
 // const initialValues = {
-//   model: "Test model",
-//   trail_type: "Test model",
+//   model: "Test",
+//   trail_type: "Test",
 //   product_id: "TEST01",
 //   image:
 //     "https://content.roadbikereview.com/channels/roadbikereview/images/products/large/product_490188_25643.jpg",
-//   short_description: "Test model",
-//   description: "Test model",
-//   type: "Test model",
-//   brake_type: "Test model",
-//   groupset: "Test model",
+//   short_description: "Test",
+//   description: "Test",
+//   type: "Test",
+//   brake_type: "Test",
+//   groupset: "Test",
 //   sizes: [],
-//   net_price: "Test model",
-//   vat: "Test model",
-//   full_price: "Test model",
+//   net_price: 123,
+//   vat: 123,
+//   full_price: 123,
 //   inStock: true,
-// };
+//};
+const initialValues = {
+  model: "",
+  trail_type: "",
+  product_id: "",
+  image: "",
+  short_description: "",
+  description: "",
+  type: "",
+  brake_type: "",
+  groupset: "",
+  sizes: [],
+  net_price: "",
+  vat: "",
+  full_price: "",
+  inStock: true,
+};
 
 const validationSchema = Yup.object({
   model: Yup.string().required("Required"),
@@ -66,7 +82,7 @@ const onSubmit = (values, { resetForm }) => {
 export const AddProductsForm = () => {
   return (
     <Formik
-      initialValues={""}
+      initialValues={initialValues}
       onSubmit={onSubmit}
       validationSchema={validationSchema}
     >
