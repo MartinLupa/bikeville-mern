@@ -1,16 +1,25 @@
 @import "../../styles/Variables.scss";
 
 .banners-container {
-  height: 100vh;
+  margin-top: -1px;
+  height: 100%;
+}
+
+.banner-text-container {
   .banners-main-text {
+    height: 120px;
     margin: 0px;
+    text-align: left;
     color: $white-text;
-    text-align: center;
-    font-size: 4rem;
+    font-size: 8rem;
     font-family: "Lato", sans-serif;
     background-color: $atention-red;
-    padding: 40px;
   }
+}
+
+.banner-link {
+  text-decoration: none;
+  color: $atention-red;
 }
 
 .banner-container {
@@ -20,17 +29,31 @@
 
 .model-text {
   position: absolute;
-  bottom: -40px;
+  bottom: -60px;
   margin: 0;
   color: $atention-red;
   font-size: 12rem;
-  font-family: "Lato", sans-serif;
   opacity: 0.8;
 }
 
-.banner-btn {
-  top: 20px;
+.banner-hover {
+  position: absolute;
+  z-index: 999;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  background-color: white;
+  .banner-hover-text {
+    font-size: 3rem;
+    text-decoration-line: none;
+  }
+  &:hover {
+    transition: 0.3s;
+    visibility: visible;
+    opacity: 0.6;
+  }
 }

@@ -1,15 +1,21 @@
 .banners-container {
-  height: 100vh;
+  margin-top: -1px;
+  height: 100%;
 }
 
-.banners-container .banners-main-text {
+.banner-text-container .banners-main-text {
+  height: 120px;
   margin: 0px;
+  text-align: left;
   color: #ffffff;
-  text-align: center;
-  font-size: 4rem;
+  font-size: 8rem;
   font-family: "Lato", sans-serif;
   background-color: #dc1405;
-  padding: 40px;
+}
+
+.banner-link {
+  text-decoration: none;
+  color: #dc1405;
 }
 
 .banner-container {
@@ -19,16 +25,16 @@
 
 .model-text {
   position: absolute;
-  bottom: -40px;
+  bottom: -60px;
   margin: 0;
   color: #dc1405;
   font-size: 12rem;
-  font-family: "Lato", sans-serif;
   opacity: 0.8;
 }
 
-.banner-btn {
-  top: 20px;
+.banner-hover {
+  position: absolute;
+  z-index: 999;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -38,5 +44,23 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  background-color: white;
+}
+
+.banner-hover .banner-hover-text {
+  font-size: 3rem;
+  -webkit-text-decoration-line: none;
+          text-decoration-line: none;
+}
+
+.banner-hover:hover {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  visibility: visible;
+  opacity: 0.6;
 }
 /*# sourceMappingURL=ProductsBanners.css.map */
