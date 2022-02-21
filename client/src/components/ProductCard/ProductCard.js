@@ -33,6 +33,7 @@ export const ProductCard = ({
         </Link>
         <AddCartIcon id={id} />
       </div>
+
       <img className="card-img" src={image} alt={model} />
       <div className="card-info">
         <h4>{model}</h4>

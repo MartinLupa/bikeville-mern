@@ -1,34 +1,66 @@
 .newsletter-container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #ffffff;
   padding-top: 20px;
-  background: #cfffdc;
-  height: 200px;
+  background: #dc1405;
+  height: 400px;
   text-align: center;
+  overflow: hidden;
+}
+
+.newsletter-container h2 {
+  margin-top: 0;
 }
 
 .newsletter-container input {
   padding-left: 10px;
   margin-right: 10px;
+  margin-bottom: 0;
   width: 300px;
-  height: 40px;
+  height: 50px;
   border: 1px solid #d7d3d3;
   border-radius: 5px;
 }
 
 .newsletter-container button {
-  margin: 0;
-  padding: 5px 15px;
+  height: 54px;
+  width: 50px;
   background-color: #ff5959;
   color: white;
   border: 1px solid #d7d3d3;
   border-radius: 5px;
 }
 
+.background-text {
+  margin: 0;
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
+  font-size: 35rem;
+  opacity: 0.3;
+  position: absolute;
+  bottom: -150px;
+}
+
 .newsletter-input {
+  z-index: 999;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 /*# sourceMappingURL=Newsletter.css.map */

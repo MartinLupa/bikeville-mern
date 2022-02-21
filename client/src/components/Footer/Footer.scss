@@ -1,12 +1,13 @@
 @import "../../styles/Variables.scss";
 
 .footer-container {
-  height: 80px;
+  height: 100px;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  background-color: $main-color;
-  color: $white-text;
+  // background-color: $main-color;
+  // color: $white-text;
+  color: $main-color;
   text-align: center;
   margin-bottom: 0;
 }

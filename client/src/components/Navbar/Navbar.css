@@ -10,8 +10,8 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  height: 80px;
-  background-color: #283148;
+  height: 100px;
+  border-bottom: 1px solid #d7d3d3;
 }
 
 .nav-left {
@@ -94,7 +94,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 78px;
+  height: 96px;
   border-bottom: 5px solid #ff5959;
 }
 

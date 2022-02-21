@@ -9,7 +9,6 @@ import "./Showroom.css";
 const { REACT_APP_API_CATALOG: CATALOG_URL } = process.env;
 
 export const Showroom = () => {
-  console.log(URL);
   const { catalog, setCatalog, filteredCatalog, setFilteredCatalog } =
     useContext(GlobalContext);
 
@@ -24,7 +23,7 @@ export const Showroom = () => {
   }, [setCatalog]);
 
   return (
-    <div>
+    <div className="lola">
       <TopScroll />
       <div className="main-container">
         <ProductFilter

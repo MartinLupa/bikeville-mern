@@ -25,10 +25,10 @@
   opacity: 0;
   margin: 0;
   padding: 0;
-  z-index: 3;
+  z-index: 999;
   background-color: white;
   position: absolute;
-  height: 480px;
+  height: 510px;
   width: 400px;
   display: -webkit-box;
   display: -ms-flexbox;

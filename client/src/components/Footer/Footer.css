@@ -1,5 +1,5 @@
 .footer-container {
-  height: 80px;
+  height: 100px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -10,8 +10,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: #283148;
-  color: #ffffff;
+  color: #283148;
   text-align: center;
   margin-bottom: 0;
 }
