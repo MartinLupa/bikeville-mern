@@ -28,6 +28,7 @@ export const PublicRouter = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="/registration" element={<RegistrationAndLogin />} />
         <Route path="/login" element={<RegistrationAndLogin />} />
+        <Route path="*" element={<NotFound />} />
         <Route
           path="/*"
           element={

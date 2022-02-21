@@ -1,5 +1,6 @@
 .not-found-container {
   height: 80vh;
+  font-size: 0.8rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
