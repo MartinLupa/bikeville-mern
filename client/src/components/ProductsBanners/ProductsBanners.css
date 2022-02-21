@@ -1,0 +1,42 @@
+.banners-container {
+  height: 100vh;
+}
+
+.banners-container .banners-main-text {
+  margin: 0px;
+  color: #ffffff;
+  text-align: center;
+  font-size: 4rem;
+  font-family: "Lato", sans-serif;
+  background-color: #dc1405;
+  padding: 40px;
+}
+
+.banner-container {
+  position: relative;
+  height: 100vh;
+}
+
+.model-text {
+  position: absolute;
+  bottom: -40px;
+  margin: 0;
+  color: #dc1405;
+  font-size: 12rem;
+  font-family: "Lato", sans-serif;
+  opacity: 0.8;
+}
+
+.banner-btn {
+  top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+/*# sourceMappingURL=ProductsBanners.css.map */

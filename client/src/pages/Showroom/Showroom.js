@@ -1,12 +1,10 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { GlobalContext } from "../../App";
 import { Newsletter } from "../../components/Newsletter/Newsletter";
 import { ProductCard } from "../../components/ProductCard/ProductCard";
 import { ProductFilter } from "../../components/ProductFilter/ProductFilter";
 import { TopScroll } from "../../components/TopScroll/TopScroll";
-import { fetchAndUpdateCatalog } from "../../helpers/fetchAndUpdateCatalog";
 import "./Showroom.css";
-const { REACT_APP_API_CATALOG: CATALOG_URL } = process.env;
 
 export const Showroom = () => {
   const { catalog, setCatalog, filteredCatalog, setFilteredCatalog } =
@@ -18,9 +16,6 @@ export const Showroom = () => {
   } else {
     productsToRender = catalog;
   }
-  useEffect(() => {
-    fetchAndUpdateCatalog(CATALOG_URL, setCatalog);
-  }, [setCatalog]);
 
   return (
     <div className="lola">

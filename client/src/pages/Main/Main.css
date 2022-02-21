@@ -1,5 +1,4 @@
 .outter-container {
-  width: 100%;
   height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -17,7 +16,6 @@
   height: 100%;
   width: 100%;
   position: relative;
-  overflow: hidden;
 }
 
 video {
@@ -73,7 +71,7 @@ video {
       -ms-flex-pack: center;
           justify-content: center;
   width: 400px;
-  height: 70px;
+  height: 50px;
   background: none;
   border: 2px solid #ffffff;
   margin-left: 10px;
@@ -81,14 +79,19 @@ video {
 
 .outline-btn h2 {
   font-style: italic;
+  font-weight: 100;
   color: #ffffff;
   font-size: 30px;
 }
 
 .outline-btn:hover {
-  background-color: rgba(238, 234, 234, 0.3);
   -webkit-transition: 0.3s;
   transition: 0.3s;
+  background-color: white;
+}
+
+.outline-btn:hover h2 {
+  color: #dc1405;
 }
 
 @media only screen and (max-width: 1210px) {

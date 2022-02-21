@@ -1,0 +1,36 @@
+@import "../../styles/Variables.scss";
+
+.banners-container {
+  height: 100vh;
+  .banners-main-text {
+    margin: 0px;
+    color: $white-text;
+    text-align: center;
+    font-size: 4rem;
+    font-family: "Lato", sans-serif;
+    background-color: $atention-red;
+    padding: 40px;
+  }
+}
+
+.banner-container {
+  position: relative;
+  height: 100vh;
+}
+
+.model-text {
+  position: absolute;
+  bottom: -40px;
+  margin: 0;
+  color: $atention-red;
+  font-size: 12rem;
+  font-family: "Lato", sans-serif;
+  opacity: 0.8;
+}
+
+.banner-btn {
+  top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
