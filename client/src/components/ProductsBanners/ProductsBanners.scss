@@ -2,19 +2,17 @@
 
 .banners-container {
   margin-top: -1px;
-  height: 100%;
+  min-height: 100vh;
 }
 
-.banner-text-container {
-  .banners-main-text {
-    height: 120px;
-    margin: 0px;
-    text-align: left;
-    color: $white-text;
-    font-size: 8rem;
-    font-family: "Lato", sans-serif;
-    background-color: $atention-red;
-  }
+.banners-main-text {
+  height: 120px;
+  margin: 0px;
+  text-align: left;
+  color: $white-text;
+  font-size: 8rem;
+  font-family: "Lato", sans-serif;
+  background-color: $atention-red;
 }
 
 .banner-link {
@@ -24,7 +22,9 @@
 
 .banner-container {
   position: relative;
+
   height: 100vh;
+  border-bottom: 1px solid $light-border-color;
 }
 
 .model-text {
@@ -55,5 +55,47 @@
     transition: 0.3s;
     visibility: visible;
     opacity: 0.6;
+  }
+}
+
+@media only screen and (max-width: 1900px) {
+  .model-text {
+    font-size: 8rem;
+    bottom: -40px;
+  }
+}
+
+@media only screen and (max-width: 1250px) {
+  .banners-main-text {
+    font-size: 6rem;
+    margin-bottom: -25px;
+  }
+  .model-text {
+    font-size: 5rem;
+    bottom: -25px;
+  }
+  .banner-container {
+    height: 75vh;
+  }
+  .banner-hover-text {
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .banners-main-text {
+    font-size: 3rem;
+    padding-top: 30px;
+    margin-bottom: -75px;
+  }
+  .model-text {
+    font-size: 2rem;
+    bottom: -10px;
+  }
+  .banner-container {
+    height: 50vh;
+  }
+  .banner-hover-text {
+    font-size: 0.8rem;
   }
 }

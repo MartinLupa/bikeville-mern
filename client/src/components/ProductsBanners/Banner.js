@@ -8,9 +8,10 @@ export const Banner = ({ imgStyle, model, product_id }) => {
 
   let backgroundImageStyle = {
     width: "100%",
-    height: "100vh",
-    backgroundSize: "cover",
-    backgroundColor: "red",
+    height: "100%",
+    backgroundSize: "100%",
+
+    backgroundRepeat: "no-repeat",
     backgroundImage: `${imgStyle}`,
   };
 

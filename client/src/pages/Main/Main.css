@@ -105,5 +105,8 @@ video {
   .callout h1 {
     font-size: 60px;
   }
+  video {
+    margin-top: 325px;
+  }
 }
 /*# sourceMappingURL=Main.css.map */

@@ -11,9 +11,7 @@ export const ProductsBanners = () => {
 
   return (
     <div className="banners-container">
-      <div className="banner-text-container">
-        <h2 className="banners-main-text">NEWEST PRODUCTS</h2>
-      </div>
+      <h2 className="banners-main-text">NEWEST PRODUCTS</h2>
 
       {newestAdditions?.map((product) => (
         <Banner
