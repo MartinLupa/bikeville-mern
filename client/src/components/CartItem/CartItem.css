@@ -5,6 +5,7 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  height: 120px;
   border-bottom: 1px solid #d7d3d3;
   margin-bottom: 3px;
   padding: 10px;

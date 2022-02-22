@@ -3,18 +3,21 @@
 .payment-item {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  height: 120px;
   border-bottom: 1px solid $light-border-color;
   margin-bottom: 3px;
   padding: 10px;
-}
-
-.payment-amounts {
-  display: flex;
-  justify-content: space-between;
-  width: 150px;
-}
-
-.amounts {
-  text-align: right;
+  h5,
+  h6 {
+    margin-top: 15px;
+    margin-bottom: 0px;
+  }
+  .payment-amounts {
+    display: flex;
+    justify-content: space-between;
+    width: 150px;
+    .amounts {
+      text-align: right;
+    }
+  }
 }

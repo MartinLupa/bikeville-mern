@@ -5,15 +5,19 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  height: 120px;
   border-bottom: 1px solid #d7d3d3;
   margin-bottom: 3px;
   padding: 10px;
 }
 
-.payment-amounts {
+.payment-item h5,
+.payment-item h6 {
+  margin-top: 15px;
+  margin-bottom: 0px;
+}
+
+.payment-item .payment-amounts {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -23,7 +27,7 @@
   width: 150px;
 }
 
-.amounts {
+.payment-item .payment-amounts .amounts {
   text-align: right;
 }
 /*# sourceMappingURL=PaymentItem.css.map */

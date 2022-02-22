@@ -4,23 +4,23 @@ export const PaymentItem = ({ product }) => {
   return (
     <div className="payment-item">
       <div>
-        <h6>{product[0].model}</h6>
+        <h5>{product[0].model}</h5>
         <h6>{product[0].product_id}</h6>
       </div>
       <div className="payment-amounts">
         <div>
-          <p>Net price: </p>
-          <p>VAT: </p>
-          <p>
+          <h5>Net price: </h5>
+          <h5>VAT: </h5>
+          <h5>
             <strong>Total:</strong>
-          </p>
+          </h5>
         </div>
         <div className="amounts">
-          <p>€ {product[0].net_price}</p>
-          <p>€ {product[0].vat}</p>
-          <p>
+          <h5>€ {product[0].net_price}</h5>
+          <h5>€ {product[0].vat}</h5>
+          <h5>
             <strong>€ {product[0].full_price}</strong>
-          </p>
+          </h5>
         </div>
       </div>
     </div>
