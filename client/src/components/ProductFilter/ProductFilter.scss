@@ -28,8 +28,10 @@
 
 .center {
   display: flex;
+  flex-direction: column;
   margin: auto;
   align-items: center;
+  position: relative;
 }
 
 .right {
@@ -42,17 +44,16 @@
     flex-direction: column;
   }
 
-  .center {
-    input {
-      width: 225px;
-    }
+  .left {
+    width: 100%;
   }
+
   .right {
     width: 100%;
     text-align: center;
     margin: auto;
     select {
-      margin-left: 0;
+      margin-left: 5px;
       margin-top: 5px;
       width: 445px;
     }

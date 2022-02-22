@@ -1,23 +1,22 @@
-import { useContext } from "react";
 import { useSelector } from "react-redux";
-import { GlobalContext } from "../../App";
 import { Newsletter } from "../../components/Newsletter/Newsletter";
 import { ProductCard } from "../../components/ProductCard/ProductCard";
 import { ProductFilter } from "../../components/ProductFilter/ProductFilter";
 import { TopScroll } from "../../components/TopScroll/TopScroll";
 import { setCatalog } from "../../redux/actions/catalog";
+import { setFilteredCatalog } from "../../redux/actions/filterCatalog";
 import "./Showroom.css";
 
 export const Showroom = () => {
   const catalog = useSelector((state) => state.catalog);
-  const { filteredCatalog, setFilteredCatalog } = useContext(GlobalContext);
+  const filteredCatalog = useSelector((state) => state.filteredCatalog);
 
-  let productsToRender;
-  if (filteredCatalog?.length > 0) {
-    productsToRender = filteredCatalog;
-  } else {
-    productsToRender = catalog;
-  }
+  // let productsToRender;
+  // if (filteredCatalog?.length > 0) {
+  //   productsToRender = filteredCatalog;
+  // } else {
+  //   productsToRender = catalog;
+  // }
 
   return (
     <div className="lola">
@@ -28,7 +27,7 @@ export const Showroom = () => {
           setCatalog={setCatalog}
           setFilteredCatalog={setFilteredCatalog}
         />
-        {productsToRender?.map((product) => {
+        {catalog?.map((product) => {
           return (
             <ProductCard
               key={product.product_id}

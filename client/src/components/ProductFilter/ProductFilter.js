@@ -1,19 +1,19 @@
-import { useContext } from "react";
-import { GlobalContext } from "../../App";
-import { useForm } from "../../hooks/useForm";
-import { GeneralButton } from "../GeneralButton/GeneralButton";
+import { useDispatch, useSelector } from "react-redux";
+import { setCatalog } from "../../redux/actions/catalog";
+import { setFilteredCatalog } from "../../redux/actions/filterCatalog";
 import "./ProductFilter.css";
 
 export const ProductFilter = () => {
-  const { catalog, setCatalog, setFilteredCatalog } = useContext(GlobalContext);
-  const [formValues, handleInputChange] = useForm({ searchText: "" });
-  const { searchText } = formValues;
+  const catalog = useSelector((state) => state.catalog);
+  const dispatch = useDispatch();
 
-  const handleSearch = (e) => {
-    e.preventDefault();
-    setFilteredCatalog(
-      catalog.filter((product) =>
-        product.model.toLowerCase().includes(searchText.toLowerCase())
+  const handleInputChange = (e) => {
+    const searchText = e.target.value;
+    dispatch(
+      setFilteredCatalog(
+        catalog.filter((product) =>
+          product.model.toLowerCase().includes(searchText.toLowerCase())
+        )
       )
     );
   };
@@ -35,24 +35,26 @@ export const ProductFilter = () => {
         (a, b) => a[sortProperty] - b[sortProperty]
       );
     }
-    setCatalog(sortedCatalog);
+    dispatch(setCatalog(sortedCatalog));
   };
 
   return (
     <div className="product-filter-container">
       <div className="left"></div>
       <div className="center">
-        <form onSubmit={handleSearch} action="">
-          <input
-            onChange={handleInputChange}
-            type="text"
-            name="searchText"
-            autoComplete="off"
-            placeholder="Filter product by name"
-            value={searchText}
-          />
-          <GeneralButton text={"Search"} />
-        </form>
+        {/* <form onSubmit={handleSearch} action=""> */}
+        <input
+          onChange={handleInputChange}
+          type="text"
+          name="searchText"
+          autoComplete="off"
+          placeholder="Filter product by name"
+          // value={searchText}
+        />
+        {/* </form> */}
+        <div className="dropdown-container">
+          {/* <Dropdown searchText={searchText} /> */}
+        </div>
       </div>
       <div className="right">
         <select

@@ -2,6 +2,7 @@ import { applyMiddleware, combineReducers, compose, createStore } from "redux";
 import thunk from "redux-thunk";
 import { authReducer } from "./authReducer";
 import { catalogReducer } from "./catalogReducer";
+import { filteredCatalogReducer } from "./filteredCatalogReducer";
 import { popupReducer } from "./popupReducer";
 import { productIDReducer } from "./productIDReducer";
 
@@ -11,6 +12,7 @@ const reducers = combineReducers({
   popup: popupReducer,
   catalog: catalogReducer,
   productID: productIDReducer,
+  filteredCatalog: filteredCatalogReducer,
 });
 
 const composeEnhancers =

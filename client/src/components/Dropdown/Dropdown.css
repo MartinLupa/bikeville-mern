@@ -1,0 +1,18 @@
+.dropdown {
+  position: absolute;
+  width: 432px;
+  height: 80%;
+  padding: 5px;
+  border: 1px solid #d7d3d3;
+  background-color: white;
+  z-index: 999;
+  left: 0px;
+  top: 46px;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.dropdown::-webkit-scrollbar {
+  display: none;
+}
+/*# sourceMappingURL=Dropdown.css.map */

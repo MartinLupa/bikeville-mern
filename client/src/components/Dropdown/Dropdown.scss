@@ -1,0 +1,18 @@
+@import "../../styles/Variables.scss";
+
+.dropdown {
+  position: absolute;
+  width: 432px;
+  height: 80%;
+  padding: 5px;
+  border: 1px solid $light-border-color;
+  background-color: white;
+  z-index: 999;
+  left: 0px;
+  top: 46px;
+  overflow: hidden;
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
