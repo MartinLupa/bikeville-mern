@@ -17,13 +17,14 @@ export const Navbar = () => {
 
   const handleLogout = () => {
     dispatch(logout());
-
     navigate("/");
   };
 
   useEffect(() => {
     localStorage.setItem("user", JSON.stringify(user));
   }, [user]);
+
+  const viewportWidth = window.innerWidth;
 
   return (
     <nav className="navbar-container sticky">

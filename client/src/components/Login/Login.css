@@ -20,4 +20,10 @@
       -ms-flex-direction: column;
           flex-direction: column;
 }
+
+@media only screen and (max-width: 800px) {
+  .login-form {
+    padding: 0;
+  }
+}
 /*# sourceMappingURL=Login.css.map */

@@ -4,7 +4,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { show } from "../../../redux/actions/popup";
-const { REACT_APP_TOKEN: token } = process.env;
+const { REACT_APP_TOKEN: token, REACT_APP_API_CATALOG } = process.env;
 
 // {
 //   "sizes": [
@@ -42,7 +42,7 @@ export const ProductsList = ({
 
   const handleDelete = (product) => {
     dispatch(show("You are about to delete a product, are you sure?"));
-    fetch(`http://localhost:5000/api/products/${product._id}`, {
+    fetch(`${REACT_APP_API_CATALOG}/${product._id}`, {
       method: "DELETE",
       headers: {
         "Content-type": "application/json",
@@ -52,17 +52,17 @@ export const ProductsList = ({
   };
 
   const handleViewDetails = (product) => {
-    // console.log(product);
+    console.log(product);
   };
   return (
     <div className="products-list">
       <table className="dashboard-table">
         <thead>
           <tr>
-            <th>{/* Image */}</th>
+            <th>Prod.</th>
             <th>ID</th>
             <th>Model</th>
-            <th>{/* View details */}</th>
+            <th>Details</th>
             <th>{/* Edit icon */}</th>
             <th>{/* Delete icon */}</th>
           </tr>

@@ -48,6 +48,7 @@
   }
   form input {
     width: 350px;
+    padding-right: 0;
   }
   .short {
     width: 350px;

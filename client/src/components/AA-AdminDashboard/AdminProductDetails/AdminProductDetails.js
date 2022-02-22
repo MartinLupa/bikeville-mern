@@ -1,16 +1,18 @@
 import { useContext } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { GlobalContext } from "../../../App";
+import { GeneralButton } from "../../GeneralButton/GeneralButton";
+import "./AdminProductDetails.css";
 
 export const AdminProductDetails = () => {
   const { id } = useParams();
   const { catalog } = useContext(GlobalContext);
+  const navigate = useNavigate();
 
   const filteredProduct = catalog?.filter((product) => product._id === id);
   const {
     _id: internal_id,
     product_id,
-    customer_id,
     image,
     model,
     type,
@@ -23,35 +25,128 @@ export const AdminProductDetails = () => {
     updatedAt,
     net_price,
     vat,
-    total_price,
+    full_price,
     supplier,
-  } = filteredProduct;
+  } = filteredProduct[0];
+
+  const handleDashboardReturn = () => {
+    navigate("/dashboard");
+  };
+
+  console.log(filteredProduct);
 
   return (
-    <div className="details-container animate__animated animate__backInLeft">
-      <img className="details-img" src={filteredProduct.image} alt="" />
-
-      <div className="details-info">
-        <h1>Model</h1>
-        <p className="details-description">Desc</p>
-        <h4>BIKE PRODUCT:</h4>
-        <p>Type</p>
-        <hr />
-        <h4>BRAKE TYPE:</h4>
-        <p>brake</p>
-        <hr />
-        <h4>GROUP SET:</h4>
-        <p>Group</p>
-        <hr />
-        <h4>SIZES:</h4>
-        {/* <div className="details-size">
-          {sizes?.map((size) => (
-            <p key={size}>{size}</p>
-          ))}
-        </div> */}
-        <div className="details-btn">
-          {/* <AddCartButton id={product_id} /> */}
-        </div>
+    <div className="dashboard-details-container">
+      <table className="dashboard-details-table">
+        <thead>
+          <tr>
+            <th>{/* Concept */}</th>
+            <th>{/* Data */}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <b>Internal ID</b>
+            </td>
+            <td>{internal_id}</td>
+          </tr>
+          <tr>
+            <td>
+              <b>Customer ID</b>
+            </td>
+            <td>{product_id}</td>
+          </tr>
+          <tr>
+            <td>
+              <b>Model</b>
+            </td>
+            <td>{model}</td>
+          </tr>
+          <tr>
+            <td>
+              <b>Type</b>
+            </td>
+            <td>{type}</td>
+          </tr>
+          <tr>
+            <td>
+              <b>Brake Type</b>
+            </td>
+            <td>{brake_type}</td>
+          </tr>
+          <tr>
+            <td>
+              <b> Trail Type</b>
+            </td>
+            <td>{trail_type}</td>
+          </tr>
+          <tr>
+            <td>
+              <b> Groupset</b>
+            </td>
+            <td>{groupset}</td>
+          </tr>
+          <tr>
+            <td>
+              <b> Sizes</b>
+            </td>
+            <td className="sizes-td">
+              {sizes.map((size) => (
+                <p>{size}</p>
+              ))}
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <b> Description</b>
+            </td>
+            <td>{description}</td>
+          </tr>
+          <tr>
+            <td>
+              <b>Created At</b>
+            </td>
+            <td>{createdAt}</td>
+          </tr>
+          <tr>
+            <td>
+              <b>Last updated</b>
+            </td>
+            <td>{updatedAt}</td>
+          </tr>
+          <tr>
+            <td>
+              <b>Net Price</b>
+            </td>
+            <td>{net_price}</td>
+          </tr>
+          <tr>
+            <td>
+              <b>VAT</b>
+            </td>
+            <td>{vat}</td>
+          </tr>
+          <tr>
+            <td>
+              <b>Total Price</b>
+            </td>
+            <td>{full_price}</td>
+          </tr>
+          <tr>
+            <td>
+              <b>Supplier</b>
+            </td>
+            <td>{supplier}</td>
+          </tr>
+        </tbody>
+      </table>
+      <div className="secondary-container">
+        <img src={image} alt="" />
+        <GeneralButton
+          passedEvent={handleDashboardReturn}
+          text={"BACK TO DASHBOARD"}
+        />
       </div>
     </div>
   );
