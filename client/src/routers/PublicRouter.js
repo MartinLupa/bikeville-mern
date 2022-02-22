@@ -11,8 +11,6 @@ import { AdminRouter } from "./AdminRouter";
 import { PrivateRoute } from "./PrivateRoute";
 import { UsersRouter } from "./UsersRouter";
 
-// import { AdminRouter } from "./AdminRouter";
-
 export const PublicRouter = () => {
   return (
     <BrowserRouter>

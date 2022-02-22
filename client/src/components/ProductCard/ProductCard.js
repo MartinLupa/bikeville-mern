@@ -1,8 +1,8 @@
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import "animate.css";
-import { useContext } from "react";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { GlobalContext } from "../../App";
+import { setProductID } from "../../redux/actions/productID";
 import { AddCartIcon } from "../AddCartIcon/AddCartIcon";
 import "./ProductCard.css";
 
@@ -15,10 +15,10 @@ export const ProductCard = ({
   full_price,
   id,
 }) => {
-  const { setProductID } = useContext(GlobalContext);
+  const dispatch = useDispatch();
 
   const handleDetailsClick = (e) => {
-    setProductID(e.id);
+    dispatch(setProductID(e.id));
   };
 
   return (

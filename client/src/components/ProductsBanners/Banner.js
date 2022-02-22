@@ -1,10 +1,11 @@
-import { useContext } from "react";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { GlobalContext } from "../../App";
+import { setProductID } from "../../redux/actions/productID";
 import "./ProductsBanners.css";
 
 export const Banner = ({ imgStyle, model, product_id }) => {
-  const { setProductID } = useContext(GlobalContext);
+  // const { setProductID } = useContext(GlobalContext);
+  const dispatch = useDispatch();
 
   let backgroundImageStyle = {
     width: "100%",
@@ -15,7 +16,7 @@ export const Banner = ({ imgStyle, model, product_id }) => {
   };
 
   const handleDetailsClick = (e) => {
-    setProductID(e.product_id);
+    dispatch(setProductID(e.product_id));
   };
 
   return (

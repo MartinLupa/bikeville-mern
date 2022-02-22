@@ -1,10 +1,11 @@
-import { useContext } from "react";
-import { GlobalContext } from "../../App";
+import { useSelector } from "react-redux";
 import { AddCartButton } from "../../components/AddCartButton/AddCartButton";
 import "./ProductDetails.css";
 
 export const ProductDetails = () => {
-  const { catalog, productID } = useContext(GlobalContext);
+  // const { catalog, productID } = useContext(GlobalContext);
+  const catalog = useSelector((state) => state.catalog);
+  const productID = useSelector((state) => state.productID);
 
   const filteredProduct = catalog?.filter(
     (product) => product.product_id === productID
