@@ -1,14 +1,17 @@
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setCatalog } from "../../redux/actions/catalog";
 import { setFilteredCatalog } from "../../redux/actions/filterCatalog";
+import { Dropdown } from "../Dropdown/Dropdown";
 import "./ProductFilter.css";
 
 export const ProductFilter = () => {
   const catalog = useSelector((state) => state.catalog);
+  const [searchText, setSearchText] = useState("");
   const dispatch = useDispatch();
 
   const handleInputChange = (e) => {
-    const searchText = e.target.value;
+    setSearchText(e.target.value);
     dispatch(
       setFilteredCatalog(
         catalog.filter((product) =>
@@ -42,20 +45,18 @@ export const ProductFilter = () => {
     <div className="product-filter-container">
       <div className="left"></div>
       <div className="center">
-        {/* <form onSubmit={handleSearch} action=""> */}
         <input
           onChange={handleInputChange}
           type="text"
           name="searchText"
           autoComplete="off"
           placeholder="Filter product by name"
-          // value={searchText}
         />
-        {/* </form> */}
         <div className="dropdown-container">
-          {/* <Dropdown searchText={searchText} /> */}
+          <Dropdown searchText={searchText} />
         </div>
       </div>
+
       <div className="right">
         <select
           onChange={(e) => sortCatalog(e.target.value)}

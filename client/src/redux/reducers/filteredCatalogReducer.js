@@ -1,6 +1,13 @@
 import { filterCatalogTypes } from "../types/filterCatalogTypes";
 
-export const filteredCatalogReducer = (data) => ({
-  type: filterCatalogTypes.setFilteredCatalog,
-  payload: data,
-});
+const initialState = [];
+
+export const filteredCatalogReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case filterCatalogTypes.setFilteredCatalog:
+      return action.payload;
+
+    default:
+      return state;
+  }
+};
