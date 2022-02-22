@@ -3,7 +3,7 @@
 .dropdown {
   position: absolute;
   width: 432px;
-  height: 80%;
+  max-height: 300px;
   padding: 5px;
   border: 1px solid $light-border-color;
   background-color: white;
@@ -14,5 +14,32 @@
   overflow-y: auto;
   &::-webkit-scrollbar {
     display: none;
+  }
+}
+.product-info-container {
+  width: 95%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 10px;
+  margin-right: 30px;
+  border-bottom: 1px solid $light-border-color;
+  h4 {
+    margin: 0;
+    margin-left: 15px;
+  }
+  img {
+    width: 70px;
+    height: 70px;
+  }
+  .product-info-left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &:hover {
+    cursor: pointer;
+    border-left: 1px solid $light-border-color;
+    border-right: 1px solid $light-border-color;
   }
 }

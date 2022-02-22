@@ -53,7 +53,7 @@ export const ProductFilter = () => {
           placeholder="Filter product by name"
         />
         <div className="dropdown-container">
-          <Dropdown searchText={searchText} />
+          <Dropdown searchText={searchText} setSearchText={setSearchText} />
         </div>
       </div>
 

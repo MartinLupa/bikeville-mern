@@ -9,14 +9,6 @@ import "./Showroom.css";
 
 export const Showroom = () => {
   const catalog = useSelector((state) => state.catalog);
-  const filteredCatalog = useSelector((state) => state.filteredCatalog);
-
-  // let productsToRender;
-  // if (filteredCatalog?.length > 0) {
-  //   productsToRender = filteredCatalog;
-  // } else {
-  //   productsToRender = catalog;
-  // }
 
   return (
     <div className="lola">

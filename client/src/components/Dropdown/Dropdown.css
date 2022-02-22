@@ -1,7 +1,7 @@
 .dropdown {
   position: absolute;
   width: 432px;
-  height: 80%;
+  max-height: 300px;
   padding: 5px;
   border: 1px solid #d7d3d3;
   background-color: white;
@@ -14,5 +14,49 @@
 
 .dropdown::-webkit-scrollbar {
   display: none;
+}
+
+.product-info-container {
+  width: 95%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-left: 10px;
+  margin-right: 30px;
+  border-bottom: 1px solid #d7d3d3;
+}
+
+.product-info-container h4 {
+  margin: 0;
+  margin-left: 15px;
+}
+
+.product-info-container img {
+  width: 70px;
+  height: 70px;
+}
+
+.product-info-container .product-info-left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.product-info-container:hover {
+  cursor: pointer;
+  border-left: 1px solid #d7d3d3;
+  border-right: 1px solid #d7d3d3;
 }
 /*# sourceMappingURL=Dropdown.css.map */
