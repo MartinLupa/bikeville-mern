@@ -12,7 +12,6 @@ export const GlobalContext = createContext();
 function App() {
   const [shoppingCart, setShoppingCart] = useState([]);
   const [qtyCounter, setQtyCounter] = useState(1);
-  // const [filteredCatalog, setFilteredCatalog] = useState();
   const [cartTotal, setCartTotal] = useState(0);
   const [order, setOrder] = useState({
     products: [],
@@ -30,8 +29,6 @@ function App() {
       <div className="app-content">
         <GlobalContext.Provider
           value={{
-            // filteredCatalog,
-            // setFilteredCatalog,
             shoppingCart,
             setShoppingCart,
             qtyCounter,

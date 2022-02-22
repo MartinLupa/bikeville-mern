@@ -9,13 +9,38 @@
           justify-content: space-between;
 }
 
-.product-filter-container input {
+.product-filter-container .search-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding-left: 10px;
   margin-right: 5px;
   width: 430px;
   height: 40px;
   border: 1px solid #d7d3d3;
   border-radius: 5px;
+}
+
+.product-filter-container .search-bar input {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  height: 95%;
+  width: 80%;
+}
+
+.product-filter-container .search-bar input:focus {
+  outline: none;
+}
+
+.product-filter-container .search-bar .search-bar-icon {
+  padding-right: 5px;
 }
 
 .product-filter-container select {

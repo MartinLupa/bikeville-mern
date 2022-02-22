@@ -1,3 +1,5 @@
+import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
+import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setCatalog } from "../../redux/actions/catalog";
@@ -41,17 +43,32 @@ export const ProductFilter = () => {
     dispatch(setCatalog(sortedCatalog));
   };
 
+  const handleCloseDropdown = () => {
+    setSearchText("");
+  };
+
   return (
     <div className="product-filter-container">
       <div className="left"></div>
       <div className="center">
-        <input
-          onChange={handleInputChange}
-          type="text"
-          name="searchText"
-          autoComplete="off"
-          placeholder="Filter product by name"
-        />
+        <div className="search-bar">
+          <input
+            onChange={handleInputChange}
+            type="text"
+            name="searchText"
+            autoComplete="off"
+            placeholder="Filter product by name"
+            value={searchText}
+          />
+          {searchText ? (
+            <CloseOutlinedIcon
+              onClick={handleCloseDropdown}
+              className="search-bar-icon"
+            />
+          ) : (
+            <SearchOutlinedIcon className="search-bar-icon" />
+          )}
+        </div>
         <div className="dropdown-container">
           <Dropdown searchText={searchText} setSearchText={setSearchText} />
         </div>
