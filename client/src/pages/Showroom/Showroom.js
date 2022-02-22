@@ -1,14 +1,16 @@
 import { useContext } from "react";
+import { useSelector } from "react-redux";
 import { GlobalContext } from "../../App";
 import { Newsletter } from "../../components/Newsletter/Newsletter";
 import { ProductCard } from "../../components/ProductCard/ProductCard";
 import { ProductFilter } from "../../components/ProductFilter/ProductFilter";
 import { TopScroll } from "../../components/TopScroll/TopScroll";
+import { setCatalog } from "../../redux/actions/catalog";
 import "./Showroom.css";
 
 export const Showroom = () => {
-  const { catalog, setCatalog, filteredCatalog, setFilteredCatalog } =
-    useContext(GlobalContext);
+  const catalog = useSelector((state) => state.catalog);
+  const { filteredCatalog, setFilteredCatalog } = useContext(GlobalContext);
 
   let productsToRender;
   if (filteredCatalog?.length > 0) {

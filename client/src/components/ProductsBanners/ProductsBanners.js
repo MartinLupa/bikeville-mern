@@ -1,10 +1,9 @@
-import { useContext } from "react";
-import { GlobalContext } from "../../App";
+import { useSelector } from "react-redux";
 import { Banner } from "./Banner";
 import "./ProductsBanners.css";
 
 export const ProductsBanners = () => {
-  const { catalog } = useContext(GlobalContext);
+  const catalog = useSelector((state) => state.catalog);
   const newestAdditions = catalog?.slice(0, 3);
 
   return (

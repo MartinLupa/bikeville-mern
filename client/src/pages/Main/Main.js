@@ -1,18 +1,28 @@
-import { useContext, useEffect } from "react";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { GlobalContext } from "../../App";
 import { ProductsBanners } from "../../components/ProductsBanners/ProductsBanners";
 import { TopScroll } from "../../components/TopScroll/TopScroll";
-import { fetchAndUpdateCatalog } from "../../helpers/fetchAndUpdateCatalog";
+import { setCatalog } from "../../redux/actions/catalog";
 import racing_cyclists_video from "../../videos/racing-cyclists2.mp4";
 import "./Main.css";
 const { REACT_APP_API_CATALOG: CATALOG_URL } = process.env;
 
 export const Main = () => {
-  const { setCatalog } = useContext(GlobalContext);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    fetchAndUpdateCatalog(CATALOG_URL, setCatalog);
+    fetch(CATALOG_URL, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+        Authorization:
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZDgyNzk2YTNlNzY5NzcwOTE0ZjVhOSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY0MTU1NjM5NiwiZXhwIjoxNzI3ODY5OTk2fQ.2It5EWX_Pvxh2Di3z5zJ9kbIoDcM7ejW96KX534wllg",
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => dispatch(setCatalog(data)));
   }, [setCatalog]);
 
   return (

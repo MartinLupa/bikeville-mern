@@ -10,9 +10,10 @@ export const GlobalContext = createContext();
 // };
 
 function App() {
-  const [catalog, setCatalog] = useState();
+  // const [catalog, setCatalog] = useState();
   const [productID, setProductID] = useState();
   const [shoppingCart, setShoppingCart] = useState([]);
+  const [qtyCounter, setQtyCounter] = useState(1);
   const [filteredCatalog, setFilteredCatalog] = useState();
   const [cartTotal, setCartTotal] = useState(0);
   const [order, setOrder] = useState({
@@ -31,14 +32,16 @@ function App() {
       <div className="app-content">
         <GlobalContext.Provider
           value={{
-            catalog,
-            setCatalog,
+            // catalog,
+            // setCatalog,
             filteredCatalog,
             setFilteredCatalog,
             productID,
             setProductID,
             shoppingCart,
             setShoppingCart,
+            qtyCounter,
+            setQtyCounter,
             cartTotal,
             setCartTotal,
             order,
