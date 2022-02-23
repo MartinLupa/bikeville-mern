@@ -1,12 +1,11 @@
-import { useContext } from "react";
+import { useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
-import { GlobalContext } from "../../../App";
 import { GeneralButton } from "../../GeneralButton/GeneralButton";
 import "./AdminProductDetails.css";
 
 export const AdminProductDetails = () => {
   const { id } = useParams();
-  const { catalog } = useContext(GlobalContext);
+  const catalog = useSelector((state) => state.catalog);
   const navigate = useNavigate();
 
   const filteredProduct = catalog?.filter((product) => product._id === id);
@@ -32,8 +31,6 @@ export const AdminProductDetails = () => {
   const handleDashboardReturn = () => {
     navigate("/dashboard");
   };
-
-  console.log(filteredProduct);
 
   return (
     <div className="dashboard-details-container">

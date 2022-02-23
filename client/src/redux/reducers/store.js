@@ -5,6 +5,7 @@ import { catalogReducer } from "./catalogReducer";
 import { filteredCatalogReducer } from "./filteredCatalogReducer";
 import { popupReducer } from "./popupReducer";
 import { productIDReducer } from "./productIDReducer";
+import { qtyCounterReducer } from "./qtyCounterReducer";
 
 const reducers = combineReducers({
   // cart: cartReducer,
@@ -13,6 +14,7 @@ const reducers = combineReducers({
   catalog: catalogReducer,
   productID: productIDReducer,
   filteredCatalog: filteredCatalogReducer,
+  qtyCounter: qtyCounterReducer,
 });
 
 const composeEnhancers =

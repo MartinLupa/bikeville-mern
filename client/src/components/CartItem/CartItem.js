@@ -1,21 +1,24 @@
 import { useContext } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
 import { GlobalContext } from "../../App";
+import { setQtyCounter } from "../../redux/actions/qtyCounter";
 import { CartItemButton } from "../CartItemButton/CartItemButton";
 import "./CartItem.css";
 
 export const CartItem = ({ product }) => {
-  const { shoppingCart, setShoppingCart, qtyCounter, setQtyCounter } =
-    useContext(GlobalContext);
+  const qtyCounter = useSelector((state) => state.qtyCounter);
+  const dispatch = useDispatch();
+  const { shoppingCart, setShoppingCart } = useContext(GlobalContext);
 
   const location = useLocation();
 
   //Lacks lower limit to 1.
   const counterIncrement = () => {
-    setQtyCounter(qtyCounter + 1);
+    dispatch(setQtyCounter(qtyCounter + 1));
   };
   const counterDecrement = () => {
-    setQtyCounter(qtyCounter - 1);
+    dispatch(setQtyCounter(qtyCounter - 1));
   };
 
   const deleteItem = () => {

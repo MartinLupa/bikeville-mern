@@ -1,10 +1,10 @@
 import AddBoxOutlinedIcon from "@mui/icons-material/AddBoxOutlined";
-import { useContext, useEffect, useState } from "react";
-import { GlobalContext } from "../../App";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { AddProductsForm } from "../../components/AA-AdminDashboard/AddProductsForm/AddProductsForm";
 import { ProductsList } from "../../components/AA-AdminDashboard/UpdateProduct/ProductsList";
 import { UpdateProductsForm } from "../../components/AA-AdminDashboard/UpdateProduct/UpdateProductsForm";
-import { fetchAndUpdateCatalog } from "../../helpers/fetchAndUpdateCatalog";
+import { setCatalog } from "../../redux/actions/catalog";
 import "./Dashboard.css";
 const { REACT_APP_API_CATALOG: CATALOG_URL } = process.env;
 
@@ -26,7 +26,8 @@ const initialValues = {
 };
 
 export default function Dashboard() {
-  const { catalog, setCatalog } = useContext(GlobalContext);
+  const catalog = useSelector((state) => state.catalog);
+  const dispatch = useDispatch();
   const [currentProduct, setCurrentProduct] = useState(initialValues);
   const [productsList, setProductsList] = useState([]);
   const [isEditing, setIsEditing] = useState(false);
@@ -36,7 +37,17 @@ export default function Dashboard() {
   };
 
   useEffect(() => {
-    fetchAndUpdateCatalog(CATALOG_URL, setCatalog);
+    fetch(CATALOG_URL, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+        Authorization:
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZDgyNzk2YTNlNzY5NzcwOTE0ZjVhOSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY0MTU1NjM5NiwiZXhwIjoxNzI3ODY5OTk2fQ.2It5EWX_Pvxh2Di3z5zJ9kbIoDcM7ejW96KX534wllg",
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => dispatch(setCatalog(data)));
     setProductsList(catalog);
   }, [catalog, isEditing]);
 
