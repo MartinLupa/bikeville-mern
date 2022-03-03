@@ -1,12 +1,11 @@
 const mongoose = require("mongoose");
-const { boolean } = require("webidl-conversions");
 
 const CartSchema = new mongoose.Schema(
   {
     userId: { type: String, required: true },
     products: [
       {
-        product_info: { type: String },
+        product_id: { type: String },
         quantity: {
           type: Number,
           default: 1,

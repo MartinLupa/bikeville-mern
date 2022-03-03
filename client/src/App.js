@@ -11,7 +11,6 @@ export const GlobalContext = createContext();
 
 function App() {
   const [shoppingCart, setShoppingCart] = useState([]);
-  const [qtyCounter, setQtyCounter] = useState(1);
   const [cartTotal, setCartTotal] = useState(0);
   const [order, setOrder] = useState({
     products: [],
@@ -31,8 +30,6 @@ function App() {
           value={{
             shoppingCart,
             setShoppingCart,
-            qtyCounter,
-            setQtyCounter,
             cartTotal,
             setCartTotal,
             order,

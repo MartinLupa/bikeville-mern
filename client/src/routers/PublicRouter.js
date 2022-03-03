@@ -13,7 +13,7 @@ import { UsersRouter } from "./UsersRouter";
 
 export const PublicRouter = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/">
       <Navbar />
       <Popup />
       <Routes>

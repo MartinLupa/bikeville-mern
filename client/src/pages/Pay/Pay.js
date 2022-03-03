@@ -7,7 +7,10 @@ import { CircularIndeterminate } from "../../components/CircularProgress/Circula
 import { GeneralButton } from "../../components/GeneralButton/GeneralButton";
 import { OrderSummary } from "../../components/OrderSummary/OrderSummary";
 import "./Pay.css";
-const { REACT_APP_API_PAYMENT: PAYMENT_URL, STRIPE_PUBLIC_KEY } = process.env;
+const {
+  REACT_APP_API_PAYMENT: PAYMENT_URL,
+  REACT_APP_STRIPE_PUBLIC_KEY: STRIPE_KEY,
+} = process.env;
 
 export const Pay = () => {
   const [stripeToken, setStripeToken] = useState(null);
@@ -54,7 +57,7 @@ export const Pay = () => {
             description={`Your total is EUR ${order.total},00`}
             amount={order.total * 100}
             token={onToken}
-            stripeKey={STRIPE_PUBLIC_KEY}
+            stripeKey={STRIPE_KEY}
           >
             <GeneralButton text={"PAY"} />
           </StripeCheckout>

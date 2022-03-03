@@ -32,7 +32,7 @@ Tested with Node v14.16.1 and npm 6.14.12.
 - useState, useEffect, useContext.
 - React Router v6 | Public router and Private router.
 - Protected routes: ShoppingCart, Pay and Success page.
-- Use of third party APIs: Mailchimp(Newsletter), Leaflet(map on Contact page).
+- Use of third party APIs: Leaflet(map on Contact page).
 - Form management: Formik, Yup.
 - Use of localStorage to maintain user session and shopping cart states.
 - SASS.
@@ -42,5 +42,5 @@ Tested with Node v14.16.1 and npm 6.14.12.
 
 - REST Api made with Node and Express | Full CRUD.
 - Payment via Stripe.
-- Authentification/verification: JSON Web Token, Crypto JS, JWT.
+- Authentification/verification: Crypto JS, JWT.
 - MongoDB, Mongoose.

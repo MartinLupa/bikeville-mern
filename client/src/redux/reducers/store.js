@@ -6,9 +6,10 @@ import { filteredCatalogReducer } from "./filteredCatalogReducer";
 import { popupReducer } from "./popupReducer";
 import { productIDReducer } from "./productIDReducer";
 import { qtyCounterReducer } from "./qtyCounterReducer";
+import { shoppingCartReducer } from "./shoppingCartReducer";
 
 const reducers = combineReducers({
-  // cart: cartReducer,
+  shoppingCart: shoppingCartReducer,
   auth: authReducer,
   popup: popupReducer,
   catalog: catalogReducer,
