@@ -6,14 +6,15 @@ import "./AddCartButton.css";
 export const AddCartButton = ({ id }) => {
   const dispatch = useDispatch();
   const catalog = useSelector((state) => state.catalog);
-  const cart = useSelector((state) => state.shoppingCart);
 
   const handleAddClick = () => {
     const addedProduct = catalog.filter((product) => product.product_id === id);
-    dispatch(addProduct(addedProduct));
+    dispatch(
+      addProduct({
+        ...addedProduct,
+      })
+    );
   };
-
-  console.log(cart);
 
   return (
     <button onClick={handleAddClick} id={id} className="add-cart-btn">
