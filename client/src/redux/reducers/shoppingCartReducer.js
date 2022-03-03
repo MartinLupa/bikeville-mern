@@ -34,7 +34,7 @@ const cartSlice = createSlice({
     addProduct: (state, action) => {
       state.quantity += 1;
       state.products.push(action.payload);
-      state.total += action.payload.full_price;
+      state.total += action.payload[0].full_price;
     },
   },
 });

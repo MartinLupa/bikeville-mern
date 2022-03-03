@@ -1,5 +1,5 @@
-import { useContext, useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useContext, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { GlobalContext } from "../../App";
 import { CartItem } from "../../components/CartItem/CartItem";
@@ -14,8 +14,8 @@ import { show } from "../../redux/actions/popup";
 import "./ShoppingCart.css";
 
 export const ShoppingCart = () => {
-  const { shoppingCart, cartTotal, setCartTotal, setOrder } =
-    useContext(GlobalContext);
+  const { setOrder } = useContext(GlobalContext);
+  const shoppingCart = useSelector((state) => state.shoppingCart);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -24,40 +24,30 @@ export const ShoppingCart = () => {
     cost: 14,
   });
 
-  const calculateCartTotal = () => {
-    let total = 0;
-    shoppingCart.map((item) => (total += item[0].full_price));
-    setCartTotal(total);
-  };
-
   const selectedCourier = (e) => {
     setCourierCompany({ company: e.target.value, cost: 14 });
   };
 
   const orderCheckout = () => {
-    if (shoppingCart.length === 0) {
+    if (shoppingCart.products.length === 0) {
       dispatch(show("Shopping cart is empty."));
       navigate("/showroom");
     } else {
       setOrder({
-        products: shoppingCart,
+        products: shoppingCart.products,
         courier_company: courierCompany,
-        total: cartTotal,
+        total: shoppingCart.total,
       });
       navigate("/pay");
     }
   };
 
-  useEffect(() => {
-    calculateCartTotal();
-  }, [shoppingCart]);
-
   return (
     <div className="cart-container">
       <div className="cart items-container">
         <h4>Cart Items</h4>
-        {shoppingCart.length > 0 ? (
-          shoppingCart.map((product, id) => (
+        {shoppingCart.products.length > 0 ? (
+          shoppingCart.products.map((product, id) => (
             <CartItem key={id} product={product} />
           ))
         ) : (
@@ -66,7 +56,7 @@ export const ShoppingCart = () => {
       </div>
       <div className="cart payment-container">
         <h4>Payment</h4>
-        {shoppingCart?.map((product, id) => (
+        {shoppingCart.products.map((product, id) => (
           <PaymentItem key={id} product={product} />
         ))}
 
@@ -75,7 +65,7 @@ export const ShoppingCart = () => {
             <strong>TOTAL:</strong>
           </p>
           <p>
-            <strong>€ {cartTotal}</strong>
+            <strong>€ {shoppingCart.total}</strong>
           </p>
         </div>
       </div>

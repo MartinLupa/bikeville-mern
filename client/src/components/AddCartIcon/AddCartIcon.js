@@ -1,16 +1,27 @@
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
-import { useContext } from "react";
-import { useSelector } from "react-redux";
-import { GlobalContext } from "../../App";
+import { useDispatch, useSelector } from "react-redux";
+import { show } from "../../redux/actions/popup";
+import { addProduct } from "../../redux/reducers/shoppingCartReducer";
 import "./AddCartIcon.css";
 
 export const AddCartIcon = ({ id }) => {
-  const { setShoppingCart } = useContext(GlobalContext);
+  const dispatch = useDispatch();
   const catalog = useSelector((state) => state.catalog);
+  const shoppingCart = useSelector((state) => state.shoppingCart);
+
   const handleAddClick = () => {
     const addedProduct = catalog.filter((product) => product.product_id === id);
-    setShoppingCart((previousCart) => [...previousCart, addedProduct]);
+    const checkExisting = shoppingCart.products.some(
+      (prod) => prod.product_id === addedProduct.product_id
+    );
+    if (checkExisting) {
+      dispatch(show("This product is already in your shopping cart."));
+    } else {
+      dispatch(addProduct({ ...addedProduct, quantity: 1 }));
+    }
   };
+
+  console.log(shoppingCart);
 
   return (
     <div className="add-icon-container">
