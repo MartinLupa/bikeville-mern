@@ -1,16 +1,15 @@
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
-import { useContext } from "react";
-import { useSelector } from "react-redux";
-import { GlobalContext } from "../../App";
+import { useDispatch, useSelector } from "react-redux";
+import { addProduct } from "../../redux/reducers/shoppingCartReducer";
 import "./AddCartButton.css";
 
 export const AddCartButton = ({ id }) => {
-  const { setShoppingCart } = useContext(GlobalContext);
+  const dispatch = useDispatch();
   const catalog = useSelector((state) => state.catalog);
 
   const handleAddClick = () => {
     const addedProduct = catalog.filter((product) => product.product_id === id);
-    setShoppingCart((previousCart) => [...previousCart, addedProduct]);
+    dispatch(addProduct(addedProduct));
   };
 
   return (

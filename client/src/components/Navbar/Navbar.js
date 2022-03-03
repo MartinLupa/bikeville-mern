@@ -1,16 +1,15 @@
 import DirectionsBikeIcon from "@mui/icons-material/DirectionsBike";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import Badge from "@mui/material/Badge";
-import { useContext, useEffect } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, NavLink, useNavigate } from "react-router-dom";
-import { GlobalContext } from "../../App";
 import { logout } from "../../redux/actions/auth";
 import "../../styles/Variables.scss";
 import "./Navbar.css";
 
 export const Navbar = () => {
-  const { shoppingCart } = useContext(GlobalContext);
+  const quantity = useSelector((state) => state.shoppingCart.quantity);
   const user = useSelector((state) => state.auth);
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -23,8 +22,6 @@ export const Navbar = () => {
   useEffect(() => {
     localStorage.setItem("user", JSON.stringify(user));
   }, [user]);
-
-  const viewportWidth = window.innerWidth;
 
   return (
     <nav className="navbar-container sticky">
@@ -118,7 +115,7 @@ export const Navbar = () => {
             <p>{user.userInfo.first_name}</p>
             <Link to="/shopping_cart">
               <div className="cart-icon">
-                <Badge badgeContent={shoppingCart?.length} color="primary">
+                <Badge badgeContent={quantity} color="primary">
                   <ShoppingCartOutlinedIcon
                     fontSize="large"
                     className="nav-link nav-icon"
@@ -131,7 +128,7 @@ export const Navbar = () => {
         ) : (
           <Link to="/shopping_cart">
             <div className="cart-icon">
-              <Badge badgeContent={shoppingCart?.length} color="primary">
+              <Badge badgeContent={quantity} color="primary">
                 <ShoppingCartOutlinedIcon
                   fontSize="large"
                   className="nav-link nav-icon"
