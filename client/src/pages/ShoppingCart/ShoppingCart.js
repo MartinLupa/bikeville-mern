@@ -65,7 +65,7 @@ export const ShoppingCart = () => {
             <strong>TOTAL:</strong>
           </p>
           <p>
-            <strong>€ {shoppingCart.total}</strong>
+            <strong>€ {shoppingCart.total || 0}</strong>
           </p>
         </div>
       </div>

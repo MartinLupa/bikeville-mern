@@ -10,22 +10,19 @@ export const AddCartIcon = ({ id }) => {
   const shoppingCart = useSelector((state) => state.shoppingCart);
 
   const handleAddClick = () => {
-    const addedProduct = catalog.filter((product) => product.product_id === id);
-
-    const shop = shoppingCart.products.map((prod) => {
-      return prod[0].product_id;
+    const addedProduct = catalog.find((product) => product.product_id === id);
+    const cartProductIDs = shoppingCart.products.map((prod) => {
+      return prod.product_id;
     });
 
-    if (shop.includes(addedProduct[0].product_id)) {
+    if (cartProductIDs.includes(addedProduct.product_id)) {
       dispatch(show("That product is already in your shopping cart."));
     } else {
-      dispatch(
-        addProduct({
-          ...addedProduct,
-        })
-      );
+      dispatch(addProduct({ ...addedProduct }));
     }
   };
+
+  console.log(shoppingCart);
 
   return (
     <div className="add-icon-container">

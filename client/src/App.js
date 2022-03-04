@@ -20,8 +20,6 @@ function ErrorFallback({ error }) {
 }
 
 function App() {
-  const [shoppingCart, setShoppingCart] = useState([]);
-  const [cartTotal, setCartTotal] = useState(0);
   const [order, setOrder] = useState({
     products: [],
     courier_company: {},
@@ -39,10 +37,6 @@ function App() {
         <ErrorBoundary FallbackComponent={ErrorFallback}>
           <GlobalContext.Provider
             value={{
-              shoppingCart,
-              setShoppingCart,
-              cartTotal,
-              setCartTotal,
               order,
               setOrder,
             }}

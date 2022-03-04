@@ -1,32 +1,31 @@
-import { useContext } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
-import { GlobalContext } from "../../App";
 import { setQtyCounter } from "../../redux/actions/qtyCounter";
+import {
+  increaseQuantity,
+  removeProduct,
+} from "../../redux/reducers/shoppingCartReducer";
 import { CartItemButton } from "../CartItemButton/CartItemButton";
 import "./CartItem.css";
 
 export const CartItem = ({ product }) => {
   const qtyCounter = useSelector((state) => state.qtyCounter);
   const dispatch = useDispatch();
-  const { shoppingCart, setShoppingCart } = useContext(GlobalContext);
-
+  const shoppingCart = useSelector((state) => state.shoppingCart);
   const location = useLocation();
 
   //Lacks lower limit to 1.
   const counterIncrement = () => {
     dispatch(setQtyCounter(qtyCounter + 1));
+    dispatch(increaseQuantity(qtyCounter));
+    console.log(shoppingCart);
   };
   const counterDecrement = () => {
     dispatch(setQtyCounter(qtyCounter - 1));
   };
 
-  const deleteItem = () => {
-    setShoppingCart(
-      shoppingCart.filter(
-        (item) => item[0].product_id !== product[0].product_id
-      )
-    );
+  const deleteItem = (product) => {
+    dispatch(removeProduct(product));
   };
 
   return (
@@ -36,21 +35,30 @@ export const CartItem = ({ product }) => {
           <div className="qty">{qtyCounter}</div>
         </div>
 
-        <img className="cart-img" src={product[0].image} alt="" />
+        <img className="cart-img" src={product.image} alt="" />
 
         <div>
-          <h5>{product[0].model}</h5>
-          <p>{product[0].product_id}</p>
+          <h5>{product.model}</h5>
+          <p>{product.product_id}</p>
         </div>
       </div>
 
       <div className="cart-right">
-        <div className="cart-price">€ {product[0].full_price}</div>
+        <div className="cart-price">€ {product.full_price}</div>
         {location.pathname !== "/pay" ? (
           <div>
-            <CartItemButton passedEvent={counterIncrement} text={"+"} />
-            <CartItemButton passedEvent={counterDecrement} text={"-"} />
-            <CartItemButton passedEvent={deleteItem} text={"x"} />
+            <CartItemButton
+              passedEvent={() => counterIncrement(product.product_id)}
+              text={"+"}
+            />
+            <CartItemButton
+              passedEvent={() => counterDecrement(product.product_id)}
+              text={"-"}
+            />
+            <CartItemButton
+              passedEvent={() => deleteItem(product)}
+              text={"x"}
+            />
           </div>
         ) : null}
       </div>
