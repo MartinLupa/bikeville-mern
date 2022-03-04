@@ -1,3 +1,4 @@
+import AddBoxOutlinedIcon from "@mui/icons-material/AddBoxOutlined";
 import DeleteForeverOutlinedIcon from "@mui/icons-material/DeleteForeverOutlined";
 import ModeEditOutlineOutlinedIcon from "@mui/icons-material/ModeEditOutlineOutlined";
 import React from "react";
@@ -6,34 +7,12 @@ import { Link } from "react-router-dom";
 import { show } from "../../../redux/actions/popup";
 const { REACT_APP_TOKEN: token, REACT_APP_API_CATALOG } = process.env;
 
-// {
-//   "sizes": [
-//       48,
-//       51,
-//       52
-//   ],
-//   "model": "lili",
-//   "trail_type": "Test model",
-//   "product_id": "TEST01",
-//   "image": "https://content.roadbikereview.com/channels/roadbikereview/images/products/large/product_490188_25643.jpg",
-//   "short_description": "Test model",
-//   "description": "Test model",
-//   "type": "Test model",
-//   "brake_type": "Test model",
-//   "groupset": "Test model",
-//   "net_price": 999,
-//   "vat": 999,
-//   "full_price": 999,
-//   "inStock": true
-// }
-
 export const ProductsList = ({
   setCurrentProduct,
   productsList,
   setIsEditing,
 }) => {
   const dispatch = useDispatch();
-  // const [filteredProducts, setFilteredProducts] = useState([]);
 
   const handleEdit = (product) => {
     setCurrentProduct(product);
@@ -54,6 +33,10 @@ export const ProductsList = ({
   const handleViewDetails = (product) => {
     console.log(product);
   };
+
+  const handleSwitchForm = () => {
+    setIsEditing(false);
+  };
   return (
     <div className="products-list">
       <table className="dashboard-table">
@@ -64,7 +47,12 @@ export const ProductsList = ({
             <th>Model</th>
             <th>Details</th>
             <th>{/* Edit icon */}</th>
-            <th>{/* Delete icon */}</th>
+            <th>
+              <AddBoxOutlinedIcon
+                className="add-icon"
+                onClick={handleSwitchForm}
+              />
+            </th>
           </tr>
         </thead>
         <tbody>

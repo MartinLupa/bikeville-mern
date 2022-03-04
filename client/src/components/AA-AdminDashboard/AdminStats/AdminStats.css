@@ -1,0 +1,45 @@
+.stats-container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.stats {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  border: 1px solid #d7d3d3;
+  height: 100px;
+  margin: 2px;
+  border-radius: 10px;
+  color: #ffffff;
+}
+
+.stats .stats-icon {
+  font-size: 3.5rem;
+}
+
+.stats-sales {
+  background-color: #418bca;
+}
+
+.stats-users {
+  background-color: #5bb85d;
+}
+
+.stats-info {
+  margin-left: 15px;
+}
+
+.stats-info h2 {
+  margin: 0;
+}
+/*# sourceMappingURL=AdminStats.css.map */

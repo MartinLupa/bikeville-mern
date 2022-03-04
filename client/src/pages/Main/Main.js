@@ -6,7 +6,8 @@ import { TopScroll } from "../../components/TopScroll/TopScroll";
 import { setCatalog } from "../../redux/actions/catalog";
 import racing_cyclists_video from "../../videos/racing-cyclists2.mp4";
 import "./Main.css";
-const { REACT_APP_API_CATALOG: CATALOG_URL } = process.env;
+const { REACT_APP_API_CATALOG: CATALOG_URL, REACT_APP_TOKEN: token } =
+  process.env;
 
 export const Main = () => {
   const dispatch = useDispatch();
@@ -17,8 +18,7 @@ export const Main = () => {
       headers: {
         "Content-Type": "application/json",
         "Access-Control-Allow-Origin": "*",
-        Authorization:
-          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZDgyNzk2YTNlNzY5NzcwOTE0ZjVhOSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY0MTU1NjM5NiwiZXhwIjoxNzI3ODY5OTk2fQ.2It5EWX_Pvxh2Di3z5zJ9kbIoDcM7ejW96KX534wllg",
+        Authorization: `Bearer ${token}`,
       },
     })
       .then((response) => response.json())

@@ -18,17 +18,12 @@
 }
 
 .dashboard-top {
+  width: 65%;
   display: flex;
   align-items: center;
   justify-content: center;
   input {
     margin: 0;
-  }
-  .add-icon {
-    margin: 0;
-    padding: 0;
-    font-size: 55px;
-    color: blue;
   }
 }
 

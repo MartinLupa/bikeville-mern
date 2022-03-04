@@ -1,7 +1,7 @@
-import AddBoxOutlinedIcon from "@mui/icons-material/AddBoxOutlined";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { AddProductsForm } from "../../components/AA-AdminDashboard/AddProductsForm/AddProductsForm";
+import { AdminStats } from "../../components/AA-AdminDashboard/AdminStats/AdminStats";
 import { ProductsList } from "../../components/AA-AdminDashboard/UpdateProduct/ProductsList";
 import { UpdateProductsForm } from "../../components/AA-AdminDashboard/UpdateProduct/UpdateProductsForm";
 import { setCatalog } from "../../redux/actions/catalog";
@@ -32,10 +32,6 @@ export default function Dashboard() {
   const [productsList, setProductsList] = useState([]);
   const [isEditing, setIsEditing] = useState(false);
 
-  const handleSwitchForm = () => {
-    setIsEditing(false);
-  };
-
   useEffect(() => {
     fetch(CATALOG_URL, {
       method: "GET",
@@ -55,8 +51,7 @@ export default function Dashboard() {
   return (
     <div className="dashboard-container">
       <div className="dashboard-top">
-        <input type="text" placeholder="Search products by ID" />
-        <AddBoxOutlinedIcon className="add-icon" onClick={handleSwitchForm} />
+        <AdminStats />
       </div>
       <div className="dashboard-bottom">
         {isEditing ? (

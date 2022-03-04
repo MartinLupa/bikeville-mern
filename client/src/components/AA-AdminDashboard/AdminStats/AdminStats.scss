@@ -1,0 +1,36 @@
+@import "../../../styles/Variables.scss";
+
+.stats-container {
+  width: 100%;
+  display: flex;
+}
+
+.stats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border: 1px solid $light-border-color;
+  height: 100px;
+  margin: 2px;
+  border-radius: 10px;
+  color: $white-text;
+  .stats-icon {
+    font-size: 3.5rem;
+  }
+}
+
+.stats-sales {
+  background-color: $sales-blue;
+}
+
+.stats-users {
+  background-color: $users-green;
+}
+
+.stats-info {
+  margin-left: 15px;
+  h2 {
+    margin: 0;
+  }
+}
