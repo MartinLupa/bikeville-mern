@@ -47,7 +47,7 @@ export const ShoppingCart = () => {
       <div className="cart items-container">
         <h4>Cart Items</h4>
         {shoppingCart.products.length > 0 ? (
-          shoppingCart.products.map((product, id) => (
+          shoppingCart?.products.map((product, id) => (
             <CartItem key={id} product={product} />
           ))
         ) : (
@@ -56,7 +56,7 @@ export const ShoppingCart = () => {
       </div>
       <div className="cart payment-container">
         <h4>Payment</h4>
-        {shoppingCart.products.map((product, id) => (
+        {shoppingCart?.products.map((product, id) => (
           <PaymentItem key={id} product={product} />
         ))}
 
@@ -65,7 +65,7 @@ export const ShoppingCart = () => {
             <strong>TOTAL:</strong>
           </p>
           <p>
-            <strong>€ {shoppingCart.total || 0}</strong>
+            <strong>€{shoppingCart.total}</strong>
           </p>
         </div>
       </div>

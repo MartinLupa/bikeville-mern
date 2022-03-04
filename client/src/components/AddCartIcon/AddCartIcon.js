@@ -11,6 +11,7 @@ export const AddCartIcon = ({ id }) => {
 
   const handleAddClick = () => {
     const addedProduct = catalog.find((product) => product.product_id === id);
+    Object.assign(addedProduct, { quantity: 1 });
     const cartProductIDs = shoppingCart.products.map((prod) => {
       return prod.product_id;
     });
@@ -19,10 +20,9 @@ export const AddCartIcon = ({ id }) => {
       dispatch(show("That product is already in your shopping cart."));
     } else {
       dispatch(addProduct({ ...addedProduct }));
+      console.log(shoppingCart);
     }
   };
-
-  console.log(shoppingCart);
 
   return (
     <div className="add-icon-container">

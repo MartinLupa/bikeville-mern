@@ -49,6 +49,7 @@ export default function Dashboard() {
       .then((response) => response.json())
       .then((data) => dispatch(setCatalog(data)));
     setProductsList(catalog);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [catalog, isEditing]);
 
   return (

@@ -1,27 +1,25 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
-import { setQtyCounter } from "../../redux/actions/qtyCounter";
 import {
-  increaseQuantity,
+  addQuantity,
   removeProduct,
+  subtractQuantity,
 } from "../../redux/reducers/shoppingCartReducer";
 import { CartItemButton } from "../CartItemButton/CartItemButton";
 import "./CartItem.css";
 
 export const CartItem = ({ product }) => {
-  const qtyCounter = useSelector((state) => state.qtyCounter);
   const dispatch = useDispatch();
   const shoppingCart = useSelector((state) => state.shoppingCart);
   const location = useLocation();
 
   //Lacks lower limit to 1.
   const counterIncrement = () => {
-    dispatch(setQtyCounter(qtyCounter + 1));
-    dispatch(increaseQuantity(qtyCounter));
+    dispatch(addQuantity({ product, qtyCounter: 1 }));
     console.log(shoppingCart);
   };
   const counterDecrement = () => {
-    dispatch(setQtyCounter(qtyCounter - 1));
+    dispatch(subtractQuantity({ product, qtyCounter: 1 }));
   };
 
   const deleteItem = (product) => {
@@ -32,7 +30,7 @@ export const CartItem = ({ product }) => {
     <div className="cart-item animate__animated animate__fadeIn">
       <div className="cart-left">
         <div className="qty-container">
-          <div className="qty">{qtyCounter}</div>
+          <div className="qty">{product.quantity}</div>
         </div>
 
         <img className="cart-img" src={product.image} alt="" />
@@ -44,7 +42,9 @@ export const CartItem = ({ product }) => {
       </div>
 
       <div className="cart-right">
-        <div className="cart-price">€ {product.full_price}</div>
+        <div className="cart-price">
+          € {product.full_price * product.quantity}
+        </div>
         {location.pathname !== "/pay" ? (
           <div>
             <CartItemButton
@@ -52,7 +52,7 @@ export const CartItem = ({ product }) => {
               text={"+"}
             />
             <CartItemButton
-              passedEvent={() => counterDecrement(product.product_id)}
+              passedEvent={() => counterDecrement(product)}
               text={"-"}
             />
             <CartItemButton

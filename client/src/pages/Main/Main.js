@@ -23,6 +23,7 @@ export const Main = () => {
     })
       .then((response) => response.json())
       .then((data) => dispatch(setCatalog(data)));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [setCatalog]);
 
   return (
