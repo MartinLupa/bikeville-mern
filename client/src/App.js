@@ -1,9 +1,10 @@
 import { createContext, useEffect, useState } from "react";
 import { ErrorBoundary } from "react-error-boundary";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import "./App.css";
 import { Footer } from "./components/Footer/Footer";
 import { login } from "./redux/actions/auth";
+import { addProduct } from "./redux/reducers/shoppingCartReducer";
 import { PublicRouter } from "./routers/PublicRouter";
 
 export const GlobalContext = createContext();
@@ -18,7 +19,6 @@ function ErrorFallback({ error }) {
 }
 
 function App() {
-  const user = useSelector((state) => state.auth);
   const dispatch = useDispatch();
   const [order, setOrder] = useState({
     products: [],
@@ -27,11 +27,18 @@ function App() {
   });
 
   useEffect(() => {
-    const initialUserState = JSON.parse(localStorage.getItem("user"));
-    console.log(initialUserState);
-    if (initialUserState.email) {
+    const initialUserState = JSON.parse(window.localStorage.getItem("user"));
+    const initialCartState = JSON.parse(
+      window.localStorage.getItem("shoppingCart")
+    );
+    if (initialUserState?.email) {
       dispatch(login(initialUserState));
     }
+    if (initialCartState?.products.length > 0) {
+      initialCartState.products.map((prod) => dispatch(addProduct(prod)));
+    }
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

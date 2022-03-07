@@ -1,4 +1,5 @@
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { show } from "../../redux/actions/popup";
 import { addProduct } from "../../redux/reducers/shoppingCartReducer";
@@ -20,9 +21,12 @@ export const AddCartIcon = ({ id }) => {
       dispatch(show("That product is already in your shopping cart."));
     } else {
       dispatch(addProduct({ ...addedProduct }));
-      console.log(shoppingCart);
     }
   };
+
+  useEffect(() => {
+    window.localStorage.setItem("shoppingCart", JSON.stringify(shoppingCart));
+  }, [shoppingCart]);
 
   return (
     <div className="add-icon-container">

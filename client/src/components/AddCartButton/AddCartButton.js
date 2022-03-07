@@ -1,4 +1,5 @@
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { show } from "../../redux/actions/popup";
 import { addProduct } from "../../redux/reducers/shoppingCartReducer";
@@ -22,6 +23,10 @@ export const AddCartButton = ({ id }) => {
       dispatch(addProduct({ ...addedProduct }));
     }
   };
+
+  useEffect(() => {
+    window.localStorage.setItem("shoppingCart", JSON.stringify(shoppingCart));
+  }, [shoppingCart]);
 
   return (
     <button onClick={handleAddClick} id={id} className="add-cart-btn">
