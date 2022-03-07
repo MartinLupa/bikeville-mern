@@ -1,7 +1,6 @@
 import DirectionsBikeIcon from "@mui/icons-material/DirectionsBike";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import Badge from "@mui/material/Badge";
-import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { logout } from "../../redux/actions/auth";
@@ -16,12 +15,9 @@ export const Navbar = () => {
 
   const handleLogout = () => {
     dispatch(logout());
+    window.localStorage.setItem("user", JSON.stringify("{logged: false}"));
     navigate("/");
   };
-
-  useEffect(() => {
-    localStorage.setItem("user", JSON.stringify(user));
-  }, [user]);
 
   return (
     <nav className="navbar-container sticky">

@@ -3,10 +3,12 @@ import LocalPhoneOutlinedIcon from "@mui/icons-material/LocalPhoneOutlined";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import "leaflet/dist/leaflet.css";
 import { GeneralButton } from "../../components/GeneralButton/GeneralButton";
+import useSEO from "../../hooks/useSEO";
 import "./Contact.css";
 import { Map } from "./Map";
 
 export const Contact = () => {
+  useSEO({ title: "Contact" });
   return (
     <div className="contact-container">
       <Map />

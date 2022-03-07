@@ -5,6 +5,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   color: $white-text;
   padding-top: 20px;
   background: $atention-red;
@@ -43,7 +44,7 @@
   bottom: -150px;
 }
 
-.newsletter-input {
+.newsletter-form {
   z-index: 999;
   display: flex;
   justify-content: center;

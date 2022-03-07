@@ -10,6 +10,9 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   color: #ffffff;
   padding-top: 20px;
   background: #dc1405;
@@ -51,7 +54,7 @@
   bottom: -150px;
 }
 
-.newsletter-input {
+.newsletter-form {
   z-index: 999;
   display: -webkit-box;
   display: -ms-flexbox;

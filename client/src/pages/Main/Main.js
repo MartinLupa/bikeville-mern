@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { ProductsBanners } from "../../components/ProductsBanners/ProductsBanners";
 import { TopScroll } from "../../components/TopScroll/TopScroll";
+import useSEO from "../../hooks/useSEO";
 import { setCatalog } from "../../redux/actions/catalog";
 import racing_cyclists_video from "../../videos/racing-cyclists2.mp4";
 import "./Main.css";
@@ -11,6 +12,7 @@ const { REACT_APP_API_CATALOG: CATALOG_URL, REACT_APP_TOKEN: token } =
 
 export const Main = () => {
   const dispatch = useDispatch();
+  useSEO({ title: "Your bike shop!" });
 
   useEffect(() => {
     fetch(CATALOG_URL, {

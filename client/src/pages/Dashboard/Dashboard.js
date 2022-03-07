@@ -4,6 +4,7 @@ import { AddProductsForm } from "../../components/AA-AdminDashboard/AddProductsF
 import { AdminStats } from "../../components/AA-AdminDashboard/AdminStats/AdminStats";
 import { ProductsList } from "../../components/AA-AdminDashboard/UpdateProduct/ProductsList";
 import { UpdateProductsForm } from "../../components/AA-AdminDashboard/UpdateProduct/UpdateProductsForm";
+import useSEO from "../../hooks/useSEO";
 import { setCatalog } from "../../redux/actions/catalog";
 import "./Dashboard.css";
 const { REACT_APP_API_CATALOG: CATALOG_URL } = process.env;
@@ -31,6 +32,7 @@ export default function Dashboard() {
   const [currentProduct, setCurrentProduct] = useState(initialValues);
   const [productsList, setProductsList] = useState([]);
   const [isEditing, setIsEditing] = useState(false);
+  useSEO({ title: "Admin Dashboard" });
 
   useEffect(() => {
     fetch(CATALOG_URL, {

@@ -7,6 +7,7 @@ import { GeneralButton } from "../../components/GeneralButton/GeneralButton";
 import { OtherServiceItem } from "../../components/OtherServiceItem/OtherServiceItem";
 import { PaymentItem } from "../../components/PaymentItem/PaymentItem";
 import { ShippingItem } from "../../components/ShippingItem/ShippingItem";
+import useSEO from "../../hooks/useSEO";
 import dhl_logo from "../../images/dhl_logo.JPG";
 import present_packaging from "../../images/present_packaging.JPG";
 import ups_logo from "../../images/ups_logo.JPG";
@@ -18,6 +19,7 @@ export const ShoppingCart = () => {
   const shoppingCart = useSelector((state) => state.shoppingCart);
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  useSEO({ title: "Shopping Cart" });
 
   const [courierCompany, setCourierCompany] = useState({
     company: "ups",

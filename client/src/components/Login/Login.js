@@ -34,6 +34,7 @@ export const Login = () => {
     }).then((req) => {
       req.json().then((data) => {
         dispatch(login(data));
+        window.localStorage.setItem("user", JSON.stringify(data));
         resetForm();
         navigate("/showroom");
       });
