@@ -1,11 +1,9 @@
 import DirectionsBikeIcon from "@mui/icons-material/DirectionsBike";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import Badge from "@mui/material/Badge";
-import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, NavLink, useNavigate } from "react-router-dom";
-import i18next from "../../i18nextConf";
 import { logout } from "../../redux/actions/auth";
 import "../../styles/Variables.scss";
 import "./Navbar.css";
@@ -16,12 +14,6 @@ export const Navbar = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { t } = useTranslation(["common"]);
-
-  useEffect(() => {
-    if (localStorage.getItem("i18nextLng")) {
-      i18next.changeLanguage("en");
-    }
-  }, []);
 
   const handleLogout = () => {
     dispatch(logout());

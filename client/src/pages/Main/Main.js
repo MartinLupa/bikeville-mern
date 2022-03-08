@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { ProductsBanners } from "../../components/ProductsBanners/ProductsBanners";
@@ -12,6 +13,7 @@ const { REACT_APP_API_CATALOG: CATALOG_URL, REACT_APP_TOKEN: token } =
 
 export const Main = () => {
   const dispatch = useDispatch();
+  const { t } = useTranslation(["main"]);
   useSEO({ title: "Your bike shop!" });
 
   useEffect(() => {
@@ -35,10 +37,10 @@ export const Main = () => {
         <div className="outter-container">
           <div className="video-container">
             <div className="callout">
-              <h1>WELCOME TO BIKEVILLE!</h1>
+              <h1>{t("WELCOME_TO_BIKEVILLE!")}</h1>
               <Link className="link" to="/showroom">
                 <button className="outline-btn">
-                  <h2>CHECK OUR PRODUCTS</h2>
+                  <h2>{t("CHECK_OUR_PRODUCTS")}</h2>
                 </button>
               </Link>
             </div>

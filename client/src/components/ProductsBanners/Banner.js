@@ -2,10 +2,12 @@ import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { setProductID } from "../../redux/actions/productID";
 import "./ProductsBanners.css";
+import i18next from "../../i18nextConf";
+import { useTranslation } from "react-i18next";
 
 export const Banner = ({ imgStyle, model, product_id }) => {
-  // const { setProductID } = useContext(GlobalContext);
   const dispatch = useDispatch();
+  const { t } = useTranslation(["main"]);
 
   let backgroundImageStyle = {
     width: "100%",
@@ -27,7 +29,7 @@ export const Banner = ({ imgStyle, model, product_id }) => {
           onClick={() => handleDetailsClick({ product_id })}
           to={`/product_details/${product_id}`}
         >
-          <h2 className="banner-hover-text">SEE THE BIKE!</h2>
+          <h2 className="banner-hover-text">{t("SEE_THE_BIKE")}</h2>
         </Link>
       </div>
       <div style={backgroundImageStyle} className="banner-container">
