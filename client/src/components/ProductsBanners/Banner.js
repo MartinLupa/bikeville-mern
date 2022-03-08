@@ -1,9 +1,8 @@
+import { useTranslation } from "react-i18next";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { setProductID } from "../../redux/actions/productID";
 import "./ProductsBanners.css";
-import i18next from "../../i18nextConf";
-import { useTranslation } from "react-i18next";
 
 export const Banner = ({ imgStyle, model, product_id }) => {
   const dispatch = useDispatch();
