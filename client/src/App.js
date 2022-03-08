@@ -45,6 +45,7 @@ function App() {
     <div className="app-container">
       <div className="app-content">
         <ErrorBoundary FallbackComponent={ErrorFallback}>
+          {/* <Suspense fallback={<div>Loading... </div>}> */}
           <GlobalContext.Provider
             value={{
               order,
@@ -53,6 +54,7 @@ function App() {
           >
             <PublicRouter />
           </GlobalContext.Provider>
+          {/* </Suspense> */}
         </ErrorBoundary>
       </div>
       <Footer />

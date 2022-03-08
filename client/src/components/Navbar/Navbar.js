@@ -1,8 +1,11 @@
 import DirectionsBikeIcon from "@mui/icons-material/DirectionsBike";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import Badge from "@mui/material/Badge";
+import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, NavLink, useNavigate } from "react-router-dom";
+import i18next from "../../i18nextConf";
 import { logout } from "../../redux/actions/auth";
 import "../../styles/Variables.scss";
 import "./Navbar.css";
@@ -12,6 +15,13 @@ export const Navbar = () => {
   const user = useSelector((state) => state.auth);
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const { t } = useTranslation(["common"]);
+
+  useEffect(() => {
+    if (localStorage.getItem("i18nextLng")) {
+      i18next.changeLanguage("en");
+    }
+  }, []);
 
   const handleLogout = () => {
     dispatch(logout());
@@ -39,7 +49,7 @@ export const Navbar = () => {
           to="/showroom"
         >
           <div>
-            <p>PRODUCTS</p>
+            <p>{t("PRODUCTS")}</p>
           </div>
         </NavLink>
         <NavLink
@@ -49,7 +59,7 @@ export const Navbar = () => {
           to="/contact"
         >
           <div>
-            <p>CONTACT</p>
+            <p>{t("CONTACT")}</p>
           </div>
         </NavLink>
 
@@ -62,7 +72,7 @@ export const Navbar = () => {
             to="/dashboard"
           >
             <div className="underline">
-              <p>DASHBOARD</p>
+              <p>{t("DASHBOARD")}</p>
             </div>
           </NavLink>
         ) : null}
@@ -75,7 +85,7 @@ export const Navbar = () => {
             to="/registration"
           >
             <div className="underline">
-              <p>REGISTER</p>
+              <p>{t("REGISTER")}</p>
             </div>
           </NavLink>
         )}
@@ -90,7 +100,7 @@ export const Navbar = () => {
             to="/"
           >
             <div className="underline">
-              <p>LOGOUT</p>
+              <p>{t("LOGOUT")}</p>
             </div>
           </NavLink>
         ) : (
@@ -101,7 +111,7 @@ export const Navbar = () => {
             to="/login"
           >
             <div className="underline">
-              <p>LOGIN</p>
+              <p>{t("LOGIN")}</p>
             </div>
           </NavLink>
         )}
