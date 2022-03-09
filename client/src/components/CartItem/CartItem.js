@@ -26,6 +26,8 @@ export const CartItem = ({ product }) => {
     dispatch(removeProduct(product));
   };
 
+  console.log("PRODUICT", product);
+
   return (
     <div className="cart-item animate__animated animate__fadeIn">
       <div className="cart-left">

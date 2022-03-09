@@ -5,12 +5,14 @@ import shoppingCartReducer from "../reducers/shoppingCartReducer";
 import { authReducer } from "./authReducer";
 import { catalogReducer } from "./catalogReducer";
 import { filteredCatalogReducer } from "./filteredCatalogReducer";
+import orderSummaryReducer from "./orderSummaryReducer";
 import { popupReducer } from "./popupReducer";
 import { productIDReducer } from "./productIDReducer";
 import { qtyCounterReducer } from "./qtyCounterReducer";
 
 const reducers = combineReducers({
   shoppingCart: shoppingCartReducer,
+  orderSummary: orderSummaryReducer,
   auth: authReducer,
   popup: popupReducer,
   catalog: catalogReducer,

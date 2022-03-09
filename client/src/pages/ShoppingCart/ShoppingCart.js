@@ -1,7 +1,6 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import { GlobalContext } from "../../App";
 import { CartItem } from "../../components/CartItem/CartItem";
 import { GeneralButton } from "../../components/GeneralButton/GeneralButton";
 import { OtherServiceItem } from "../../components/OtherServiceItem/OtherServiceItem";
@@ -12,10 +11,10 @@ import dhl_logo from "../../images/dhl_logo.JPG";
 import present_packaging from "../../images/present_packaging.JPG";
 import ups_logo from "../../images/ups_logo.JPG";
 import { show } from "../../redux/actions/popup";
+import { setOrder } from "../../redux/reducers/orderSummaryReducer";
 import "./ShoppingCart.css";
 
 export const ShoppingCart = () => {
-  const { setOrder } = useContext(GlobalContext);
   const shoppingCart = useSelector((state) => state.shoppingCart);
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -35,11 +34,13 @@ export const ShoppingCart = () => {
       dispatch(show("Shopping cart is empty."));
       navigate("/showroom");
     } else {
-      setOrder({
-        products: shoppingCart.products,
-        courier_company: courierCompany,
-        total: shoppingCart.total,
-      });
+      dispatch(
+        setOrder({
+          products: shoppingCart.products,
+          courier_company: courierCompany,
+          total: shoppingCart.total,
+        })
+      );
       navigate("/pay");
     }
   };

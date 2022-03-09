@@ -4,7 +4,6 @@ import App from "./App";
 import "./index.css";
 import { store } from "./redux/reducers/store";
 import "./i18nextConf";
-
 import "./i18nextConf.js";
 
 ReactDOM.render(

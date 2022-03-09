@@ -1,12 +1,11 @@
-import React, { useContext } from "react";
+import React from "react";
 import { useSelector } from "react-redux";
-import { GlobalContext } from "../../App";
 import { CartItem } from "../CartItem/CartItem";
 import "./OrderSummary.css";
 
 export const OrderSummary = () => {
-  const { order } = useContext(GlobalContext);
   const user = useSelector((state) => state.auth);
+  const order = useSelector((state) => state.orderSummary);
 
   const monthNames = [
     "January",
@@ -25,6 +24,8 @@ export const OrderSummary = () => {
   const date = new Date().getDate() + 2;
   const month = monthNames[new Date().getMonth()];
   const year = new Date().getFullYear();
+
+  console.log(order.products);
 
   return (
     <div className="summary-container">

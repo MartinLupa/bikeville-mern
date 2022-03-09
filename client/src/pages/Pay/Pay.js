@@ -1,8 +1,8 @@
 import axios from "axios";
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import StripeCheckout from "react-stripe-checkout";
-import { GlobalContext } from "../../App";
 import { CircularIndeterminate } from "../../components/CircularProgress/CircularProgress";
 import { GeneralButton } from "../../components/GeneralButton/GeneralButton";
 import { OrderSummary } from "../../components/OrderSummary/OrderSummary";
@@ -14,7 +14,8 @@ const {
 
 export const Pay = () => {
   const [stripeToken, setStripeToken] = useState(null);
-  const { order, setShoppingCart } = useContext(GlobalContext);
+  const order = useSelector((state) => state.orderSummary);
+  console.log(order);
   const navigate = useNavigate();
 
   const onToken = (token) => {
@@ -30,13 +31,12 @@ export const Pay = () => {
         });
         console.log(res.data);
         navigate("/success");
-        setShoppingCart([]);
       } catch (err) {
         console.log(err);
       }
     };
     stripeToken && makeRequest();
-  }, [stripeToken, navigate, order.total, setShoppingCart]);
+  }, [stripeToken, navigate, order]);
 
   return (
     <div className="pay-container">
