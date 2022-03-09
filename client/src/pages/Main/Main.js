@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { ProductsBanners } from "../../components/ProductsBanners/ProductsBanners";
 import { TopScroll } from "../../components/TopScroll/TopScroll";
+import { fetchAndUpdateCatalog } from "../../helpers/fetchAndUpdateCatalog";
 import useSEO from "../../hooks/useSEO";
 import { setCatalog } from "../../redux/actions/catalog";
 import racing_cyclists_video from "../../videos/racing-cyclists2.mp4";
@@ -17,16 +18,17 @@ export const Main = () => {
   useSEO({ title: "Your bike shop!" });
 
   useEffect(() => {
-    fetch(CATALOG_URL, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "*",
-        Authorization: `Bearer ${token}`,
-      },
-    })
-      .then((response) => response.json())
-      .then((data) => dispatch(setCatalog(data)));
+    fetchAndUpdateCatalog(CATALOG_URL, dispatch, setCatalog, token);
+    // fetch(CATALOG_URL, {
+    //   method: "GET",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //     "Access-Control-Allow-Origin": "*",
+    //     Authorization: `Bearer ${token}`,
+    //   },
+    // })
+    //   .then((response) => response.json())
+    //   .then((data) => dispatch(setCatalog(data)));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [setCatalog]);
 
