@@ -23,7 +23,7 @@ STRIPE_KEY = Your Stripe account public key.
 
 Create a .env file inside client folder and replace:
 
-````bash
+```bash
 REACT_APP_STRIPE_PUBLIC_KEY = Your Stripe account public key.
 MAPS_KEY = Leaflet API key
 REACT_APP_TOKEN = JWT Token
@@ -40,7 +40,7 @@ Navigate to api and client folders and run in both:
 ```bash
 npm install
 npm start
-````
+```
 
 ## Project info
 
