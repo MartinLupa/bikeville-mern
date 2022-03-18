@@ -12,14 +12,35 @@ https://github.com/MartinLupa/bikeville-mern
 
 ## How to use
 
-Replace .env dummy variables.
+Create a .env file inside api folder and replace:
+
+```bash
+MONGO_URL = database connection url
+PASS_SEC = can be any string
+JWT_SEC = can be any string
+STRIPE_KEY = Your Stripe account public key.
+```
+
+Create a .env file inside client folder and replace:
+
+````bash
+REACT_APP_STRIPE_PUBLIC_KEY = Your Stripe account public key.
+MAPS_KEY = Leaflet API key
+REACT_APP_TOKEN = JWT Token
+REACT_APP_API_USER_REGISTRATION = http://localhost:5000/api/auth/registration
+REACT_APP_API_USER_LOGIN = http://localhost:5000/api/auth/login
+REACT_APP_API_CATALOG = http://localhost:5000/api/products
+REACT_APP_API_PAYMENT = http://localhost:5000/api/checkout/payment
+REACT_APP_API_SALES_STATS = http://localhost:5000/api/orders/income
+REACT_APP_API_USERS_STATS = http://localhost:5000/api/users/stats
+```
 
 Navigate to api and client folders and run in both:
 
 ```bash
 npm install
 npm start
-```
+````
 
 ## Project info
 
@@ -34,7 +55,7 @@ Tested with Node v14.16.1 and npm 6.14.12.
 - Form management: Formik, Yup.
 - Use of localStorage to maintain user session and shopping cart states.
 - Libraries | Frameworks: SASS, Material UI, CSS Animate, i18next.
-- Basic SEO, useSEO, React Helmet.
+- Basic SEO, useSEO.
 
 ### Back-end | NODE, EXPRESS, MONGO, MONGOOSE
 
