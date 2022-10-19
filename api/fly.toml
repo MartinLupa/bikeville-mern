@@ -1,6 +1,6 @@
 # fly.toml file generated for summer-fire-2101 on 2022-10-19T16:06:43+02:00
 
-app = "bikeville"
+app = "summer-fire-2101"
 kill_signal = "SIGINT"
 kill_timeout = 5
 processes = []
