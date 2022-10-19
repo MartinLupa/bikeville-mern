@@ -19,6 +19,7 @@ export const Main = () => {
 
   useEffect(() => {
     fetchAndUpdateCatalog(CATALOG_URL, dispatch, setCatalog, token);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [setCatalog]);
 
   return (

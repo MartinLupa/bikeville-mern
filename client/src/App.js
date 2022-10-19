@@ -27,7 +27,7 @@ function App() {
     if (initialUserState?.email) {
       dispatch(login(initialUserState));
     }
-    if (initialCartState?.products.length > 0) {
+    if (initialCartState?.products?.length > 0) {
       initialCartState.products.map((prod) => dispatch(addProduct(prod)));
     }
 
